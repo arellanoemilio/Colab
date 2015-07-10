@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		
+		Parse.enableLocalDatastore()
+		
+		// Initialize Parse.
+		Parse.setApplicationId("QSkDUFTM4Li9PDQUCDdf7asD9sOdq8tNHyj5PAfh",
+			clientKey: "MnO4v4SUY5eGSVphWAnhLgtUTDjBcw4GbOSqxAnm")
+		
+		// [Optional] Track statistics around application opens.
+		PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+		
 		return true
 	}
 
