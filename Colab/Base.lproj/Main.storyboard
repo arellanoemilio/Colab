@@ -495,6 +495,7 @@
                         <viewControllerLayoutGuide type="bottom" id="KxW-CX-cDD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qxi-fu-9PR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3kt-Rn-YVj">
@@ -548,11 +549,11 @@
                                 <exclude reference="oT0-uf-KoD"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Def-4x-pnk"/>
-                                <exclude reference="TJI-Z1-J10"/>
                                 <exclude reference="KMg-bC-lcb"/>
                                 <exclude reference="PS9-I9-F7a"/>
                                 <exclude reference="ekl-el-Lt7"/>
+                                <exclude reference="Def-4x-pnk"/>
+                                <exclude reference="TJI-Z1-J10"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -561,11 +562,11 @@
                                 <include reference="oT0-uf-KoD"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Def-4x-pnk"/>
-                                <include reference="TJI-Z1-J10"/>
                                 <include reference="KMg-bC-lcb"/>
                                 <include reference="PS9-I9-F7a"/>
                                 <include reference="ekl-el-Lt7"/>
+                                <include reference="Def-4x-pnk"/>
+                                <include reference="TJI-Z1-J10"/>
                             </mask>
                         </variation>
                     </view>
@@ -584,6 +585,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HjB-zf-19h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5hp-KI-8Ce">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="let's start, what's your region?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf7-rn-bRO">
@@ -654,6 +656,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bsp-o0-iSe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O6A-nt-PdX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your industry?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VH-gX-MeM">

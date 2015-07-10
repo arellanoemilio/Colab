@@ -24,12 +24,6 @@ class HomeViewController: UIViewController {
 		gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
 		view.layer.insertSublayer(gradient, atIndex: 0)
 		
-		let testObject = PFObject(className: "TestObject")
-		testObject["foo"] = "bar"
-		testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-			println("Object has been saved.")
-		}
-		
 	}
 
 	override func didReceiveMemoryWarning() {
