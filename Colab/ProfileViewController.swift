@@ -1,16 +1,18 @@
 //
-//  BrowseViewController.swift
+//  ProfileViewController.swift
 //  Colab
 //
-//  Created by Mikk Kärner on 10/07/15.
+//  Created by Emilio Arellano on 7/10/15.
 //  Copyright (c) 2015 mikkkarner. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class BrowseViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
+    var user: PFUser?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +34,5 @@ class BrowseViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-	
-	@IBAction func unwindToBrowseViewController(sender: UIStoryboardSegue) {}
 
 }

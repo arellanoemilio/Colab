@@ -11,14 +11,13 @@ import Parse
 
 class HomeViewController: UIViewController {
 	
-	var red: CGFloat!
+    var user = PFUser.currentUser()
+    
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-		
-		//red = ((baseColor1 & 0xFF0000) >> 16) / 255.0f
-		
+        
 		var gradient: CAGradientLayer = CAGradientLayer()
 		gradient.frame = view.bounds
 		gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
@@ -30,7 +29,24 @@ class HomeViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier{
+            switch (identifier){
+                case "HomeToProfile":
+                    var profileViewController = segue.destinationViewController as! ProfileViewController
+                    profileViewController.user = user
+                case "HomeToCollabs":
+                    var collabsViewController = segue.destinationViewController as! CollabsTableViewController
+                    collabsViewController.user = user
+                default: break
+            }
+        }
 
+    }
+    
+
+    
 
 }
 
