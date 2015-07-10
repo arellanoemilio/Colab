@@ -11,6 +11,31 @@ import Parse
 
 class BrowseViewController: UIViewController {
 
+    typealias PropertyList = AnyObject
+    var filters: PropertyList{
+        get{
+            var list = [Array<String>]()
+            list.append(regions)
+            list.append(platforms)
+            list.append(industries)
+            return list
+        }
+        set{
+            if let list = newValue as? [Array<String>]{
+                if list.count == 3{
+                    regions  = list[0]
+                    platforms = list[1]
+                    industries = list[2]
+                }
+            }
+        }
+    }
+    
+    var regions = [String]()
+    var platforms = [String]()
+    var industries = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
