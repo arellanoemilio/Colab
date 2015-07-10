@@ -13,6 +13,7 @@
 		8A1BA8171B4F0413004C487D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8161B4F0413004C487D /* Images.xcassets */; };
 		8A1BA81A1B4F0413004C487D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8181B4F0413004C487D /* LaunchScreen.xib */; };
 		8A1BA8261B4F0413004C487D /* ColabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BA8251B4F0413004C487D /* ColabTests.swift */; };
+		8A3624D11B500F95006C860B /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3624D01B500F95006C860B /* BrowseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		8A1BA81F1B4F0413004C487D /* ColabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1BA8241B4F0413004C487D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1BA8251B4F0413004C487D /* ColabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColabTests.swift; sourceTree = "<group>"; };
+		8A3624D01B500F95006C860B /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				8A1BA8161B4F0413004C487D /* Images.xcassets */,
 				8A1BA8181B4F0413004C487D /* LaunchScreen.xib */,
 				8A1BA80D1B4F0413004C487D /* Supporting Files */,
+				8A3624D01B500F95006C860B /* BrowseViewController.swift */,
 			);
 			path = Colab;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3624D11B500F95006C860B /* BrowseViewController.swift in Sources */,
 				8A1BA8121B4F0413004C487D /* ViewController.swift in Sources */,
 				8A1BA8101B4F0413004C487D /* AppDelegate.swift in Sources */,
 			);
@@ -411,6 +415,7 @@
 				8A1BA82B1B4F0413004C487D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A1BA82C1B4F0413004C487D /* Build configuration list for PBXNativeTarget "ColabTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				8A1BA82E1B4F0413004C487D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

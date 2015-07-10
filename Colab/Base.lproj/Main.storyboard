@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="1125" y="1050"/>
         </scene>
-        <!--View Controller-->
+        <!--Browse View Controller-->
         <scene sceneID="dSu-w6-E5Z">
             <objects>
-                <viewController id="KJ2-Wn-wvY" sceneMemberID="viewController">
+                <viewController id="KJ2-Wn-wvY" customClass="BrowseViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1b9-HF-Quq"/>
                         <viewControllerLayoutGuide type="bottom" id="IZ4-QS-Wv6"/>
@@ -726,10 +726,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Region" id="Fqu-xD-eZa">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="2zz-Aj-jZ2"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="2zz-Aj-jZ2">
+                            <connections>
+                                <segue destination="XKp-0s-LXb" kind="unwind" unwindAction="unwindToBrowseViewController:" id="5bL-8B-YKK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEL-Zr-Njv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XKp-0s-LXb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3439.5" y="-286"/>
         </scene>
@@ -766,10 +771,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Platforms" id="EzN-3g-dM8">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="WSu-U4-s5i"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="WSu-U4-s5i">
+                            <connections>
+                                <segue destination="NYL-fN-Dn1" kind="unwind" unwindAction="unwindToBrowseViewController:" id="hbB-0F-8o4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oc-uR-WDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NYL-fN-Dn1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3439.5" y="382"/>
         </scene>
@@ -1127,10 +1137,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Industry" id="Ect-Bw-lE5">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ZBg-Jb-joL"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ZBg-Jb-joL">
+                            <connections>
+                                <segue destination="pQf-nu-0oQ" kind="unwind" unwindAction="unwindToBrowseViewController:" id="YjX-3U-b0m"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7u-mn-1K1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pQf-nu-0oQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4216.5" y="1050"/>
         </scene>
