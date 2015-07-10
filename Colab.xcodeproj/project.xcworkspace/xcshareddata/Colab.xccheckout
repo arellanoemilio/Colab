@@ -5,16 +5,26 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>B510968A-C2E4-4443-BA29-C168CBBA8BA9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Colab</string>
+=======
+	<string>DA64CC48-D69C-459A-940F-FF42AD16EF71</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+>>>>>>> 8ca33ba48c3868d8f741e0b7264a10fe66464403
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6C1E65AC1294F7567F40FE889B0CC14E78D5B132</key>
 		<string>https://bitbucket.org/mikkkarner/colab.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
+<<<<<<< HEAD
 	<string>Colab.xcodeproj</string>
+=======
+	<string>Colab.xcodeproj/project.xcworkspace</string>
+>>>>>>> 8ca33ba48c3868d8f741e0b7264a10fe66464403
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6C1E65AC1294F7567F40FE889B0CC14E78D5B132</key>
@@ -34,7 +44,11 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>6C1E65AC1294F7567F40FE889B0CC14E78D5B132</string>
 			<key>IDESourceControlWCCName</key>
+<<<<<<< HEAD
 			<string>Colab</string>
+=======
+			<string>colab</string>
+>>>>>>> 8ca33ba48c3868d8f741e0b7264a10fe66464403
 		</dict>
 	</array>
 </dict>

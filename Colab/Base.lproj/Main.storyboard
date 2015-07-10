@@ -716,7 +716,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Hl7-H7-pIl" style="IBUITableViewCellStyleDefault" id="yb0-Tp-iNk">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Region Cell" textLabel="Hl7-H7-pIl" style="IBUITableViewCellStyleDefault" id="yb0-Tp-iNk">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yb0-Tp-iNk" id="CE5-Cy-yzs">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -757,7 +757,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="FXW-ar-WDF" style="IBUITableViewCellStyleDefault" id="syS-ZY-1NU">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Platform Cell" textLabel="FXW-ar-WDF" style="IBUITableViewCellStyleDefault" id="syS-ZY-1NU">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="syS-ZY-1NU" id="rOF-wx-Wgf">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -798,7 +798,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="u1u-fa-pv8" style="IBUITableViewCellStyleDefault" id="8FD-nG-p4j">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Industry Cell" textLabel="u1u-fa-pv8" style="IBUITableViewCellStyleDefault" id="8FD-nG-p4j">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8FD-nG-p4j" id="j0O-ef-qJg">
                                     <autoresizingMask key="autoresizingMask"/>
