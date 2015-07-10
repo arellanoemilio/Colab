@@ -247,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="LUN-r8-aHe">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Messege User Cell" rowHeight="79" id="LUN-r8-aHe">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUN-r8-aHe" id="6nK-dB-NOk">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -351,7 +351,7 @@
                                     <segue destination="u35-Y8-FlK" kind="show" id="Ds3-rh-Awx"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="ikU-Tx-jEY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Accept User Cell" rowHeight="79" id="ikU-Tx-jEY">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ikU-Tx-jEY" id="wzw-Xk-cic">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -836,6 +836,6 @@
         <image name="chatIcon" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dKJ-Gf-wTj"/>
+        <segue reference="Ds3-rh-Awx"/>
     </inferredMetricsTieBreakers>
 </document>
