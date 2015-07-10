@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class HomeViewController: UIViewController {
 	
@@ -22,6 +23,12 @@ class HomeViewController: UIViewController {
 		gradient.frame = view.bounds
 		gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
 		view.layer.insertSublayer(gradient, atIndex: 0)
+		
+		let testObject = PFObject(className: "TestObject")
+		testObject["foo"] = "bar"
+		testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+			println("Object has been saved.")
+		}
 		
 	}
 
