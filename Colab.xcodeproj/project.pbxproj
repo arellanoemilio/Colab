@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A1BA8101B4F0413004C487D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BA80F1B4F0413004C487D /* AppDelegate.swift */; };
-		8A1BA8121B4F0413004C487D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BA8111B4F0413004C487D /* ViewController.swift */; };
+		8A1BA8121B4F0413004C487D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BA8111B4F0413004C487D /* HomeViewController.swift */; };
 		8A1BA8151B4F0413004C487D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8131B4F0413004C487D /* Main.storyboard */; };
 		8A1BA8171B4F0413004C487D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8161B4F0413004C487D /* Images.xcassets */; };
 		8A1BA81A1B4F0413004C487D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8181B4F0413004C487D /* LaunchScreen.xib */; };
@@ -30,7 +30,7 @@
 		8A1BA80A1B4F0413004C487D /* Colab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1BA80E1B4F0413004C487D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1BA80F1B4F0413004C487D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A1BA8111B4F0413004C487D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A1BA8111B4F0413004C487D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A1BA8141B4F0413004C487D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A1BA8161B4F0413004C487D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A1BA8191B4F0413004C487D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -79,13 +79,11 @@
 		8A1BA80C1B4F0413004C487D /* Colab */ = {
 			isa = PBXGroup;
 			children = (
-				8A1BA80F1B4F0413004C487D /* AppDelegate.swift */,
-				8A1BA8111B4F0413004C487D /* ViewController.swift */,
 				8A1BA8131B4F0413004C487D /* Main.storyboard */,
 				8A1BA8161B4F0413004C487D /* Images.xcassets */,
-				8A1BA8181B4F0413004C487D /* LaunchScreen.xib */,
 				8A1BA80D1B4F0413004C487D /* Supporting Files */,
 				8A3624D01B500F95006C860B /* BrowseViewController.swift */,
+				8A1BA8111B4F0413004C487D /* HomeViewController.swift */,
 			);
 			path = Colab;
 			sourceTree = "<group>";
@@ -93,6 +91,8 @@
 		8A1BA80D1B4F0413004C487D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8A1BA8181B4F0413004C487D /* LaunchScreen.xib */,
+				8A1BA80F1B4F0413004C487D /* AppDelegate.swift */,
 				8A1BA80E1B4F0413004C487D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -216,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A3624D11B500F95006C860B /* BrowseViewController.swift in Sources */,
-				8A1BA8121B4F0413004C487D /* ViewController.swift in Sources */,
+				8A1BA8121B4F0413004C487D /* HomeViewController.swift in Sources */,
 				8A1BA8101B4F0413004C487D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
