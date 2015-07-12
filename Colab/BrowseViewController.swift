@@ -31,6 +31,7 @@ class BrowseViewController: UIViewController {
         }
     }
     
+    
     var regions = [String]()
     var platforms = [String]()
     var industries = [String]()
