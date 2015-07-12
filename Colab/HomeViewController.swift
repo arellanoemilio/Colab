@@ -11,17 +11,17 @@ import Parse
 
 class HomeViewController: UIViewController {
 	
-	var red: CGFloat!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		//red = ((baseColor1 & 0xFF0000) >> 16) / 255.0f
+		let lightYellow: UIColor = UIColor(red: 0, green: 0.059, blue: 0.875, alpha: 1)
+		let darkYellow: UIColor = UIColor(red: 0, green: 0.059, blue: 0.984, alpha: 1)
 		
 		var gradient: CAGradientLayer = CAGradientLayer()
 		gradient.frame = view.bounds
-		gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
+		gradient.colors = [UIColor.blackColor().CGColor, UIColor.blueColor().CGColor]
 		view.layer.insertSublayer(gradient, atIndex: 0)
 		
 	}

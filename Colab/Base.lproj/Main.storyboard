@@ -486,10 +486,10 @@
             </objects>
             <point key="canvasLocation" x="334.5" y="2524"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="U3J-Dd-i0v">
             <objects>
-                <viewController id="mYD-nN-5m0" sceneMemberID="viewController">
+                <viewController id="mYD-nN-5m0" customClass="SignInViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fcu-na-B9Y"/>
                         <viewControllerLayoutGuide type="bottom" id="KxW-CX-cDD"/>
@@ -525,6 +525,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="signIn:" destination="mYD-nN-5m0" eventType="touchUpInside" id="6eF-RW-gcU"/>
                                     <segue destination="1LF-Ai-2MO" kind="show" id="CFr-Va-UyW"/>
                                 </connections>
                             </button>
