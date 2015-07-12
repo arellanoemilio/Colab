@@ -28,15 +28,12 @@
 		8A3624E81B501801006C860B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624E71B501801006C860B /* SystemConfiguration.framework */; };
 		8A3624EA1B501810006C860B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624E91B501810006C860B /* libz.dylib */; };
 		8A3624EC1B50181E006C860B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624EB1B50181E006C860B /* libsqlite3.dylib */; };
-<<<<<<< HEAD
 		8AD4DF541B52E2F000220CFF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4DF511B52E2F000220CFF /* FBSDKCoreKit.framework */; };
 		8AD4DF551B52E2F000220CFF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4DF521B52E2F000220CFF /* FBSDKLoginKit.framework */; };
 		8AD4DF561B52E2F000220CFF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4DF531B52E2F000220CFF /* FBSDKShareKit.framework */; };
 		8AD4DF5A1B52E34800220CFF /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4DF581B52E34800220CFF /* ParseFacebookUtilsV4.framework */; };
-=======
 		B10B83251B505C780059766B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83241B505C780059766B /* ProfileViewController.swift */; };
 		B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83281B505F220059766B /* CollabsTableViewController.swift */; };
->>>>>>> 34261c3ea9d09dfdcc1b9342380a3c0a4d67577d
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,16 +72,13 @@
 		8A3624E71B501801006C860B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8A3624E91B501810006C860B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8A3624EB1B50181E006C860B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-<<<<<<< HEAD
 		8AD4DF501B52DFB400220CFF /* Colab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colab-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AD4DF511B52E2F000220CFF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		8AD4DF521B52E2F000220CFF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		8AD4DF531B52E2F000220CFF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		8AD4DF581B52E34800220CFF /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-=======
 		B10B83241B505C780059766B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B10B83281B505F220059766B /* CollabsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabsTableViewController.swift; sourceTree = "<group>"; };
->>>>>>> 34261c3ea9d09dfdcc1b9342380a3c0a4d67577d
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,14 +142,11 @@
 				8A1BA8161B4F0413004C487D /* Images.xcassets */,
 				8A1BA80D1B4F0413004C487D /* Supporting Files */,
 				8A1BA8111B4F0413004C487D /* HomeViewController.swift */,
-<<<<<<< HEAD
 				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				8AD4DF501B52DFB400220CFF /* Colab-Bridging-Header.h */,
-=======
 				B10B83241B505C780059766B /* ProfileViewController.swift */,
 				8A3624D01B500F95006C860B /* BrowseViewController.swift */,
 				B10B83281B505F220059766B /* CollabsTableViewController.swift */,
->>>>>>> 34261c3ea9d09dfdcc1b9342380a3c0a4d67577d
 			);
 			path = Colab;
 			sourceTree = "<group>";
