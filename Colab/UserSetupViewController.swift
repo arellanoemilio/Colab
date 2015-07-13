@@ -23,13 +23,12 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	
 	var listToDisplay = [String]()
 	
+	var selected: [Bool] = []
+	
 	var cellIdentifier = "Centered Text Cell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		//list.delegate = self
-		//list.dataSource = self
 		
 		switch self.restorationIdentifier! {
 			case "RegionSetup":
@@ -55,6 +54,8 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 		var fileContent =  NSBundle.mainBundle().pathForResource(file, ofType: "plist")
 		listToDisplay = NSArray(contentsOfFile: fileContent!)! as! [String]
 		list.reloadData()
+		
+		selected = [Bool](count: listToDisplay.count, repeatedValue: false)
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,6 +80,26 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 		
 		let row = indexPath.row
 		println(listToDisplay[row])
+		
+		let cell = tableView.cellForRowAtIndexPath(indexPath)
+		cell?.selectionStyle = UITableViewCellSelectionStyle.None
+		
+//		if self.restorationIdentifier! == "RegionSetup" {
+//			for index in 0...listToDisplay.count-1 {
+//				if index != row {
+//					cell?.backgroundColor = UIColor.whiteColor()
+//					selected[index] = false
+//				}
+//			}
+//		}
+		
+		if selected[row] {
+			cell?.backgroundColor = UIColor.whiteColor()
+		} else {
+			cell?.backgroundColor = UIColor.blueColor()
+		}
+		selected[row] = !selected[row]
+		
 	}
 	
 
