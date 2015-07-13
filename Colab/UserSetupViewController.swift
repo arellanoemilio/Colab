@@ -22,6 +22,7 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	var industries = [String]()
 	
 	var listToDisplay = [String]()
+	
 	var cellIdentifier = "Centered Text Cell"
 
     override func viewDidLoad() {
