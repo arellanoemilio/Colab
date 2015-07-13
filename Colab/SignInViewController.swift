@@ -31,9 +31,10 @@ class SignInViewController: UIViewController {
 			if let user = user {
 				if user.isNew {
 					println("User signed up and logged in through Facebook!")
-					self.performSegueWithIdentifier("toUserSetup", sender: sender)
+					self.performSegueWithIdentifier("userSetup", sender: sender)
 				} else {
 					println("User logged in through Facebook!")
+					self.performSegueWithIdentifier("userSetup", sender: sender)
 				}
 			} else {
 				println("Uh oh. The user cancelled the Facebook login.")
@@ -42,8 +43,8 @@ class SignInViewController: UIViewController {
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if (segue.identifier == "toUserSetup") {
-			
+		if (segue.identifier == "userSetup") {
+			let userSetupVC: UIViewController = segue.destinationViewController as! UIViewController
 		}
 	}
 }

@@ -505,7 +505,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signIn:" destination="mYD-nN-5m0" eventType="touchUpInside" id="6eF-RW-gcU"/>
-                                    <segue destination="1LF-Ai-2MO" kind="show" id="CFr-Va-UyW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -551,6 +550,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="t7b-K2-fMk"/>
+                    <connections>
+                        <segue destination="1LF-Ai-2MO" kind="show" identifier="userSetup" id="evi-tN-CmL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIn-Hn-nA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
