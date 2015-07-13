@@ -36,6 +36,9 @@
 		B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83281B505F220059766B /* CollabsTableViewController.swift */; };
 		B14C48EF1B5307770000782E /* ConstantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C48EE1B5307770000782E /* ConstantList.swift */; };
 		B14C48F11B53A7A50000782E /* DisplayListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C48F01B53A7A50000782E /* DisplayListTableViewController.swift */; };
+		B14C48F31B53AABA0000782E /* Regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F21B53AABA0000782E /* Regions.plist */; };
+		B14C48F51B53ABBF0000782E /* SocialPlatforms.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */; };
+		B14C48F71B53AC9A0000782E /* Industry.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F61B53AC9A0000782E /* Industry.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		B10B83281B505F220059766B /* CollabsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabsTableViewController.swift; sourceTree = "<group>"; };
 		B14C48EE1B5307770000782E /* ConstantList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantList.swift; sourceTree = "<group>"; };
 		B14C48F01B53A7A50000782E /* DisplayListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayListTableViewController.swift; sourceTree = "<group>"; };
+		B14C48F21B53AABA0000782E /* Regions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Regions.plist; sourceTree = "<group>"; };
+		B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SocialPlatforms.plist; sourceTree = "<group>"; };
+		B14C48F61B53AC9A0000782E /* Industry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Industry.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,9 @@
 				8A1BA8131B4F0413004C487D /* Main.storyboard */,
 				8A1BA8161B4F0413004C487D /* Images.xcassets */,
 				B14C48EE1B5307770000782E /* ConstantList.swift */,
+				B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */,
+				B14C48F61B53AC9A0000782E /* Industry.plist */,
+				B14C48F21B53AABA0000782E /* Regions.plist */,
 				8AD4DF501B52DFB400220CFF /* Colab-Bridging-Header.h */,
 				8A1BA80D1B4F0413004C487D /* Supporting Files */,
 				8A1BA8111B4F0413004C487D /* HomeViewController.swift */,
@@ -290,6 +299,9 @@
 			files = (
 				8A1BA8151B4F0413004C487D /* Main.storyboard in Resources */,
 				8A1BA81A1B4F0413004C487D /* LaunchScreen.xib in Resources */,
+				B14C48F51B53ABBF0000782E /* SocialPlatforms.plist in Resources */,
+				B14C48F31B53AABA0000782E /* Regions.plist in Resources */,
+				B14C48F71B53AC9A0000782E /* Industry.plist in Resources */,
 				8A1BA8171B4F0413004C487D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
