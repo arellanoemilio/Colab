@@ -589,7 +589,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gcN-wp-UyN" kind="show" id="GJp-1E-sBJ"/>
+                                    <action selector="nextPage:" destination="1LF-Ai-2MO" eventType="touchUpInside" id="dMS-Vc-jgx"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AfU-jQ-T2x">
@@ -682,6 +682,7 @@
                     <navigationItem key="navigationItem" id="4Ae-fo-pUL"/>
                     <connections>
                         <outlet property="regionList" destination="AfU-jQ-T2x" id="7VR-hX-nyS"/>
+                        <segue destination="gcN-wp-UyN" kind="show" identifier="toIndustrySetup" id="4ln-Km-ELU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpI-t6-Eai" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -736,7 +737,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5Uu-sL-3ms" kind="show" id="W5D-Ln-EHS"/>
+                                    <action selector="nextPage:" destination="gcN-wp-UyN" eventType="touchUpInside" id="byY-cN-8mL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -788,6 +789,7 @@
                     </view>
                     <connections>
                         <outlet property="industryList" destination="EOU-40-Sfi" id="94e-17-b3J"/>
+                        <segue destination="5Uu-sL-3ms" kind="show" identifier="toPlatformSetup" id="ddb-hP-LCT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gD-UX-Wrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -855,7 +857,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xST-VI-Hsl" kind="show" id="x1Y-4j-aMw"/>
+                                    <action selector="nextPage:" destination="5Uu-sL-3ms" eventType="touchUpInside" id="rQH-ID-d6d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -913,16 +915,17 @@
                     </view>
                     <connections>
                         <outlet property="platformList" destination="KfH-1s-oDm" id="C7p-DB-sgn"/>
+                        <segue destination="xST-VI-Hsl" kind="show" identifier="toBioSetup" id="yVA-af-3cj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWw-TF-aF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4357.5" y="2524"/>
         </scene>
-        <!--View Controller-->
+        <!--Bio Setup View Controller-->
         <scene sceneID="dbY-Nh-nFy">
             <objects>
-                <viewController storyboardIdentifier="BioSetup" id="xST-VI-Hsl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BioSetup" id="xST-VI-Hsl" customClass="BioSetupViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PCJ-zr-idf"/>
                         <viewControllerLayoutGuide type="bottom" id="mbz-z2-kUw"/>
@@ -937,7 +940,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tfD-CJ-8Vh" kind="show" id="Llw-PC-9AT"/>
+                                    <action selector="done:" destination="xST-VI-Hsl" eventType="touchUpInside" id="IJ7-OY-IOi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="write little bit about yourself." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-HO-NSx">
@@ -1009,6 +1012,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="bioField" destination="hgr-wN-LSv" id="0PP-Wb-SMi"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toHome" id="pGK-ay-9R3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hza-7C-8dC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1031,9 +1038,6 @@
                                 <state key="normal" title="Continue To Home Page">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="7e5-2u-Xab"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-gk-qK4">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -1671,7 +1675,7 @@
         <image name="thumbUp" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7e5-2u-Xab"/>
-        <segue reference="Bwe-DD-Cbn"/>
+        <segue reference="pGK-ay-9R3"/>
+        <segue reference="dKJ-Gf-wTj"/>
     </inferredMetricsTieBreakers>
 </document>
