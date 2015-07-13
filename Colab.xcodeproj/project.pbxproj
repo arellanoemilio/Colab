@@ -28,9 +28,7 @@
 		8A3624E81B501801006C860B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624E71B501801006C860B /* SystemConfiguration.framework */; };
 		8A3624EA1B501810006C860B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624E91B501810006C860B /* libz.dylib */; };
 		8A3624EC1B50181E006C860B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624EB1B50181E006C860B /* libsqlite3.dylib */; };
-		8AAB9A3C1B53DFB000D2F7DD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAB9A391B53DFB000D2F7DD /* FBSDKCoreKit.framework */; };
-		8AAB9A3D1B53DFB000D2F7DD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAB9A3A1B53DFB000D2F7DD /* FBSDKLoginKit.framework */; };
-		8AAB9A3E1B53DFB000D2F7DD /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAB9A3B1B53DFB000D2F7DD /* FBSDKShareKit.framework */; };
+		8AAB9A401B53E21800D2F7DD /* SetupPageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB9A3F1B53E21800D2F7DD /* SetupPageContentViewController.swift */; };
 		8AD4DF5A1B52E34800220CFF /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD4DF581B52E34800220CFF /* ParseFacebookUtilsV4.framework */; };
 		B10B83251B505C780059766B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83241B505C780059766B /* ProfileViewController.swift */; };
 		B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83281B505F220059766B /* CollabsTableViewController.swift */; };
@@ -77,9 +75,7 @@
 		8A3624E71B501801006C860B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8A3624E91B501810006C860B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8A3624EB1B50181E006C860B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		8AAB9A391B53DFB000D2F7DD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		8AAB9A3A1B53DFB000D2F7DD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		8AAB9A3B1B53DFB000D2F7DD /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		8AAB9A3F1B53E21800D2F7DD /* SetupPageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPageContentViewController.swift; sourceTree = "<group>"; };
 		8AD4DF501B52DFB400220CFF /* Colab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colab-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AD4DF581B52E34800220CFF /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		B10B83241B505C780059766B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +94,6 @@
 			files = (
 				8A3624EC1B50181E006C860B /* libsqlite3.dylib in Frameworks */,
 				8A3624EA1B501810006C860B /* libz.dylib in Frameworks */,
-				8AAB9A3E1B53DFB000D2F7DD /* FBSDKShareKit.framework in Frameworks */,
 				8A3624E81B501801006C860B /* SystemConfiguration.framework in Frameworks */,
 				8A3624E61B5017F5006C860B /* StoreKit.framework in Frameworks */,
 				8A3624E41B5017E7006C860B /* Security.framework in Frameworks */,
@@ -107,11 +102,9 @@
 				8A3624DE1B5017CE006C860B /* CoreLocation.framework in Frameworks */,
 				8A3624DC1B5017C1006C860B /* CoreGraphics.framework in Frameworks */,
 				8A3624DA1B5017B4006C860B /* CFNetwork.framework in Frameworks */,
-				8AAB9A3C1B53DFB000D2F7DD /* FBSDKCoreKit.framework in Frameworks */,
 				8A3624D81B5017AA006C860B /* AudioToolbox.framework in Frameworks */,
 				8AD4DF5A1B52E34800220CFF /* ParseFacebookUtilsV4.framework in Frameworks */,
 				8A3624D61B50174C006C860B /* Parse.framework in Frameworks */,
-				8AAB9A3D1B53DFB000D2F7DD /* FBSDKLoginKit.framework in Frameworks */,
 				8A3624D51B50174C006C860B /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +155,7 @@
 				8A3624D01B500F95006C860B /* BrowseViewController.swift */,
 				B14C48F01B53A7A50000782E /* DisplayListTableView.swift */,
 				B10B83281B505F220059766B /* CollabsTableViewController.swift */,
+				8AAB9A3F1B53E21800D2F7DD /* SetupPageContentViewController.swift */,
 			);
 			path = Colab;
 			sourceTree = "<group>";
@@ -196,9 +190,6 @@
 		8A3624D21B501622006C860B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8AAB9A391B53DFB000D2F7DD /* FBSDKCoreKit.framework */,
-				8AAB9A3A1B53DFB000D2F7DD /* FBSDKLoginKit.framework */,
-				8AAB9A3B1B53DFB000D2F7DD /* FBSDKShareKit.framework */,
 				8AD4DF581B52E34800220CFF /* ParseFacebookUtilsV4.framework */,
 				8A3624EB1B50181E006C860B /* libsqlite3.dylib */,
 				8A3624E91B501810006C860B /* libz.dylib */,
@@ -328,6 +319,7 @@
 				B10B83251B505C780059766B /* ProfileViewController.swift in Sources */,
 				B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */,
 				8A1BA8101B4F0413004C487D /* AppDelegate.swift in Sources */,
+				8AAB9A401B53E21800D2F7DD /* SetupPageContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -551,17 +551,25 @@
                     </view>
                     <navigationItem key="navigationItem" id="t7b-K2-fMk"/>
                     <connections>
-                        <segue destination="1LF-Ai-2MO" kind="show" identifier="userSetup" id="evi-tN-CmL"/>
+                        <segue destination="GJz-bc-oc0" kind="show" identifier="userSetup" id="i8e-YB-EKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIn-Hn-nA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1125" y="2524"/>
         </scene>
-        <!--View Controller-->
+        <!--Page View Controller-->
+        <scene sceneID="QDM-dU-owR">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="GJz-bc-oc0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mqg-z1-0tA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908" y="2524"/>
+        </scene>
+        <!--Setup Page Content View Controller-->
         <scene sceneID="Qsy-jy-Egx">
             <objects>
-                <viewController id="1LF-Ai-2MO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="1LF-Ai-2MO" customClass="SetupPageContentViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Y1-Eu-eUi"/>
                         <viewControllerLayoutGuide type="bottom" id="HjB-zf-19h"/>
@@ -581,9 +589,6 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="gcN-wp-UyN" kind="show" id="Mik-9u-YYf"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AfU-jQ-T2x">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -675,7 +680,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpI-t6-Eai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="2524"/>
+            <point key="canvasLocation" x="1992" y="3416"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Q2z-lN-qJQ">
@@ -724,9 +729,6 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="5Uu-sL-3ms" kind="show" id="qX6-Ra-AVK"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -778,7 +780,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gD-UX-Wrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692.5" y="2524"/>
+            <point key="canvasLocation" x="2776.5" y="3416"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FL5-Vc-vbo">
@@ -840,9 +842,6 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="xST-VI-Hsl" kind="show" id="bJa-Mw-ud8"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -900,7 +899,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWw-TF-aF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3439.5" y="2524"/>
+            <point key="canvasLocation" x="3523.5" y="3416"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dbY-Nh-nFy">
@@ -919,9 +918,6 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="tfD-CJ-8Vh" kind="show" id="uF6-Hg-803"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="write little bit about yourself." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-HO-NSx">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -995,7 +991,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hza-7C-8dC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4216.5" y="2524"/>
+            <point key="canvasLocation" x="4300.5" y="3416"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f9o-GD-xo0">
@@ -1014,9 +1010,6 @@
                                 <state key="normal" title="Continue To Home Page">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="KiJ-Fs-QJx" kind="show" id="koU-Ym-LJI"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-gk-qK4">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -1060,7 +1053,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="813-eg-jgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4954.5" y="2524"/>
+            <point key="canvasLocation" x="5038.5" y="3416"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="0kh-Yj-UyT">
@@ -1632,6 +1625,6 @@
         <image name="thumbUp" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bwe-DD-Cbn"/>
+        <segue reference="dKJ-Gf-wTj"/>
     </inferredMetricsTieBreakers>
 </document>
