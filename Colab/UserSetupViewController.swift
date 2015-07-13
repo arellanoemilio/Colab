@@ -10,7 +10,10 @@ import UIKit
 
 class UserSetupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-	@IBOutlet weak var list: UITableView!
+	@IBOutlet weak var regionList: UITableView!
+	@IBOutlet weak var industryList: UITableView!
+	@IBOutlet weak var platformList: UITableView!
+	
 	
 	var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
 	
@@ -24,20 +27,29 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		list.delegate = self
-		list.dataSource = self
+		//list.delegate = self
+		//list.dataSource = self
 		
 		switch self.restorationIdentifier! {
-			case "RegionSetup": populatedWith(fileName: "Regions")
-			case "IndustrySetup": populatedWith(fileName: "SocialPlatforms")
-			case "PlatformSetup": populatedWith(fileName: "Industry")
+			case "RegionSetup":
+				regionList.delegate = self
+				regionList.dataSource = self
+				populatedWith(fileName: "Regions", list: regionList)
+			case "IndustrySetup":
+				industryList.delegate = self
+				industryList.dataSource = self
+				populatedWith(fileName: "SocialPlatforms", list: industryList)
+			case "PlatformSetup":
+				platformList.delegate = self
+				platformList.dataSource = self
+				populatedWith(fileName: "Industry", list: platformList)
 			default: break
 			
 		}
 		
 	}
 	
-	func populatedWith(fileName file: String) {
+	func populatedWith(fileName file: String, list: UITableView) {
 		defaults = NSUserDefaults.standardUserDefaults()
 		var fileContent =  NSBundle.mainBundle().pathForResource(file, ofType: "plist")
 		listToDisplay = NSArray(contentsOfFile: fileContent!)! as! [String]

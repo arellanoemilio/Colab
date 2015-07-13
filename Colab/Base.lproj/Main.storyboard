@@ -582,9 +582,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="82.5" y="28" width="231.5" height="20.5"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGd-hZ-vwc">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -602,7 +599,7 @@
                                     <constraint firstAttribute="width" constant="400" id="ci9-QH-nbc"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Region Cell" textLabel="JK7-hK-11y" style="IBUITableViewCellStyleDefault" id="DsJ-b8-ddU">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Centered Text Cell" textLabel="JK7-hK-11y" style="IBUITableViewCellStyleDefault" id="DsJ-b8-ddU">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DsJ-b8-ddU" id="GjQ-ch-6DH">
@@ -626,8 +623,7 @@
                                         <exclude reference="ci9-QH-nbc"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-2" y="56.5" width="400" height="497.5"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="ci9-QH-nbc"/>
                                     </mask>
@@ -684,6 +680,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="4Ae-fo-pUL"/>
+                    <connections>
+                        <outlet property="regionList" destination="AfU-jQ-T2x" id="7VR-hX-nyS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpI-t6-Eai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -711,7 +710,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Industry Cell" textLabel="GtL-AT-fnz" style="IBUITableViewCellStyleDefault" id="WdU-wg-nwh">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Centered Text Cell" textLabel="GtL-AT-fnz" style="IBUITableViewCellStyleDefault" id="WdU-wg-nwh">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WdU-wg-nwh" id="926-Us-k78">
@@ -788,7 +787,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="list" destination="EOU-40-Sfi" id="pow-nd-MBn"/>
+                        <outlet property="industryList" destination="EOU-40-Sfi" id="94e-17-b3J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gD-UX-Wrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -820,7 +819,7 @@
                                     <constraint firstAttribute="width" constant="400" id="cfb-at-Fug"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Platform Cell" textLabel="x9Q-qe-Zj4" style="IBUITableViewCellStyleDefault" id="vKz-Xr-OEb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Centered Text Cell" textLabel="x9Q-qe-Zj4" style="IBUITableViewCellStyleDefault" id="vKz-Xr-OEb">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vKz-Xr-OEb" id="AfB-a0-gtL">
@@ -912,6 +911,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="platformList" destination="KfH-1s-oDm" id="C7p-DB-sgn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWw-TF-aF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
