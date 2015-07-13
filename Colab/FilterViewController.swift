@@ -5,6 +5,7 @@
 //  Created by Mikk Kärner on 10/07/15.
 //  Copyright (c) 2015 mikkkarner. All rights reserved.
 //
+//test addinf sdalfns
 
 import UIKit
 import Parse
