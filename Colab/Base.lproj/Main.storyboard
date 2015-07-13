@@ -59,7 +59,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="KJ2-Wn-wvY" kind="show" identifier="HomeToBrowse" id="y4A-Jv-9Y5"/>
+                                    <segue destination="0yo-W4-fOm" kind="show" id="61N-bs-VDb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvk-vG-pF6">
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="1125" y="1050"/>
         </scene>
-        <!--Browse View Controller-->
+        <!--Filter View Controller-->
         <scene sceneID="dSu-w6-E5Z">
             <objects>
-                <viewController id="KJ2-Wn-wvY" customClass="BrowseViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KJ2-Wn-wvY" customClass="FilterViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1b9-HF-Quq"/>
                         <viewControllerLayoutGuide type="bottom" id="IZ4-QS-Wv6"/>
@@ -151,26 +151,12 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="176" y="550" width="48" height="30"/>
                                 </variation>
-                                <connections>
-                                    <segue destination="0yo-W4-fOm" kind="show" identifier="BrowseToProspects" id="Q6P-eZ-Ucj"/>
-                                </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-s5-WN3">
-                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
-                                <segments>
-                                    <segment title="Region"/>
-                                    <segment title="Platform"/>
-                                    <segment title="Industry"/>
-                                </segments>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="72" width="368" height="29"/>
-                                </variation>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="um8-S3-1Yd" customClass="DisplayListTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="um8-S3-1Yd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZVC-1e-vlh" style="IBUITableViewCellStyleDefault" id="sfc-KE-Zkg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Centered Text Cell" textLabel="ZVC-1e-vlh" style="IBUITableViewCellStyleDefault" id="sfc-KE-Zkg">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sfc-KE-Zkg" id="l3M-Ra-HBN">
@@ -190,35 +176,48 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="108" width="368" height="434"/>
+                                    <rect key="frame" x="16" y="64" width="368" height="478"/>
                                 </variation>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-s5-WN3">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="Region"/>
+                                    <segment title="Platform"/>
+                                    <segment title="Industry"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="28" width="368" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="indexChanged:" destination="KJ2-Wn-wvY" eventType="valueChanged" id="ZPW-zy-hmc"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="RGs-qG-W7R"/>
-                                <exclude reference="iQ8-s5-WN3"/>
                                 <exclude reference="um8-S3-1Yd"/>
+                                <exclude reference="iQ8-s5-WN3"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="RGs-qG-W7R"/>
-                                <include reference="iQ8-s5-WN3"/>
                                 <include reference="um8-S3-1Yd"/>
+                                <include reference="iQ8-s5-WN3"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="filterSelector" destination="iQ8-s5-WN3" id="b31-qo-40t"/>
-                        <outlet property="list" destination="um8-S3-1Yd" id="BP4-1b-83r"/>
-                        <outlet property="listDisplayer" destination="um8-S3-1Yd" id="GVd-9E-tXo"/>
+                        <outlet property="list" destination="um8-S3-1Yd" id="v9f-7s-1Ce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17u-Vs-WT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="1050"/>
+            <point key="canvasLocation" x="2652" y="1055"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="P9I-9U-Bgq">
@@ -1348,15 +1347,6 @@
                                     <segue destination="u35-Y8-FlK" kind="show" id="Bwe-DD-Cbn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPo-9l-pkM">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCq-Lw-JDw">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1420,6 +1410,18 @@
                                 <state key="normal" image="thumbUp">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af0-Vw-uFm">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Filter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="338" y="72" width="34" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="KJ2-Wn-wvY" kind="presentation" id="aS4-Fy-ITl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1485,7 +1487,6 @@
                                 <exclude reference="tex-D2-E0W"/>
                                 <exclude reference="G5e-Bd-qhO"/>
                                 <exclude reference="e8w-2S-wQk"/>
-                                <exclude reference="GPo-9l-pkM"/>
                                 <exclude reference="QCq-Lw-JDw"/>
                                 <exclude reference="J8V-yg-U5S"/>
                                 <exclude reference="c9s-Kz-gRx"/>
@@ -1494,6 +1495,7 @@
                                 <exclude reference="6WO-DZ-ycz"/>
                                 <exclude reference="wYS-Gg-vYr"/>
                                 <exclude reference="KvP-Tc-SHl"/>
+                                <exclude reference="af0-Vw-uFm"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="3sL-Wj-K3e"/>
@@ -1546,7 +1548,6 @@
                                 <include reference="tex-D2-E0W"/>
                                 <include reference="G5e-Bd-qhO"/>
                                 <include reference="e8w-2S-wQk"/>
-                                <include reference="GPo-9l-pkM"/>
                                 <include reference="QCq-Lw-JDw"/>
                                 <include reference="J8V-yg-U5S"/>
                                 <include reference="c9s-Kz-gRx"/>
@@ -1555,6 +1556,7 @@
                                 <include reference="6WO-DZ-ycz"/>
                                 <include reference="wYS-Gg-vYr"/>
                                 <include reference="KvP-Tc-SHl"/>
+                                <include reference="af0-Vw-uFm"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="3sL-Wj-K3e"/>
@@ -1600,10 +1602,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4B-Mo-1GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692.5" y="1050"/>
+            <point key="canvasLocation" x="1908" y="1055"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GOF-UY-kwN">
