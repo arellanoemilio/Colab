@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class MatchesViewController: UIViewController {
 
@@ -14,10 +15,13 @@ class MatchesViewController: UIViewController {
     var platforms = [String]()
     var industries = [String]()
     
+    var matches: [PFUser]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        query()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +30,16 @@ class MatchesViewController: UIViewController {
     }
     
    @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
+        query()
+    }
+    
+    func query(){
+        var query = PFUser.query()
+        if regions.count > 0{ query?.whereKey("region", containsAllObjectsInArray: regions)}
+        if platforms.count > 0{query?.whereKey("platform", containsAllObjectsInArray: platforms)}
+        if industries.count > 0{query?.whereKey("industry", containsAllObjectsInArray: industries)}
+        matches = query?.findObjects() as! [PFUser]?
+        println("\(matches!.count)")
     }
     
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {

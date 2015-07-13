@@ -36,9 +36,9 @@ class ProfileViewController: UIViewController {
             //region = myUser["region"] as! String
             //media = myUser["platforms"] as! [String]
             //industry = myUser["industries"] as! [String]
-            let bioDescription: String = user["bio"] as String
+            //let bioDescription: String = user["bio"] as String
             //regionLabel.text = region
-            bioDescriptionLabel.text = bioDescription
+            //bioDescriptionLabel.text = bioDescription
             //populateIndustry()
             //populateMedia()
         }
