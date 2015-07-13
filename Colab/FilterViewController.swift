@@ -71,10 +71,18 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
      // Mark: UITableViewDelegate methods
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let row = indexPath.row
-        println(listToDisplay[row])
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
+        if let cell = selectedCell{
+            if let content = cell.textLabel?.text{
+                cell.backgroundColor = UIColor.blueColor()
+                switch filterSelector.selectedSegmentIndex{
+                case 0: regions.append(content)
+                case 1: platforms.append(content)
+                case 2: industries.append(content)
+                default: break
+                }
+            }
+        }
     }
     
     /*
@@ -87,6 +95,6 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     */
 	
-	@IBAction func unwindToBrowseViewController(sender: UIStoryboardSegue) {}
+	
 
 }

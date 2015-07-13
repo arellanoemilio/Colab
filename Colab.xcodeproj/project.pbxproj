@@ -42,6 +42,7 @@
 		B1A87FB41B53E40400B4F7F1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A87FB11B53E40400B4F7F1 /* FBSDKCoreKit.framework */; };
 		B1A87FB51B53E40400B4F7F1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A87FB21B53E40400B4F7F1 /* FBSDKLoginKit.framework */; };
 		B1A87FB61B53E40400B4F7F1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A87FB31B53E40400B4F7F1 /* FBSDKShareKit.framework */; };
+		B1FE4A321B53FA8B008931D2 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		B1A87FB11B53E40400B4F7F1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B1A87FB21B53E40400B4F7F1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B1A87FB31B53E40400B4F7F1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				8A1BA8111B4F0413004C487D /* HomeViewController.swift */,
 				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				B10B83241B505C780059766B /* ProfileViewController.swift */,
+				B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */,
 				8A3624D01B500F95006C860B /* FilterViewController.swift */,
 				B10B83281B505F220059766B /* CollabsTableViewController.swift */,
 				8AAB9A3F1B53E21800D2F7DD /* SetupPageContentViewController.swift */,
@@ -335,6 +338,7 @@
 				8A1375451B50554A00A39083 /* SignInViewController.swift in Sources */,
 				8A3624D11B500F95006C860B /* FilterViewController.swift in Sources */,
 				8A1BA8121B4F0413004C487D /* HomeViewController.swift in Sources */,
+				B1FE4A321B53FA8B008931D2 /* MatchesViewController.swift in Sources */,
 				B14C48EF1B5307770000782E /* ConstantList.swift in Sources */,
 				B10B83251B505C780059766B /* ProfileViewController.swift in Sources */,
 				B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */,

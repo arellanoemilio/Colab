@@ -204,15 +204,15 @@
                                 <exclude reference="iQ8-s5-WN3"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="sBj-20-9vu"/>
+                                <exclude reference="DfE-83-dvi"/>
+                                <exclude reference="oGR-nZ-aqG"/>
                                 <exclude reference="MeC-fh-Mm1"/>
                                 <exclude reference="aHK-vw-1o8"/>
                                 <exclude reference="d2v-uo-PaW"/>
                                 <exclude reference="6K6-kJ-2gC"/>
                                 <exclude reference="WzM-EG-xpD"/>
                                 <exclude reference="npG-3a-qmO"/>
-                                <exclude reference="DfE-83-dvi"/>
-                                <exclude reference="oGR-nZ-aqG"/>
-                                <exclude reference="sBj-20-9vu"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -222,15 +222,15 @@
                                 <include reference="iQ8-s5-WN3"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="sBj-20-9vu"/>
+                                <include reference="DfE-83-dvi"/>
+                                <include reference="oGR-nZ-aqG"/>
                                 <include reference="MeC-fh-Mm1"/>
                                 <include reference="aHK-vw-1o8"/>
                                 <include reference="d2v-uo-PaW"/>
                                 <include reference="6K6-kJ-2gC"/>
                                 <include reference="WzM-EG-xpD"/>
                                 <include reference="npG-3a-qmO"/>
-                                <include reference="DfE-83-dvi"/>
-                                <include reference="oGR-nZ-aqG"/>
-                                <include reference="sBj-20-9vu"/>
                             </mask>
                         </variation>
                     </view>
