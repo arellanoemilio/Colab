@@ -212,7 +212,7 @@
                     </view>
                     <connections>
                         <outlet property="filterSelector" destination="iQ8-s5-WN3" id="b31-qo-40t"/>
-                        <outlet property="list" destination="um8-S3-1Yd" id="cS4-J1-IV3"/>
+                        <outlet property="list" destination="um8-S3-1Yd" id="BP4-1b-83r"/>
                         <outlet property="listDisplayer" destination="um8-S3-1Yd" id="GVd-9E-tXo"/>
                     </connections>
                 </viewController>

@@ -12,6 +12,7 @@ import Parse
 class BrowseViewController: UIViewController {
 
     @IBOutlet weak var filterSelector: UISegmentedControl!
+    @IBOutlet weak var list: DisplayListTableView!
     
     /*
     typealias PropertyList = AnyObject
