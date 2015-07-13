@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 mikkkarner. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class DisplayListTableViewController: UITableViewController {
     
