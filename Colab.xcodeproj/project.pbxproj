@@ -14,7 +14,7 @@
 		8A1BA8171B4F0413004C487D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8161B4F0413004C487D /* Images.xcassets */; };
 		8A1BA81A1B4F0413004C487D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8181B4F0413004C487D /* LaunchScreen.xib */; };
 		8A1BA8261B4F0413004C487D /* ColabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BA8251B4F0413004C487D /* ColabTests.swift */; };
-		8A3624D11B500F95006C860B /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3624D01B500F95006C860B /* BrowseViewController.swift */; };
+		8A3624D11B500F95006C860B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3624D01B500F95006C860B /* FilterViewController.swift */; };
 		8A3624D51B50174C006C860B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624D31B50174C006C860B /* Bolts.framework */; };
 		8A3624D61B50174C006C860B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624D41B50174C006C860B /* Parse.framework */; };
 		8A3624D81B5017AA006C860B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624D71B5017AA006C860B /* AudioToolbox.framework */; };
@@ -61,7 +61,7 @@
 		8A1BA81F1B4F0413004C487D /* ColabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1BA8241B4F0413004C487D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1BA8251B4F0413004C487D /* ColabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColabTests.swift; sourceTree = "<group>"; };
-		8A3624D01B500F95006C860B /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		8A3624D01B500F95006C860B /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		8A3624D31B50174C006C860B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		8A3624D41B50174C006C860B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8A3624D71B5017AA006C860B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -152,7 +152,7 @@
 				8A1BA8111B4F0413004C487D /* HomeViewController.swift */,
 				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				B10B83241B505C780059766B /* ProfileViewController.swift */,
-				8A3624D01B500F95006C860B /* BrowseViewController.swift */,
+				8A3624D01B500F95006C860B /* FilterViewController.swift */,
 				B14C48F01B53A7A50000782E /* DisplayListTableView.swift */,
 				B10B83281B505F220059766B /* CollabsTableViewController.swift */,
 				8AAB9A3F1B53E21800D2F7DD /* SetupPageContentViewController.swift */,
@@ -313,7 +313,7 @@
 			files = (
 				B14C48F11B53A7A50000782E /* DisplayListTableView.swift in Sources */,
 				8A1375451B50554A00A39083 /* SignInViewController.swift in Sources */,
-				8A3624D11B500F95006C860B /* BrowseViewController.swift in Sources */,
+				8A3624D11B500F95006C860B /* FilterViewController.swift in Sources */,
 				8A1BA8121B4F0413004C487D /* HomeViewController.swift in Sources */,
 				B14C48EF1B5307770000782E /* ConstantList.swift in Sources */,
 				B10B83251B505C780059766B /* ProfileViewController.swift in Sources */,
