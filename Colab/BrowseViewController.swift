@@ -11,6 +11,9 @@ import Parse
 
 class BrowseViewController: UIViewController {
 
+    @IBOutlet weak var filterSelector: UISegmentedControl!
+    
+    /*
     typealias PropertyList = AnyObject
     var filters: PropertyList{
         get{
@@ -30,7 +33,7 @@ class BrowseViewController: UIViewController {
             }
         }
     }
-    
+    */
     
     var regions = [String]()
     var platforms = [String]()

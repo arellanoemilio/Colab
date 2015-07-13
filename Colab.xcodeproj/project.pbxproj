@@ -35,7 +35,7 @@
 		B10B83251B505C780059766B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83241B505C780059766B /* ProfileViewController.swift */; };
 		B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83281B505F220059766B /* CollabsTableViewController.swift */; };
 		B14C48EF1B5307770000782E /* ConstantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C48EE1B5307770000782E /* ConstantList.swift */; };
-		B14C48F11B53A7A50000782E /* DisplayListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C48F01B53A7A50000782E /* DisplayListTableViewController.swift */; };
+		B14C48F11B53A7A50000782E /* DisplayListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C48F01B53A7A50000782E /* DisplayListTableView.swift */; };
 		B14C48F31B53AABA0000782E /* Regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F21B53AABA0000782E /* Regions.plist */; };
 		B14C48F51B53ABBF0000782E /* SocialPlatforms.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */; };
 		B14C48F71B53AC9A0000782E /* Industry.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F61B53AC9A0000782E /* Industry.plist */; };
@@ -85,7 +85,7 @@
 		B10B83241B505C780059766B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B10B83281B505F220059766B /* CollabsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabsTableViewController.swift; sourceTree = "<group>"; };
 		B14C48EE1B5307770000782E /* ConstantList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantList.swift; sourceTree = "<group>"; };
-		B14C48F01B53A7A50000782E /* DisplayListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayListTableViewController.swift; sourceTree = "<group>"; };
+		B14C48F01B53A7A50000782E /* DisplayListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayListTableView.swift; sourceTree = "<group>"; };
 		B14C48F21B53AABA0000782E /* Regions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Regions.plist; sourceTree = "<group>"; };
 		B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SocialPlatforms.plist; sourceTree = "<group>"; };
 		B14C48F61B53AC9A0000782E /* Industry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Industry.plist; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				B10B83241B505C780059766B /* ProfileViewController.swift */,
 				8A3624D01B500F95006C860B /* BrowseViewController.swift */,
-				B14C48F01B53A7A50000782E /* DisplayListTableViewController.swift */,
+				B14C48F01B53A7A50000782E /* DisplayListTableView.swift */,
 				B10B83281B505F220059766B /* CollabsTableViewController.swift */,
 			);
 			path = Colab;
@@ -320,7 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B14C48F11B53A7A50000782E /* DisplayListTableViewController.swift in Sources */,
+				B14C48F11B53A7A50000782E /* DisplayListTableView.swift in Sources */,
 				8A1375451B50554A00A39083 /* SignInViewController.swift in Sources */,
 				8A3624D11B500F95006C860B /* BrowseViewController.swift in Sources */,
 				8A1BA8121B4F0413004C487D /* HomeViewController.swift in Sources */,

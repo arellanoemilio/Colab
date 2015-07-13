@@ -8,8 +8,9 @@
 
 import UIKit
 
-class DisplayListTableViewController: UITableViewController {
+class DisplayListTableView: UITableView {
     var listToDisplay = [String]()
+    
     
     
 }
