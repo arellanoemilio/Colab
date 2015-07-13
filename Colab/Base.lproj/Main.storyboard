@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rtZ-JQ-MrP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -448,22 +448,6 @@
             </objects>
             <point key="canvasLocation" x="1908" y="1795"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pbE-uV-tgA">
-            <objects>
-                <navigationController id="rtZ-JQ-MrP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YFH-44-in4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="mYD-nN-5m0" kind="relationship" relationship="rootViewController" id="V61-ZW-GXP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vFW-Ke-WWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="334.5" y="2524"/>
-        </scene>
         <!--Sign In View Controller-->
         <scene sceneID="U3J-Dd-i0v">
             <objects>
@@ -550,25 +534,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="t7b-K2-fMk"/>
                     <connections>
-                        <segue destination="GJz-bc-oc0" kind="show" identifier="userSetup" id="i8e-YB-EKs"/>
+                        <segue destination="HGn-8l-Npt" kind="show" identifier="userSetup" id="9jZ-rO-20Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIn-Hn-nA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1125" y="2524"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="QDM-dU-owR">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="GJz-bc-oc0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mqg-z1-0tA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1908" y="2524"/>
-        </scene>
-        <!--Setup Page Content View Controller-->
+        <!--User Setup View Controller-->
         <scene sceneID="Qsy-jy-Egx">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="1LF-Ai-2MO" customClass="SetupPageContentViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegionSetup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1LF-Ai-2MO" customClass="UserSetupViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Y1-Eu-eUi"/>
                         <viewControllerLayoutGuide type="bottom" id="HjB-zf-19h"/>
@@ -582,12 +558,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="82.5" y="28" width="231.5" height="20.5"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGd-hZ-vwc">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="gcN-wp-UyN" kind="show" id="GJp-1E-sBJ"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AfU-jQ-T2x">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -620,7 +602,8 @@
                                         <exclude reference="ci9-QH-nbc"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-2" y="56.5" width="400" height="497.5"/>
                                     <mask key="constraints">
                                         <exclude reference="ci9-QH-nbc"/>
                                     </mask>
@@ -676,15 +659,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="4Ae-fo-pUL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpI-t6-Eai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992" y="3416"/>
+            <point key="canvasLocation" x="2826" y="2524"/>
         </scene>
-        <!--View Controller-->
+        <!--User Setup View Controller-->
         <scene sceneID="Q2z-lN-qJQ">
             <objects>
-                <viewController id="gcN-wp-UyN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IndustrySetup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gcN-wp-UyN" customClass="UserSetupViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iuy-YF-bTh"/>
                         <viewControllerLayoutGuide type="bottom" id="bsp-o0-iSe"/>
@@ -728,6 +712,9 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="5Uu-sL-3ms" kind="show" id="W5D-Ln-EHS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -776,15 +763,18 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="list" destination="EOU-40-Sfi" id="pow-nd-MBn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gD-UX-Wrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776.5" y="3416"/>
+            <point key="canvasLocation" x="3610.5" y="2524"/>
         </scene>
-        <!--View Controller-->
+        <!--User Setup View Controller-->
         <scene sceneID="FL5-Vc-vbo">
             <objects>
-                <viewController id="5Uu-sL-3ms" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlatformSetup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Uu-sL-3ms" customClass="UserSetupViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8BZ-WS-0GF"/>
                         <viewControllerLayoutGuide type="bottom" id="VqE-8k-KbX"/>
@@ -841,6 +831,9 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xST-VI-Hsl" kind="show" id="x1Y-4j-aMw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -898,12 +891,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWw-TF-aF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3523.5" y="3416"/>
+            <point key="canvasLocation" x="4357.5" y="2524"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dbY-Nh-nFy">
             <objects>
-                <viewController id="xST-VI-Hsl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BioSetup" id="xST-VI-Hsl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PCJ-zr-idf"/>
                         <viewControllerLayoutGuide type="bottom" id="mbz-z2-kUw"/>
@@ -917,6 +910,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="tfD-CJ-8Vh" kind="show" id="Llw-PC-9AT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="write little bit about yourself." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-HO-NSx">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -990,7 +986,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hza-7C-8dC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4300.5" y="3416"/>
+            <point key="canvasLocation" x="5134.5" y="2524"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f9o-GD-xo0">
@@ -1009,6 +1005,9 @@
                                 <state key="normal" title="Continue To Home Page">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="7e5-2u-Xab"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-gk-qK4">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -1052,7 +1051,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="813-eg-jgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5038.5" y="3416"/>
+            <point key="canvasLocation" x="5872.5" y="2524"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="0kh-Yj-UyT">
@@ -1621,6 +1620,24 @@
             </objects>
             <point key="canvasLocation" x="334.5" y="1050"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ruS-E5-k4V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HGn-8l-Npt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LRq-E7-ctb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1LF-Ai-2MO" kind="relationship" relationship="rootViewController" id="Nn8-Dx-z0s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydu-Uu-VvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908" y="2524"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chatIcon" width="48" height="48"/>
@@ -1628,6 +1645,7 @@
         <image name="thumbUp" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dKJ-Gf-wTj"/>
+        <segue reference="7e5-2u-Xab"/>
+        <segue reference="Bwe-DD-Cbn"/>
     </inferredMetricsTieBreakers>
 </document>
