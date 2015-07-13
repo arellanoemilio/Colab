@@ -25,9 +25,7 @@ class MatchesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   @IBAction func unwindToMatchVC(segue:UIStoryboardSegue){
-        println("start unwind")
-        
+   @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
     }
     
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {

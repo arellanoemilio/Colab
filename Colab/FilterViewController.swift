@@ -47,15 +47,11 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         list.reloadData()
     }
     
-    
-    /*@IBAction func search(sender: UIButton) {
-        println("start search")
+    @IBAction func search(sender: AnyObject) {
         performSegueWithIdentifier("search", sender: sender)
-         println("end search")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-         println("start prepareForSegue")
         if let identifier = segue.identifier{
             switch identifier{
             case "search":
@@ -67,8 +63,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
             default: break
             }
         }
-        println("end prepareForSegue")
-    }*/
+    }
 
     // Mark: UITableViewDataSouce methods
     
