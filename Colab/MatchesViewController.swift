@@ -10,6 +10,10 @@ import UIKit
 
 class MatchesViewController: UIViewController {
 
+    var regions = [String]()
+    var platforms = [String]()
+    var industries = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +23,9 @@ class MatchesViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+   @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
     }
     
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
