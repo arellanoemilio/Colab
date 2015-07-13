@@ -82,36 +82,27 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		
 		let row = indexPath.row
-		println(listToDisplay[row])
-		
 		let cell = tableView.cellForRowAtIndexPath(indexPath)
-		cell?.selectionStyle = UITableViewCellSelectionStyle.None
 		
 		if self.restorationIdentifier! == "RegionSetup" {
 			for i in 0..<listToDisplay.count {
 				if i != row {
 					selected[i] = false
 					let newIndexPath = NSIndexPath(forItem: i, inSection: 0)
-					tableView.cellForRowAtIndexPath(newIndexPath)?.backgroundColor = UIColor.whiteColor()
+					tableView.cellForRowAtIndexPath(newIndexPath)?.accessoryType = UITableViewCellAccessoryType.None
 				}
 			}
 		}
 		
 		if selected[row] {
-			cell?.backgroundColor = UIColor.whiteColor()
+			cell?.accessoryType = UITableViewCellAccessoryType.None
 		} else {
-			cell?.backgroundColor = UIColor.blueColor()
+			cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
 		}
 		selected[row] = !selected[row]
-		
-		
-		for b in selected {
-			println(b.description)
-		}
 	}
 	
 	@IBAction func nextPage(sender: UIButton) {
-		println("continue puss")
 		var cont = false
 		for b in selected {
 			if b { cont = true }
