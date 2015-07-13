@@ -148,9 +148,6 @@
                                 <state key="normal" title="Search">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="176" y="550" width="48" height="30"/>
-                                </variation>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="um8-S3-1Yd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -175,9 +172,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="64" width="368" height="478"/>
-                                </variation>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-s5-WN3">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
@@ -186,20 +180,39 @@
                                     <segment title="Platform"/>
                                     <segment title="Industry"/>
                                 </segments>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="28" width="368" height="29"/>
-                                </variation>
                                 <connections>
                                     <action selector="indexChanged:" destination="KJ2-Wn-wvY" eventType="valueChanged" id="ZPW-zy-hmc"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="um8-S3-1Yd" firstAttribute="top" secondItem="iQ8-s5-WN3" secondAttribute="bottom" constant="6" id="6K6-kJ-2gC"/>
+                            <constraint firstItem="RGs-qG-W7R" firstAttribute="top" secondItem="um8-S3-1Yd" secondAttribute="bottom" constant="7" id="DfE-83-dvi"/>
+                            <constraint firstItem="iQ8-s5-WN3" firstAttribute="leading" secondItem="LEq-z1-QGX" secondAttribute="leadingMargin" constant="-3" id="MeC-fh-Mm1"/>
+                            <constraint firstItem="um8-S3-1Yd" firstAttribute="leading" secondItem="iQ8-s5-WN3" secondAttribute="leading" id="WzM-EG-xpD"/>
+                            <constraint firstItem="iQ8-s5-WN3" firstAttribute="top" secondItem="1b9-HF-Quq" secondAttribute="bottom" constant="10" id="aHK-vw-1o8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iQ8-s5-WN3" secondAttribute="trailing" constant="3" id="d2v-uo-PaW"/>
+                            <constraint firstItem="um8-S3-1Yd" firstAttribute="trailing" secondItem="iQ8-s5-WN3" secondAttribute="trailing" id="npG-3a-qmO"/>
+                            <constraint firstAttribute="centerX" secondItem="RGs-qG-W7R" secondAttribute="centerX" constant="1" id="oGR-nZ-aqG"/>
+                            <constraint firstItem="IZ4-QS-Wv6" firstAttribute="top" secondItem="RGs-qG-W7R" secondAttribute="bottom" constant="17" id="sBj-20-9vu"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="RGs-qG-W7R"/>
                                 <exclude reference="um8-S3-1Yd"/>
                                 <exclude reference="iQ8-s5-WN3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="MeC-fh-Mm1"/>
+                                <exclude reference="aHK-vw-1o8"/>
+                                <exclude reference="d2v-uo-PaW"/>
+                                <exclude reference="6K6-kJ-2gC"/>
+                                <exclude reference="WzM-EG-xpD"/>
+                                <exclude reference="npG-3a-qmO"/>
+                                <exclude reference="DfE-83-dvi"/>
+                                <exclude reference="oGR-nZ-aqG"/>
+                                <exclude reference="sBj-20-9vu"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -207,6 +220,17 @@
                                 <include reference="RGs-qG-W7R"/>
                                 <include reference="um8-S3-1Yd"/>
                                 <include reference="iQ8-s5-WN3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="MeC-fh-Mm1"/>
+                                <include reference="aHK-vw-1o8"/>
+                                <include reference="d2v-uo-PaW"/>
+                                <include reference="6K6-kJ-2gC"/>
+                                <include reference="WzM-EG-xpD"/>
+                                <include reference="npG-3a-qmO"/>
+                                <include reference="DfE-83-dvi"/>
+                                <include reference="oGR-nZ-aqG"/>
+                                <include reference="sBj-20-9vu"/>
                             </mask>
                         </variation>
                     </view>
