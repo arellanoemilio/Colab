@@ -15,7 +15,7 @@ class MatchesViewController: UIViewController {
     var platforms = [String]()
     var industries = [String]()
     
-    var matches: [PFUser]?
+    var matches: [PFUser]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +40,36 @@ class MatchesViewController: UIViewController {
         query()
     }
     
-    func query(){
+    func query() {
         var query = PFUser.query()
-        if regions.count > 0{ query?.whereKey("region", containsAllObjectsInArray: regions)}
-        if platforms.count > 0{query?.whereKey("platform", containsAllObjectsInArray: platforms)}
-        if industries.count > 0{query?.whereKey("industry", containsAllObjectsInArray: industries)}
-        matches = query?.findObjects() as! [PFUser]?
-        if matches != nil{ println(" matches = \(matches!.count)")}else{ println("matches = 0")}
+		
+        if regions.count > 0 {
+			query?.whereKey("region", containsAllObjectsInArray: regions)
+		}
+        if platforms.count > 0 {
+			query?.whereKey("platform", containsAllObjectsInArray: platforms)
+		}
+        if industries.count > 0 {
+			query?.whereKey("industry", containsAllObjectsInArray: industries)
+		}
+		
+		query?.findObjectsInBackgroundWithBlock {
+			(objects: [AnyObject]?, error: NSError?) -> Void in
+			if error == nil {
+				self.matches = objects as! [PFUser]
+			
+				if objects?.count > 0 {
+					println(" matches = \(self.matches!.count)")
+				} else {
+					println("matches = 0")
+				}
+				
+				// DO VISUAL SETUP STUFF FROM HERE
+			
+			} else {
+				println("Error: \(error!) \(error!.userInfo!)")
+			}
+		}
     }
     
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {

@@ -170,7 +170,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oIw-Gn-pwT">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1038,68 +1038,6 @@
             </objects>
             <point key="canvasLocation" x="4234.5" y="2524"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="f9o-GD-xo0">
-            <objects>
-                <viewController id="tfD-CJ-8Vh" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="i7S-OG-OMV"/>
-                        <viewControllerLayoutGuide type="bottom" id="iLc-1U-e0C"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7M5-bw-bDq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHy-f6-ZD0">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Continue To Home Page">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-gk-qK4">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="iLc-1U-e0C" firstAttribute="top" secondItem="IHy-f6-ZD0" secondAttribute="bottom" constant="20" id="3Nf-Vq-PHD"/>
-                            <constraint firstAttribute="centerX" secondItem="l1a-gk-qK4" secondAttribute="centerX" id="X7K-Ka-hZa"/>
-                            <constraint firstAttribute="centerY" secondItem="l1a-gk-qK4" secondAttribute="centerY" constant="0.5" id="YvS-oV-aXX"/>
-                            <constraint firstAttribute="centerX" secondItem="IHy-f6-ZD0" secondAttribute="centerX" constant="-0.5" id="vne-mJ-rMm"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="IHy-f6-ZD0"/>
-                                <exclude reference="l1a-gk-qK4"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="3Nf-Vq-PHD"/>
-                                <exclude reference="X7K-Ka-hZa"/>
-                                <exclude reference="YvS-oV-aXX"/>
-                                <exclude reference="vne-mJ-rMm"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="IHy-f6-ZD0"/>
-                                <include reference="l1a-gk-qK4"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="3Nf-Vq-PHD"/>
-                                <include reference="X7K-Ka-hZa"/>
-                                <include reference="YvS-oV-aXX"/>
-                                <include reference="vne-mJ-rMm"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="813-eg-jgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5872.5" y="2524"/>
-        </scene>
         <!--Profile View Controller-->
         <scene sceneID="0kh-Yj-UyT">
             <objects>
@@ -1657,6 +1595,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pGK-ay-9R3"/>
-        <segue reference="dKJ-Gf-wTj"/>
+        <segue reference="Bwe-DD-Cbn"/>
     </inferredMetricsTieBreakers>
 </document>
