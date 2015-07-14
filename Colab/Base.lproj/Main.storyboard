@@ -36,9 +36,6 @@
                                         <include reference="S5N-KK-yus"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="dFd-mP-7tY" kind="show" identifier="HomeToCollabs" id="nlO-jx-a7x"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sld-o0-HSV">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -58,9 +55,6 @@
                                         <include reference="VGb-Xs-eqz"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="0yo-W4-fOm" kind="show" id="61N-bs-VDb"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvk-vG-pF6">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -81,9 +75,6 @@
                                         <include reference="Ss6-pj-z2y"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="u35-Y8-FlK" kind="show" identifier="HomeToProfile" id="FF4-Lz-pDl"/>
-                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -129,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="1050"/>
+            <point key="canvasLocation" x="246" y="223"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="dSu-w6-E5Z">
@@ -369,7 +360,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="u35-Y8-FlK" kind="show" id="Ds3-rh-Awx"/>
+                                    <segue destination="h7W-gO-5eS" kind="show" id="Ds3-rh-Awx"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Accept User Cell" rowHeight="79" id="ikU-Tx-jEY">
@@ -474,7 +465,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="u35-Y8-FlK" kind="show" id="CcO-HJ-6oA"/>
+                                    <segue destination="h7W-gO-5eS" kind="show" id="CcO-HJ-6oA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -483,6 +474,7 @@
                             <outlet property="delegate" destination="dFd-mP-7tY" id="sAm-rW-FBY"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="0M5-Rb-Yo1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDY-9P-zhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -575,7 +567,7 @@
                     <navigationItem key="navigationItem" id="t7b-K2-fMk"/>
                     <connections>
                         <segue destination="HGn-8l-Npt" kind="show" identifier="userSetup" id="9jZ-rO-20Z"/>
-                        <segue destination="KiJ-Fs-QJx" kind="presentation" identifier="User Profile" id="caV-Yq-ggo"/>
+                        <segue destination="OUx-cU-kvG" kind="presentation" identifier="User Profile" id="Hsw-hA-usv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIn-Hn-nA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -983,7 +975,7 @@
                                 </state>
                                 <connections>
                                     <action selector="done:" destination="xST-VI-Hsl" eventType="touchUpInside" id="IJ7-OY-IOi"/>
-                                    <segue destination="KiJ-Fs-QJx" kind="presentation" identifier="toHome" id="zpt-Rl-494"/>
+                                    <segue destination="OUx-cU-kvG" kind="presentation" identifier="toHome" id="7fq-9s-GZ6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1093,7 +1085,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GFK-9X-Hda">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GFK-9X-Hda">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SU6-LC-YSa">
@@ -1173,8 +1165,6 @@
                                 <exclude reference="6pX-Oq-o2J"/>
                                 <exclude reference="khV-Jg-v3N"/>
                                 <exclude reference="tT0-oD-ff7"/>
-                                <exclude reference="5fM-q3-1NO"/>
-                                <exclude reference="VYN-fM-FZJ"/>
                                 <exclude reference="jp8-ZM-8Mk"/>
                                 <exclude reference="oRg-Tb-9q8"/>
                             </mask>
@@ -1208,13 +1198,12 @@
                                 <include reference="6pX-Oq-o2J"/>
                                 <include reference="khV-Jg-v3N"/>
                                 <include reference="tT0-oD-ff7"/>
-                                <include reference="5fM-q3-1NO"/>
-                                <include reference="VYN-fM-FZJ"/>
                                 <include reference="jp8-ZM-8Mk"/>
                                 <include reference="oRg-Tb-9q8"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Dqw-Th-gPW"/>
                     <connections>
                         <outlet property="bioDescriptionLabel" destination="9eX-jE-kgg" id="X0N-to-PHH"/>
                         <outlet property="industry1Label" destination="r3P-Oj-KwM" id="J7Z-U8-9l5"/>
@@ -1304,12 +1293,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvP-Tc-SHl">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="thumbUp">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af0-Vw-uFm">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Filter">
@@ -1328,7 +1311,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="u35-Y8-FlK" kind="show" id="Bwe-DD-Cbn"/>
+                                    <segue destination="h7W-gO-5eS" kind="show" id="Bwe-DD-Cbn"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IqO-2t-ZQB">
@@ -1356,6 +1339,12 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvP-Tc-SHl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="thumbUp">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1365,9 +1354,6 @@
                             <constraint firstItem="UdI-QU-wrb" firstAttribute="leading" secondItem="NRs-73-HHb" secondAttribute="leading" id="3q4-Cp-w4V"/>
                             <constraint firstItem="J8V-yg-U5S" firstAttribute="top" secondItem="G5e-Bd-qhO" secondAttribute="bottom" constant="8.5" id="8Uw-T0-ZHi"/>
                             <constraint firstItem="UdI-QU-wrb" firstAttribute="centerX" secondItem="u4p-DW-SIM" secondAttribute="centerX" id="9CB-Qa-ype"/>
-                            <constraint firstItem="IKs-nC-WyQ" firstAttribute="top" secondItem="wYS-Gg-vYr" secondAttribute="bottom" constant="20" id="9RK-lP-zwd">
-                                <variation key="widthClass=compact" constant="8"/>
-                            </constraint>
                             <constraint firstItem="e8w-2S-wQk" firstAttribute="top" secondItem="UdI-QU-wrb" secondAttribute="top" id="9w2-8n-6R0"/>
                             <constraint firstItem="c9s-Kz-gRx" firstAttribute="width" secondItem="QCq-Lw-JDw" secondAttribute="width" id="BkD-Ip-6LU"/>
                             <constraint firstItem="KvP-Tc-SHl" firstAttribute="height" secondItem="wYS-Gg-vYr" secondAttribute="height" id="CcB-oN-y3S"/>
@@ -1380,6 +1366,8 @@
                             <constraint firstItem="NRs-73-HHb" firstAttribute="top" secondItem="UdI-QU-wrb" secondAttribute="bottom" constant="8" id="PQk-c5-vke">
                                 <variation key="widthClass=compact" constant="8" symbolic="YES"/>
                             </constraint>
+                            <constraint firstItem="KvP-Tc-SHl" firstAttribute="top" secondItem="J8V-yg-U5S" secondAttribute="bottom" constant="8" id="QvY-6f-eTY"/>
+                            <constraint firstItem="wYS-Gg-vYr" firstAttribute="top" secondItem="QCq-Lw-JDw" secondAttribute="bottom" constant="8" id="R1F-zf-BEU"/>
                             <constraint firstItem="UdI-QU-wrb" firstAttribute="top" secondItem="u4p-DW-SIM" secondAttribute="bottom" constant="7.5" id="WuY-bO-7cb"/>
                             <constraint firstItem="G5e-Bd-qhO" firstAttribute="top" secondItem="UdI-QU-wrb" secondAttribute="bottom" constant="8" id="WzP-uG-72o">
                                 <variation key="widthClass=compact" constant="8" symbolic="YES"/>
@@ -1422,11 +1410,11 @@
                                 <exclude reference="QCq-Lw-JDw"/>
                                 <exclude reference="J8V-yg-U5S"/>
                                 <exclude reference="c9s-Kz-gRx"/>
-                                <exclude reference="KvP-Tc-SHl"/>
                                 <exclude reference="af0-Vw-uFm"/>
                                 <exclude reference="e8w-2S-wQk"/>
                                 <exclude reference="IqO-2t-ZQB"/>
                                 <exclude reference="wYS-Gg-vYr"/>
+                                <exclude reference="KvP-Tc-SHl"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="3q4-Cp-w4V"/>
@@ -1458,13 +1446,14 @@
                                 <exclude reference="d8n-CQ-Rv0"/>
                                 <exclude reference="hdn-Hi-j00"/>
                                 <exclude reference="kao-4h-qaM"/>
+                                <exclude reference="R1F-zf-BEU"/>
                                 <exclude reference="0M8-9T-Psy"/>
                                 <exclude reference="8Uw-T0-ZHi"/>
-                                <exclude reference="9RK-lP-zwd"/>
-                                <exclude reference="opa-EE-GtX"/>
                                 <exclude reference="CcB-oN-y3S"/>
                                 <exclude reference="GSV-qi-QE2"/>
                                 <exclude reference="Nrj-ac-GxO"/>
+                                <exclude reference="QvY-6f-eTY"/>
+                                <exclude reference="opa-EE-GtX"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1477,11 +1466,11 @@
                                 <include reference="QCq-Lw-JDw"/>
                                 <include reference="J8V-yg-U5S"/>
                                 <include reference="c9s-Kz-gRx"/>
-                                <include reference="KvP-Tc-SHl"/>
                                 <include reference="af0-Vw-uFm"/>
                                 <include reference="e8w-2S-wQk"/>
                                 <include reference="IqO-2t-ZQB"/>
                                 <include reference="wYS-Gg-vYr"/>
+                                <include reference="KvP-Tc-SHl"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="3q4-Cp-w4V"/>
@@ -1513,17 +1502,19 @@
                                 <include reference="d8n-CQ-Rv0"/>
                                 <include reference="hdn-Hi-j00"/>
                                 <include reference="kao-4h-qaM"/>
+                                <include reference="R1F-zf-BEU"/>
                                 <include reference="0M8-9T-Psy"/>
                                 <include reference="8Uw-T0-ZHi"/>
-                                <include reference="9RK-lP-zwd"/>
-                                <include reference="opa-EE-GtX"/>
                                 <include reference="CcB-oN-y3S"/>
                                 <include reference="GSV-qi-QE2"/>
                                 <include reference="Nrj-ac-GxO"/>
+                                <include reference="QvY-6f-eTY"/>
+                                <exclude reference="opa-EE-GtX"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="RZw-wx-Q1X"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="IqO-2t-ZQB" id="DNW-qh-FSc"/>
                         <outlet property="userImageView" destination="UdI-QU-wrb" id="feM-LY-xZr"/>
@@ -1542,7 +1533,8 @@
         <!--Navigation Controller-->
         <scene sceneID="GOF-UY-kwN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KiJ-Fs-QJx" sceneMemberID="viewController">
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="KiJ-Fs-QJx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="x1h-JH-22w"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KC9-P0-wAC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1550,12 +1542,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NfW-tG-ZJl"/>
+                        <segue destination="0yo-W4-fOm" kind="relationship" relationship="rootViewController" id="X7f-au-gDt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZQ-NR-82v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352.5" y="1050"/>
+            <point key="canvasLocation" x="1125" y="1055"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ruS-E5-k4V">
@@ -1575,6 +1567,64 @@
             </objects>
             <point key="canvasLocation" x="1125" y="2524"/>
         </scene>
+        <!--Profile Navigation Controller-->
+        <scene sceneID="jsn-TN-egX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h7W-gO-5eS" customClass="ProfileNavigationController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="w2w-76-Clu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="413-aV-Xfm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u35-Y8-FlK" kind="relationship" relationship="rootViewController" id="y6G-yQ-ogp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRg-y4-xYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="382"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="i0k-my-Qwb">
+            <objects>
+                <tabBarController id="OUx-cU-kvG" customClass="HomeViewController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="0YQ-JA-ylR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KiJ-Fs-QJx" kind="relationship" relationship="viewControllers" id="kCJ-KM-tct"/>
+                        <segue destination="wda-ie-ifp" kind="relationship" relationship="viewControllers" id="qYg-zX-Bfc"/>
+                        <segue destination="h7W-gO-5eS" kind="relationship" relationship="viewControllers" id="VCo-tR-OHD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbf-yD-Xgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352.5" y="1055"/>
+        </scene>
+        <!--Collabs Navigation Controller-->
+        <scene sceneID="SFA-RL-wuK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wda-ie-ifp" customClass="CollabsNavigationController" customModule="Colab" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="ptY-GX-7Ab"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z0T-ID-2YY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dFd-mP-7tY" kind="relationship" relationship="rootViewController" id="0pN-Pq-YM0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mef-aA-LGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="1795"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chatIcon" width="48" height="48"/>
@@ -1583,7 +1633,7 @@
         <image name="thumbUp" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zpt-Rl-494"/>
-        <segue reference="Bwe-DD-Cbn"/>
+        <segue reference="7fq-9s-GZ6"/>
+        <segue reference="Ds3-rh-Awx"/>
     </inferredMetricsTieBreakers>
 </document>

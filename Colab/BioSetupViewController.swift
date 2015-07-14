@@ -49,9 +49,23 @@ class BioSetupViewController: UIViewController {
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "toHome" {
-			let homeVC: UINavigationController = segue.destinationViewController as! UINavigationController
-		}
-	}
+        if segue.identifier == "toHome" {
+            if let nextTabBarController  = segue.destinationViewController as? UITabBarController{
+                let navCons = nextTabBarController.viewControllers as! [UINavigationController]
+                
+                var selectedIndex = 2
+                nextTabBarController.selectedIndex = selectedIndex
+                
+                var collabsNavCon = navCons[1] as! CollabsNavigationController
+                collabsNavCon.user = PFUser.currentUser()
+                var collabsViewCon = collabsNavCon.topViewController as! CollabsTableViewController
+                collabsViewCon.user = collabsNavCon.user
+                
+                var profileNavCon = navCons[2] as! ProfileNavigationController
+                profileNavCon.user = PFUser.currentUser()
+                var profileViewCon = profileNavCon.topViewController as! ProfileViewController
+                profileViewCon.user = profileNavCon.user
+            }
+        }	}
 	
 }

@@ -53,6 +53,28 @@ class SignInViewController: UIViewController {
 		if (segue.identifier == "userSetup") {
 			let userSetupVC: UIViewController = segue.destinationViewController as! UIViewController
 		}
+        if (segue.identifier == "User Profile"){
+            if let nextTabBarController  = segue.destinationViewController as? UITabBarController{
+                let navCons = nextTabBarController.viewControllers as! [UINavigationController]
+                
+                var selectedIndex = 0
+                nextTabBarController.selectedIndex = selectedIndex
+                
+                if let collabsNavCon = navCons[1] as? CollabsNavigationController{
+                    collabsNavCon.user = PFUser.currentUser()
+                    if let collabsViewCon = collabsNavCon.topViewController as? CollabsTableViewController{
+                        collabsViewCon.user = collabsNavCon.user
+                    }
+                }
+                
+                if let profileNavCon = navCons[2] as? ProfileNavigationController{
+                    profileNavCon.user = PFUser.currentUser()
+                    if let profileViewCon = profileNavCon.topViewController as? ProfileViewController{
+                        profileViewCon.user = profileNavCon.user
+                    }
+                }
+            }
+        }
 	}
 	
 	// TODO: Get FB data here

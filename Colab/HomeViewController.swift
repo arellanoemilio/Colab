@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class HomeViewController: UIViewController {
+class HomeViewController: UITabBarController {
 	
     var user = PFUser.currentUser()
     
@@ -18,14 +18,14 @@ class HomeViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		let lightYellow: UIColor = UIColor(red: 0, green: 0.059, blue: 0.875, alpha: 1)
+		/*let lightYellow: UIColor = UIColor(red: 0, green: 0.059, blue: 0.875, alpha: 1)
 		let darkYellow: UIColor = UIColor(red: 0, green: 0.059, blue: 0.984, alpha: 1)
 		
 		
 		var gradient: CAGradientLayer = CAGradientLayer()
 		gradient.frame = view.bounds
 		gradient.colors = [UIColor.blackColor().CGColor, UIColor.blueColor().CGColor]
-		view.layer.insertSublayer(gradient, atIndex: 0)
+		view.layer.insertSublayer(gradient, atIndex: 0)*/
 		
 	}
 
