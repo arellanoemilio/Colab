@@ -11,11 +11,11 @@ import Parse
 
 class ProfileViewController: UIViewController {
 
-    var user: PFUser?
+    var user: PFUser!
     var media = [String]()
-    var industry = [String]()
-    var region = ""
-    var name = ""
+	var industry: String!
+	var region: String!
+	var name: String!
 	var bioDescription = ""
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -31,14 +31,18 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         if user != nil {
-            //region = myUser["region"] as! String
-            //media = myUser["platforms"] as! [String]
-            //industry = myUser["industries"] as! [String]
-            //let bioDescription: String = user["bio"] as String
-            //regionLabel.text = region
-            //bioDescriptionLabel.text = bioDescription
+			name = user["name"] as! String
+			region = user["region"] as! String
+			media = user["platforms"] as! [String]
+            industry = user["industry"] as! String
+            let bioDescription: String = user["bio"] as! String
+			
+			nameLabel.text = name
+			regionLabel.text = region
+            bioDescriptionLabel.text = bioDescription
+			industry1Label.text = industry
             //populateIndustry()
-            //populateMedia()
+            populateMedia()
         }
         
         
@@ -56,15 +60,16 @@ class ProfileViewController: UIViewController {
         }
     }
 
-    func populateIndustry(){
-        var counter = 0
-        while counter < industry.count{
-            switch counter{
-            case 0: industry1Label.text = industry[counter++]
-            default: break
-            }
-        }
-    }
+//    func populateIndustry(){
+//        var counter = 0
+//        while counter < industry.count{
+//            switch counter{
+//            case 0: industry1Label.text = industry[counter++]
+//            default: break
+//            }
+//        }
+//    }
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

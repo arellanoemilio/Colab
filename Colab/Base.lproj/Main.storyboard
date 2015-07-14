@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -983,7 +983,7 @@
                                 </state>
                                 <connections>
                                     <action selector="done:" destination="xST-VI-Hsl" eventType="touchUpInside" id="IJ7-OY-IOi"/>
-                                    <segue destination="KiJ-Fs-QJx" kind="presentation" id="zpt-Rl-494"/>
+                                    <segue destination="KiJ-Fs-QJx" kind="presentation" identifier="toHome" id="zpt-Rl-494"/>
                                 </connections>
                             </button>
                         </subviews>

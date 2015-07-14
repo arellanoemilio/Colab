@@ -50,7 +50,7 @@ class BioSetupViewController: UIViewController {
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "toHome" {
-			let homeVC: HomeViewController = segue.destinationViewController as! HomeViewController
+			let homeVC: UINavigationController = segue.destinationViewController as! UINavigationController
 		}
 	}
 	
