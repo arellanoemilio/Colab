@@ -34,11 +34,6 @@ class CollabsTableViewController: UITableViewController {
 		var query2 = PFQuery(className: "Connection")
 		query2.whereKey("user2", equalTo: PFUser.currentUser()!)
 		
-//		query1.includeKey("user1")
-//		query1.includeKey("user2")
-//		query2.includeKey("user1")
-//		query2.includeKey("user2")
-		
 		var subQueries = [query1, query2]
 		
 		var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
