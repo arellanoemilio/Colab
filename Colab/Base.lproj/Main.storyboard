@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -258,6 +258,11 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="followersLabel" destination="jsT-Sg-LV0" id="a7X-Zn-dGl"/>
+                                    <outlet property="industryLabel" destination="5Pz-nR-Nmh" id="IgR-sb-yne"/>
+                                    <outlet property="nameLabel" destination="Li0-ml-4kQ" id="aJj-Pe-Nkq"/>
+                                    <outlet property="profilePicture" destination="MDv-Hl-HEx" id="nxf-lm-EcT"/>
+                                    <outlet property="regionLabel" destination="0K5-m1-aX4" id="FU8-Fq-wrQ"/>
                                     <segue destination="h7W-gO-5eS" kind="show" id="Ds3-rh-Awx"/>
                                 </connections>
                             </tableViewCell>
@@ -1236,12 +1241,18 @@
                                         <include reference="PsA-xm-bNa"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="dislike:" destination="0yo-W4-fOm" eventType="touchUpInside" id="7ug-as-Vif"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvP-Tc-SHl">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="thumbUp">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="like:" destination="0yo-W4-fOm" eventType="touchUpInside" id="Du3-PJ-Pk2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

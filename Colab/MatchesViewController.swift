@@ -19,7 +19,8 @@ class MatchesViewController: UIViewController {
     @IBOutlet weak var userMedia3Label: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    var regions = [String]()
+	
+	var regions = [String]()
     var platforms = [String]()
     var industries = [String]()
     
@@ -49,7 +50,20 @@ class MatchesViewController: UIViewController {
 		loadingIndicator.stopAnimating()
 		loadingIndicator.hidden = true
 	}
-    
+	
+	@IBAction func like(sender: AnyObject) {
+		var connection = PFObject(className: "Connection")
+		connection["user1"] = PFUser.currentUser()
+		connection["user2"] = matches[currentUserDisplayed]
+		connection.saveInBackground()
+		
+		// TODO: FETCH NEW USER
+	}
+	
+	@IBAction func dislike(sender: AnyObject) {
+		// TODO: FETCH NEW USER
+	}
+	
    @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
     if let source = segue.sourceViewController as? FilterViewController{
         println("populating arrays")
@@ -169,6 +183,8 @@ class MatchesViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "toProfile" {
 			var profileViewController = segue.destinationViewController as! ProfileViewController
+			profileViewController.user = matches[currentUserDisplayed]
+			
 			profileViewController.user = matches[currentUserDisplayed]
 		}
     }

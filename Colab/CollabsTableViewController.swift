@@ -12,6 +12,7 @@ import Parse
 class CollabsTableViewController: UITableViewController {
 
     var user: PFUser?
+	var users = [PFUser]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,49 @@ class CollabsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+		
+		getCollabs()
+		
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	
+	func getCollabs() {
+		var query1 = PFQuery(className: "Connection")
+		query1.whereKey("user1", equalTo: PFUser.currentUser()!)
+		
+		var query2 = PFQuery(className: "Connection")
+		query2.whereKey("user2", equalTo: PFUser.currentUser()!)
+		
+//		query1.includeKey("user1")
+//		query1.includeKey("user2")
+//		query2.includeKey("user1")
+//		query2.includeKey("user2")
+		
+		var subQueries = [query1, query2]
+		
+		var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
+		mainQuery.includeKey("user1")
+		mainQuery.includeKey("user2")
+		
+		mainQuery.findObjectsInBackgroundWithBlock {
+			(objects: [AnyObject]?, error: NSError?) -> Void in
+			if error == nil {
+				//self.users = objects as! [PFUser]
+				for obj in objects! {
+					let connection: PFObject = obj as! PFObject
+					if connection["user1"] as? PFUser == PFUser.currentUser() {
+						self.users.append(connection["user2"] as! PFUser)
+					} else {
+						self.users.append(connection["user1"] as! PFUser)
+					}
+				}
+				println(self.users)
+				self.tableView.reloadData()
+			} else {
+				println("Error: \(error!) \(error!.userInfo!)")
+			}
+		}
+		
+	}
 
     // MARK: - Table view data source
 
@@ -39,7 +77,7 @@ class CollabsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return users.count
     }
 
 	
@@ -47,7 +85,7 @@ class CollabsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("collabsListCell", forIndexPath: indexPath) as! CollabsTableViewCell
 
         // Configure the cell...
-		cell.user = user!
+		cell.user = users[indexPath.row]
 
         return cell
     }
