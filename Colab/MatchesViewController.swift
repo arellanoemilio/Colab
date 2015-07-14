@@ -31,6 +31,10 @@ class MatchesViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         query()
+		
+		userImageView.layer.cornerRadius = 20
+		userImageView.layer.masksToBounds = true
+		
         
     }
 
@@ -38,6 +42,13 @@ class MatchesViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		loadingIndicator.stopAnimating()
+		loadingIndicator.hidden = true
+	}
     
    @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
     if let source = segue.sourceViewController as? FilterViewController{
@@ -131,21 +142,36 @@ class MatchesViewController: UIViewController {
     }
 	
     func setPicture(user: PFUser){
-        
+        let urlString = user["pictureURL"] as! String
+		
+		loadingIndicator.hidden = false
+		loadingIndicator.startAnimating()
+		
+		let image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
+		
+		loadingIndicator.stopAnimating()
+		loadingIndicator.hidden = true
+		
+		userImageView.image = image
+		
     }
+	
+	
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
         if let filterViewController = segue
     }*/
 	
 
-    /*
+	
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+		if segue.identifier == "toProfile" {
+			var profileViewController = segue.destinationViewController as! ProfileViewController
+			profileViewController.user = matches[currentUserDisplayed]
+		}
     }
-    */
+
 
 }
