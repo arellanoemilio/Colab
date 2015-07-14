@@ -10,18 +10,28 @@ import UIKit
 import Parse
 
 class MatchesViewController: UIViewController {
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userRegionLabel: UILabel!
+    @IBOutlet weak var userIndustryLabel: UILabel!
+    @IBOutlet weak var userMedia1Label: UILabel!
+    @IBOutlet weak var userMedia2Label: UILabel!
+    @IBOutlet weak var userMedia3Label: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
 
     var regions = [String]()
     var platforms = [String]()
     var industries = [String]()
     
     var matches: [PFUser]!
+    var currentUserDisplayed = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         query()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,7 +71,7 @@ class MatchesViewController: UIViewController {
 						var name = match["name"] as! String
 						println("\(name)")
 					}
-					
+                    self.useUserAtIndex(self.currentUserDisplayed)
 				}
 			} else {
 				// Log details of the failure
@@ -71,6 +81,24 @@ class MatchesViewController: UIViewController {
 		
 		//if matches != nil{ println(" matches = \(matches!.count)")}else{ println("matches = 0")}
 	}
+    
+    func useUserAtIndex(index:Int){
+        var displayUser = matches[index]
+        populateLayoutWithUser(displayUser)
+    }
+    
+    func populateLayoutWithUser(user:PFUser){
+        userNameLabel.text = user["name"] as? String
+        userRegionLabel.text = user["region"] as? String
+        
+        //setPicture(user)
+        //setMedias(user)
+    }
+    
+    func setMedia(user: PFUser){
+    // let medias = user[
+    
+    }
 	
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
         if let filterViewController = segue

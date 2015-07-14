@@ -161,11 +161,11 @@
 				8AD4DF501B52DFB400220CFF /* Colab-Bridging-Header.h */,
 				8A1BA80D1B4F0413004C487D /* Supporting Files */,
 				8A1BA8111B4F0413004C487D /* HomeViewController.swift */,
-				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				B10B83241B505C780059766B /* ProfileViewController.swift */,
 				B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */,
 				8A3624D01B500F95006C860B /* FilterViewController.swift */,
 				B10B83281B505F220059766B /* CollabsTableViewController.swift */,
+				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				8AC62A0B1B53F27F00FB11F6 /* UserSetupViewController.swift */,
 				8A2936A21B545010001ECD8C /* BioSetupViewController.swift */,
 			);
