@@ -148,12 +148,14 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	}
 	
 	func setIndustries() {
+		var industry = ""
 		for i in 0..<listToDisplay.count {
 			if selected[i] {
-				industries.append(listToDisplay[i])
+				industry = listToDisplay[i]
+				break
 			}
 		}
-		user["industries"] = industries
+		user["industry"] = industry
 		user.saveInBackground()
 	}
 	
