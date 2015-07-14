@@ -30,6 +30,13 @@ class MatchesViewController: UIViewController {
     }
     
    @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
+    if let source = segue.sourceViewController as? FilterViewController{
+        println("populating arrays")
+        regions = source.regions
+        industries = source.industries
+        platforms = source.platforms
+    }
+        println("\(regions) \n \(industries) \n \(platforms)")
         query()
     }
     
@@ -39,7 +46,7 @@ class MatchesViewController: UIViewController {
         if platforms.count > 0{query?.whereKey("platform", containsAllObjectsInArray: platforms)}
         if industries.count > 0{query?.whereKey("industry", containsAllObjectsInArray: industries)}
         matches = query?.findObjects() as! [PFUser]?
-        println("\(matches!.count)")
+        if matches != nil{ println(" matches = \(matches!.count)")}else{ println("matches = 0")}
     }
     
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
