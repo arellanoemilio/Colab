@@ -12,7 +12,7 @@ import Parse
 class ProfileViewController: UIViewController {
 
     var user: PFUser!
-    var media = [String]()
+	var media: [String]!
 	var industry: String!
 	var region: String!
 	var name: String!
@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
     
     func populateMedia(){
         var counter = 0
-        while counter < media.count{
+        while counter < 3 {
             switch counter{
             case 0: media1Label.text = media[counter++]
             case 1: media2Label.text = media[counter++]

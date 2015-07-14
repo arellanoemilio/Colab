@@ -35,7 +35,7 @@ class SignInViewController: UIViewController {
 					self.performSegueWithIdentifier("userSetup", sender: sender)
 				} else {
 					println("User logged in through Facebook!")
-					self.getDataFromFB()
+					//self.getDataFromFB()
 					//self.performSegueWithIdentifier("userSetup", sender: sender)
 					if user["bio"] != nil {
 						self.performSegueWithIdentifier("User Profile", sender: sender)

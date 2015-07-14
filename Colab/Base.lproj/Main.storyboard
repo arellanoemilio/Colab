@@ -82,7 +82,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="u35-Y8-FlK" kind="show" identifier="HomeToProfile" id="dKJ-Gf-wTj"/>
+                                    <segue destination="u35-Y8-FlK" kind="show" identifier="HomeToProfile" id="FF4-Lz-pDl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1530,6 +1530,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zpt-Rl-494"/>
-        <segue reference="Bwe-DD-Cbn"/>
+        <segue reference="FF4-Lz-pDl"/>
     </inferredMetricsTieBreakers>
 </document>
