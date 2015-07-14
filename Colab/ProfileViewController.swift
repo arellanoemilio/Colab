@@ -26,8 +26,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var industry1Label: UILabel!
     @IBOutlet weak var bioDescriptionLabel: UITextView!
 	@IBOutlet weak var profilePicture: UIImageView!
-	@IBOutlet weak var loadingPicture: UIActivityIndicatorView!
-   
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,9 +51,6 @@ class ProfileViewController: UIViewController {
 		
 		profilePicture.layer.cornerRadius = 64
 		profilePicture.layer.masksToBounds = true
-		
-		loadingPicture.stopAnimating()
-		loadingPicture.hidden = true
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -77,14 +73,8 @@ class ProfileViewController: UIViewController {
 	func getProfilePic() {
 		let urlString = user["pictureURL"] as! String
 		
-		loadingPicture.startAnimating()
-		loadingPicture.hidden = false
-		
 		let image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
-		
-		loadingPicture.stopAnimating()
-		loadingPicture.hidden = true
-		
+				
 		profilePicture.image = image
 		
 	}

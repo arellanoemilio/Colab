@@ -1080,7 +1080,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eX-jE-kgg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eX-jE-kgg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1093,12 +1093,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GFK-9X-Hda">
-                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="189" y="125" width="20" height="20"/>
-                                </variation>
-                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SU6-LC-YSa">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
@@ -1122,7 +1116,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="n3c-Id-7di" firstAttribute="baseline" secondItem="Vst-3C-Akz" secondAttribute="baseline" id="14l-z9-eMx"/>
-                            <constraint firstItem="SU6-LC-YSa" firstAttribute="centerX" secondItem="GFK-9X-Hda" secondAttribute="centerX" id="5fM-q3-1NO"/>
                             <constraint firstItem="9eX-jE-kgg" firstAttribute="leading" secondItem="Afc-YX-Iib" secondAttribute="leadingMargin" id="6ms-TS-SbC"/>
                             <constraint firstItem="9eX-jE-kgg" firstAttribute="trailing" secondItem="Afc-YX-Iib" secondAttribute="trailingMargin" id="6pX-Oq-o2J"/>
                             <constraint firstItem="w56-uV-kFG" firstAttribute="top" secondItem="Vst-3C-Akz" secondAttribute="bottom" constant="8" id="9h9-XM-8pD">
@@ -1137,7 +1130,6 @@
                             <constraint firstAttribute="centerX" secondItem="Vst-3C-Akz" secondAttribute="centerX" constant="-0.5" id="Riu-4c-EVf">
                                 <variation key="widthClass=compact" constant="126.5"/>
                             </constraint>
-                            <constraint firstItem="SU6-LC-YSa" firstAttribute="centerY" secondItem="GFK-9X-Hda" secondAttribute="centerY" id="VYN-fM-FZJ"/>
                             <constraint firstItem="ptB-rx-fHS" firstAttribute="centerX" secondItem="w56-uV-kFG" secondAttribute="centerX" id="eah-mH-dfF"/>
                             <constraint firstAttribute="centerX" secondItem="w56-uV-kFG" secondAttribute="centerX" constant="-1" id="gIU-rv-t6t"/>
                             <constraint firstAttribute="centerY" secondItem="SU6-LC-YSa" secondAttribute="centerY" constant="164" id="jp8-ZM-8Mk"/>
@@ -1158,12 +1150,9 @@
                                 <exclude reference="Vst-3C-Akz"/>
                                 <exclude reference="9eX-jE-kgg"/>
                                 <exclude reference="n3c-Id-7di"/>
-                                <exclude reference="GFK-9X-Hda"/>
                                 <exclude reference="SU6-LC-YSa"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5fM-q3-1NO"/>
-                                <exclude reference="VYN-fM-FZJ"/>
                                 <exclude reference="jp8-ZM-8Mk"/>
                                 <exclude reference="oRg-Tb-9q8"/>
                                 <exclude reference="GHz-IJ-AMc"/>
@@ -1194,12 +1183,9 @@
                                 <include reference="Vst-3C-Akz"/>
                                 <include reference="9eX-jE-kgg"/>
                                 <include reference="n3c-Id-7di"/>
-                                <include reference="GFK-9X-Hda"/>
                                 <include reference="SU6-LC-YSa"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5fM-q3-1NO"/>
-                                <include reference="VYN-fM-FZJ"/>
                                 <include reference="jp8-ZM-8Mk"/>
                                 <include reference="oRg-Tb-9q8"/>
                                 <include reference="GHz-IJ-AMc"/>
@@ -1225,7 +1211,6 @@
                     <connections>
                         <outlet property="bioDescriptionLabel" destination="9eX-jE-kgg" id="X0N-to-PHH"/>
                         <outlet property="industry1Label" destination="r3P-Oj-KwM" id="J7Z-U8-9l5"/>
-                        <outlet property="loadingPicture" destination="GFK-9X-Hda" id="VFJ-ru-wzz"/>
                         <outlet property="media1Label" destination="w56-uV-kFG" id="sq9-XQ-bCn"/>
                         <outlet property="media2Label" destination="ptB-rx-fHS" id="MMT-kD-5kS"/>
                         <outlet property="media3Label" destination="8Hf-zF-D2P" id="BT4-QR-7et"/>
