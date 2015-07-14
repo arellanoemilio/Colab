@@ -25,8 +25,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var media3Label: UILabel!
     @IBOutlet weak var industry1Label: UILabel!
     @IBOutlet weak var bioDescriptionLabel: UITextView!
+	@IBOutlet weak var profilePicture: UIImageView!
+	@IBOutlet weak var loadingPicture: UIActivityIndicatorView!
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,10 +45,23 @@ class ProfileViewController: UIViewController {
             //populateIndustry()
             populateMedia()
         }
-        
-        
     }
-    
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		profilePicture.layer.cornerRadius = 64
+		profilePicture.layer.masksToBounds = true
+		
+		loadingPicture.stopAnimating()
+		loadingPicture.hidden = true
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		getProfilePic()
+	}
+	
     func populateMedia(){
         var counter = 0
         while counter < 3 {
@@ -59,6 +73,21 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+	
+	func getProfilePic() {
+		let urlString = user["pictureURL"] as! String
+		
+		loadingPicture.startAnimating()
+		loadingPicture.hidden = false
+		
+		let image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
+		
+		loadingPicture.stopAnimating()
+		loadingPicture.hidden = true
+		
+		profilePicture.image = image
+		
+	}
 
 //    func populateIndustry(){
 //        var counter = 0
