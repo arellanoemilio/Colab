@@ -1031,7 +1031,7 @@
                     </view>
                     <connections>
                         <outlet property="bioField" destination="hgr-wN-LSv" id="0PP-Wb-SMi"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="toHome" id="pGK-ay-9R3"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toHome" id="pGK-ay-9R3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hza-7C-8dC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1656,7 +1656,7 @@
         <image name="thumbUp" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NfW-tG-ZJl"/>
+        <segue reference="pGK-ay-9R3"/>
         <segue reference="dKJ-Gf-wTj"/>
     </inferredMetricsTieBreakers>
 </document>

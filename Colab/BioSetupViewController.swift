@@ -19,6 +19,8 @@ class BioSetupViewController: UIViewController {
         super.viewDidLoad()
 		
 		user = PFUser.currentUser()
+		
+		navigationItem.title = "Bio setup (4/4)"
 
     }
 	

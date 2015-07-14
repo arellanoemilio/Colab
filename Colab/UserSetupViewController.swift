@@ -38,14 +38,17 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 				regionList.delegate = self
 				regionList.dataSource = self
 				populatedWith(fileName: "Regions", list: regionList)
+				navigationItem.title = "Region setup (1/4)"
 			case "IndustrySetup":
 				industryList.delegate = self
 				industryList.dataSource = self
 				populatedWith(fileName: "Industry", list: industryList)
+				navigationItem.title = "Industry setup (2/4)"
 			case "PlatformSetup":
 				platformList.delegate = self
 				platformList.dataSource = self
 				populatedWith(fileName: "SocialPlatforms", list: platformList)
+				navigationItem.title = "Social setup (3/4)"
 			default: break
 			
 		}
