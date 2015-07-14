@@ -18,7 +18,7 @@ class MatchesViewController: UIViewController {
     @IBOutlet weak var userMedia2Label: UILabel!
     @IBOutlet weak var userMedia3Label: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
-
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     var regions = [String]()
     var platforms = [String]()
     var industries = [String]()
@@ -94,16 +94,16 @@ class MatchesViewController: UIViewController {
         userNameLabel.text = user["name"] as? String
         userRegionLabel.text = user["region"] as? String
         userIndustryLabel.text = user["industry"] as? String
-        //setPicture(user)
+        setPicture(user)
         setMedias(user)
     }
     
     func setMedias(user: PFUser){
         let medias = user["platforms"] as? [String]
         var i = 0
-        for media in platforms{
-            if medias != nil{
-                if contains(medias!, media){
+        if medias != nil{
+            for media in platforms{
+                    if contains(medias!, media){
                     switch i{
                     case 0: userMedia1Label.text = media
                     case 1: userMedia2Label.text = media
@@ -113,10 +113,26 @@ class MatchesViewController: UIViewController {
                     i++
                 }
             }
+            while i < 2{
+                for j in 0..<medias!.count {
+                    if !contains(platforms, medias![j]){
+                        switch i{
+                        case 0: userMedia1Label.text = medias![j]
+                        case 1: userMedia2Label.text = medias![j]
+                        case 2: userMedia3Label.text = medias![j]
+                        default: break
+                        }
+                        i++
+                    }else{i++}
+                }
+            }
         }
     
     }
 	
+    func setPicture(user: PFUser){
+        
+    }
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
         if let filterViewController = segue
     }*/
