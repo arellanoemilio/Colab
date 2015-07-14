@@ -42,7 +42,6 @@ class ProfileViewController: UIViewController {
 			regionLabel.text = region
             bioDescriptionLabel.text = bioDescription
 			industry1Label.text = industry
-            //populateIndustry()
             populateMedia()
         }
     }

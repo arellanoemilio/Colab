@@ -18,7 +18,7 @@ class MatchesViewController: UIViewController {
     @IBOutlet weak var userMedia2Label: UILabel!
     @IBOutlet weak var userMedia3Label: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
-
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     var regions = [String]()
     var platforms = [String]()
     var industries = [String]()
