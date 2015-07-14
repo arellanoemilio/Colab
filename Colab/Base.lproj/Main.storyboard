@@ -575,7 +575,7 @@
                     <navigationItem key="navigationItem" id="t7b-K2-fMk"/>
                     <connections>
                         <segue destination="HGn-8l-Npt" kind="show" identifier="userSetup" id="9jZ-rO-20Z"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="User Profile" id="BlI-QY-T64"/>
+                        <segue destination="KiJ-Fs-QJx" kind="presentation" identifier="User Profile" id="caV-Yq-ggo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIn-Hn-nA9" userLabel="First Responder" sceneMemberID="firstResponder"/>

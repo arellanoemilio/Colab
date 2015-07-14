@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     var industry = [String]()
     var region = ""
     var name = ""
-   // var bioDescription = ""
+	var bioDescription = ""
     
     @IBOutlet weak var nameLabel: NSLayoutConstraint!
     @IBOutlet weak var regionLabel: UILabel!

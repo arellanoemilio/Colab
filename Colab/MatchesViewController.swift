@@ -40,41 +40,42 @@ class MatchesViewController: UIViewController {
         query()
     }
     
-    func query() {
-        var query = PFUser.query()
-		
-        if regions.count > 0 {
-			query?.whereKey("region", containsAllObjectsInArray: regions)
+	func query(){
+		var query = PFUser.query()!
+		for region in regions{
+			query.whereKey("region", containsString: region)
 		}
-        if platforms.count > 0 {
-			query?.whereKey("platform", containsAllObjectsInArray: platforms)
-		}
-        if industries.count > 0 {
-			query?.whereKey("industry", containsAllObjectsInArray: industries)
-		}
-		
-		query?.findObjectsInBackgroundWithBlock {
+		if platforms.count > 0{query.whereKey("industries", containsAllObjectsInArray: platforms)}
+		if industries.count > 0{query.whereKey("industries", containsAllObjectsInArray: industries)}
+		query.whereKey("objectId" , notEqualTo: PFUser.currentUser()!.objectId!)
+		query.findObjectsInBackgroundWithBlock {
 			(objects: [AnyObject]?, error: NSError?) -> Void in
+			
 			if error == nil {
-				self.matches = objects as! [PFUser]
-			
-				if objects?.count > 0 {
-					println(" matches = \(self.matches!.count)")
-				} else {
-					println("matches = 0")
+				// The find succeeded.
+				println("Successfully retrieved \(objects!.count) matches.")
+				// Do something with the found objects
+				if let objects = objects as? [PFUser] {
+					self.matches = objects
+					for match in self.matches{
+						var name = match["name"] as! String
+						println("\(name)")
+					}
+					
 				}
-				
-				// DO VISUAL SETUP STUFF FROM HERE
-			
 			} else {
+				// Log details of the failure
 				println("Error: \(error!) \(error!.userInfo!)")
 			}
 		}
-    }
-    
+		
+		//if matches != nil{ println(" matches = \(matches!.count)")}else{ println("matches = 0")}
+	}
+	
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
         if let filterViewController = segue
     }*/
+	
 
     /*
     // MARK: - Navigation
