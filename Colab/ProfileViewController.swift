@@ -18,14 +18,12 @@ class ProfileViewController: UIViewController {
     var name = ""
 	var bioDescription = ""
     
-    @IBOutlet weak var nameLabel: NSLayoutConstraint!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var media1Label: UILabel!
     @IBOutlet weak var media2Label: UILabel!
     @IBOutlet weak var media3Label: UILabel!
     @IBOutlet weak var industry1Label: UILabel!
-    @IBOutlet weak var industry2Label: UILabel!
-    @IBOutlet weak var industry3Label: UILabel!
     @IBOutlet weak var bioDescriptionLabel: UITextView!
    
     
@@ -63,8 +61,6 @@ class ProfileViewController: UIViewController {
         while counter < industry.count{
             switch counter{
             case 0: industry1Label.text = industry[counter++]
-            case 1: industry2Label.text = industry[counter++]
-            case 2: industry3Label.text = industry[counter++]
             default: break
             }
         }

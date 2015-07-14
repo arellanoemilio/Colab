@@ -87,7 +87,7 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 		let row = indexPath.row
 		let cell = tableView.cellForRowAtIndexPath(indexPath)
 		
-		if self.restorationIdentifier! == "RegionSetup" {
+		if self.restorationIdentifier! == "RegionSetup" || self.restorationIdentifier! == "IndustrySetup" {
 			for i in 0..<listToDisplay.count {
 				if i != row {
 					selected[i] = false

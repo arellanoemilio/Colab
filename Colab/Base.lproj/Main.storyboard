@@ -1074,18 +1074,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="industry 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hva-GG-sYP">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="industry 3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqf-oO-yzU">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Name Label -" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vst-3C-Akz">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1123,16 +1111,12 @@
                             <constraint firstAttribute="centerX" secondItem="Vst-3C-Akz" secondAttribute="centerX" constant="-0.5" id="Riu-4c-EVf">
                                 <variation key="widthClass=compact" constant="126.5"/>
                             </constraint>
-                            <constraint firstItem="Hva-GG-sYP" firstAttribute="centerX" secondItem="Kqf-oO-yzU" secondAttribute="centerX" id="aRT-M8-uPI"/>
-                            <constraint firstItem="Hva-GG-sYP" firstAttribute="top" secondItem="r3P-Oj-KwM" secondAttribute="bottom" constant="8" id="cap-2t-Pka"/>
                             <constraint firstItem="ptB-rx-fHS" firstAttribute="centerX" secondItem="w56-uV-kFG" secondAttribute="centerX" id="eah-mH-dfF"/>
                             <constraint firstAttribute="centerX" secondItem="w56-uV-kFG" secondAttribute="centerX" constant="-1" id="gIU-rv-t6t"/>
                             <constraint firstItem="8Hf-zF-D2P" firstAttribute="centerX" secondItem="r3P-Oj-KwM" secondAttribute="centerX" id="k6y-4a-Od9"/>
-                            <constraint firstItem="Hva-GG-sYP" firstAttribute="centerX" secondItem="r3P-Oj-KwM" secondAttribute="centerX" id="kML-ka-1cB"/>
                             <constraint firstAttribute="centerX" secondItem="9eX-jE-kgg" secondAttribute="centerX" id="khV-Jg-v3N"/>
                             <constraint firstItem="8Hf-zF-D2P" firstAttribute="top" secondItem="ptB-rx-fHS" secondAttribute="bottom" constant="8" id="kr4-bo-dgH"/>
                             <constraint firstItem="HZD-V4-zy1" firstAttribute="top" secondItem="9eX-jE-kgg" secondAttribute="bottom" constant="20" id="lWt-NN-iKV"/>
-                            <constraint firstItem="Kqf-oO-yzU" firstAttribute="top" secondItem="Hva-GG-sYP" secondAttribute="bottom" constant="8" id="or3-d1-yV4"/>
                             <constraint firstItem="r3P-Oj-KwM" firstAttribute="top" secondItem="8Hf-zF-D2P" secondAttribute="bottom" constant="7" id="oxV-UQ-9pa"/>
                             <constraint firstAttribute="centerY" secondItem="9eX-jE-kgg" secondAttribute="centerY" constant="-193" id="tT0-oD-ff7"/>
                         </constraints>
@@ -1142,8 +1126,6 @@
                                 <exclude reference="ptB-rx-fHS"/>
                                 <exclude reference="8Hf-zF-D2P"/>
                                 <exclude reference="r3P-Oj-KwM"/>
-                                <exclude reference="Hva-GG-sYP"/>
-                                <exclude reference="Kqf-oO-yzU"/>
                                 <exclude reference="Vst-3C-Akz"/>
                                 <exclude reference="9eX-jE-kgg"/>
                                 <exclude reference="n3c-Id-7di"/>
@@ -1152,10 +1134,6 @@
                                 <exclude reference="k6y-4a-Od9"/>
                                 <exclude reference="kr4-bo-dgH"/>
                                 <exclude reference="lWt-NN-iKV"/>
-                                <exclude reference="aRT-M8-uPI"/>
-                                <exclude reference="cap-2t-Pka"/>
-                                <exclude reference="kML-ka-1cB"/>
-                                <exclude reference="or3-d1-yV4"/>
                                 <exclude reference="GHz-IJ-AMc"/>
                                 <exclude reference="Riu-4c-EVf"/>
                                 <exclude reference="14l-z9-eMx"/>
@@ -1178,8 +1156,6 @@
                                 <include reference="ptB-rx-fHS"/>
                                 <include reference="8Hf-zF-D2P"/>
                                 <include reference="r3P-Oj-KwM"/>
-                                <include reference="Hva-GG-sYP"/>
-                                <include reference="Kqf-oO-yzU"/>
                                 <include reference="Vst-3C-Akz"/>
                                 <include reference="9eX-jE-kgg"/>
                                 <include reference="n3c-Id-7di"/>
@@ -1188,10 +1164,6 @@
                                 <include reference="k6y-4a-Od9"/>
                                 <include reference="kr4-bo-dgH"/>
                                 <include reference="lWt-NN-iKV"/>
-                                <include reference="aRT-M8-uPI"/>
-                                <include reference="cap-2t-Pka"/>
-                                <include reference="kML-ka-1cB"/>
-                                <include reference="or3-d1-yV4"/>
                                 <include reference="GHz-IJ-AMc"/>
                                 <include reference="Riu-4c-EVf"/>
                                 <include reference="14l-z9-eMx"/>
@@ -1210,15 +1182,13 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="bioDescription" destination="9eX-jE-kgg" id="dZF-Xk-Bxk"/>
-                        <outlet property="industry1" destination="r3P-Oj-KwM" id="1eb-w6-arS"/>
-                        <outlet property="industry2" destination="Hva-GG-sYP" id="3Js-i3-pnR"/>
-                        <outlet property="industry3" destination="Kqf-oO-yzU" id="CJ2-hP-bvX"/>
-                        <outlet property="media1" destination="w56-uV-kFG" id="sql-dR-Cru"/>
-                        <outlet property="media2" destination="ptB-rx-fHS" id="tZo-4z-Xjy"/>
-                        <outlet property="media3" destination="8Hf-zF-D2P" id="tIG-Qe-PVs"/>
-                        <outlet property="name" destination="GHz-IJ-AMc" id="8G7-yW-z4Q"/>
-                        <outlet property="region" destination="n3c-Id-7di" id="bhU-qE-Sma"/>
+                        <outlet property="bioDescriptionLabel" destination="9eX-jE-kgg" id="X0N-to-PHH"/>
+                        <outlet property="industry1Label" destination="r3P-Oj-KwM" id="J7Z-U8-9l5"/>
+                        <outlet property="media1Label" destination="w56-uV-kFG" id="sq9-XQ-bCn"/>
+                        <outlet property="media2Label" destination="ptB-rx-fHS" id="MMT-kD-5kS"/>
+                        <outlet property="media3Label" destination="8Hf-zF-D2P" id="BT4-QR-7et"/>
+                        <outlet property="nameLabel" destination="Vst-3C-Akz" id="Pff-eP-Xro"/>
+                        <outlet property="regionLabel" destination="n3c-Id-7di" id="8wa-nn-nAW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCr-Wo-LDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
