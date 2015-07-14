@@ -31,9 +31,11 @@ class SignInViewController: UIViewController {
 			if let user = user {
 				if user.isNew {
 					println("User signed up and logged in through Facebook!")
+					self.getDataFromFB()
 					self.performSegueWithIdentifier("userSetup", sender: sender)
 				} else {
 					println("User logged in through Facebook!")
+					self.getDataFromFB()
 					//self.performSegueWithIdentifier("userSetup", sender: sender)
 					self.performSegueWithIdentifier("User Profile", sender: sender)
 				}
@@ -47,5 +49,37 @@ class SignInViewController: UIViewController {
 		if (segue.identifier == "userSetup") {
 			let userSetupVC: UIViewController = segue.destinationViewController as! UIViewController
 		}
+	}
+	
+	// TODO: Get FB data here
+	func getDataFromFB() {
+		if FBSDKAccessToken.currentAccessToken() != nil {
+			var user = PFUser.currentUser()
+			var name = ""
+			var picURL = ""
+			
+			FBSDKGraphRequest(graphPath: "me?fields=name", parameters: nil)
+			.startWithCompletionHandler {
+				(connection: FBSDKGraphRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
+				if (error == nil) {
+					name = result["name"] as! String
+					user!["name"] = name
+					user?.saveInBackground()
+				}
+			}
+			FBSDKGraphRequest(graphPath: "me/picture?type=large&redirect=false", parameters: nil)
+				.startWithCompletionHandler {
+					(connection: FBSDKGraphRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
+					if (error == nil) {
+						picURL = (result["data"] as! NSDictionary)["url"] as! String
+						user!["pictureURL"] = picURL
+						user?.saveInBackground()
+					}
+			}
+			
+			//user!.saveInBackground()
+
+		}
+		
 	}
 }

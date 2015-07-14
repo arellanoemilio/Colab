@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -1211,27 +1211,27 @@
                                 <exclude reference="n3c-Id-7di"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="GHz-IJ-AMc"/>
-                                <exclude reference="Riu-4c-EVf"/>
-                                <exclude reference="9h9-XM-8pD"/>
-                                <exclude reference="gIU-rv-t6t"/>
-                                <exclude reference="ABP-uj-Azr"/>
-                                <exclude reference="RXD-7K-lC9"/>
-                                <exclude reference="eah-mH-dfF"/>
                                 <exclude reference="k6y-4a-Od9"/>
                                 <exclude reference="kr4-bo-dgH"/>
-                                <exclude reference="oxV-UQ-9pa"/>
+                                <exclude reference="lWt-NN-iKV"/>
                                 <exclude reference="aRT-M8-uPI"/>
                                 <exclude reference="cap-2t-Pka"/>
                                 <exclude reference="kML-ka-1cB"/>
+                                <exclude reference="or3-d1-yV4"/>
+                                <exclude reference="GHz-IJ-AMc"/>
+                                <exclude reference="Riu-4c-EVf"/>
                                 <exclude reference="14l-z9-eMx"/>
                                 <exclude reference="Kgk-ik-TQG"/>
+                                <exclude reference="ABP-uj-Azr"/>
+                                <exclude reference="RXD-7K-lC9"/>
+                                <exclude reference="eah-mH-dfF"/>
+                                <exclude reference="oxV-UQ-9pa"/>
+                                <exclude reference="9h9-XM-8pD"/>
+                                <exclude reference="gIU-rv-t6t"/>
                                 <exclude reference="6ms-TS-SbC"/>
                                 <exclude reference="6pX-Oq-o2J"/>
                                 <exclude reference="khV-Jg-v3N"/>
                                 <exclude reference="tT0-oD-ff7"/>
-                                <exclude reference="or3-d1-yV4"/>
-                                <exclude reference="lWt-NN-iKV"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1247,27 +1247,27 @@
                                 <include reference="n3c-Id-7di"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="GHz-IJ-AMc"/>
-                                <include reference="Riu-4c-EVf"/>
-                                <include reference="9h9-XM-8pD"/>
-                                <include reference="gIU-rv-t6t"/>
-                                <include reference="ABP-uj-Azr"/>
-                                <include reference="RXD-7K-lC9"/>
-                                <include reference="eah-mH-dfF"/>
                                 <include reference="k6y-4a-Od9"/>
                                 <include reference="kr4-bo-dgH"/>
-                                <include reference="oxV-UQ-9pa"/>
+                                <include reference="lWt-NN-iKV"/>
                                 <include reference="aRT-M8-uPI"/>
                                 <include reference="cap-2t-Pka"/>
                                 <include reference="kML-ka-1cB"/>
+                                <include reference="or3-d1-yV4"/>
+                                <include reference="GHz-IJ-AMc"/>
+                                <include reference="Riu-4c-EVf"/>
                                 <include reference="14l-z9-eMx"/>
                                 <include reference="Kgk-ik-TQG"/>
+                                <include reference="ABP-uj-Azr"/>
+                                <include reference="RXD-7K-lC9"/>
+                                <include reference="eah-mH-dfF"/>
+                                <include reference="oxV-UQ-9pa"/>
+                                <include reference="9h9-XM-8pD"/>
+                                <include reference="gIU-rv-t6t"/>
                                 <include reference="6ms-TS-SbC"/>
                                 <include reference="6pX-Oq-o2J"/>
                                 <include reference="khV-Jg-v3N"/>
                                 <include reference="tT0-oD-ff7"/>
-                                <include reference="or3-d1-yV4"/>
-                                <include reference="lWt-NN-iKV"/>
                             </mask>
                         </variation>
                     </view>
