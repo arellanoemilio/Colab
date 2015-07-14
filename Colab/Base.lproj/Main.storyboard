@@ -268,15 +268,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Messege User Cell" rowHeight="79" id="LUN-r8-aHe">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="collabsListCell" rowHeight="79" id="LUN-r8-aHe" customClass="CollabsTableViewCell" customModule="Colab" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUN-r8-aHe" id="6nK-dB-NOk">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-Hl-HEx">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-Hl-HEx">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="66" id="jVJ-4Q-dZX"/>
+                                                <constraint firstAttribute="width" constant="66" id="jYW-gc-kwa"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="jVJ-4Q-dZX"/>
+                                                    <exclude reference="jYW-gc-kwa"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                                 <rect key="frame" x="8" y="8" width="64" height="59.5"/>
+                                                <mask key="constraints">
+                                                    <include reference="jVJ-4Q-dZX"/>
+                                                    <include reference="jYW-gc-kwa"/>
+                                                </mask>
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Lastname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Li0-ml-4kQ">
@@ -369,6 +383,11 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="followersLabel" destination="jsT-Sg-LV0" id="x2A-rf-cA6"/>
+                                    <outlet property="industryLabel" destination="5Pz-nR-Nmh" id="xNb-Dm-bjG"/>
+                                    <outlet property="nameLabel" destination="Li0-ml-4kQ" id="LbW-QQ-tnM"/>
+                                    <outlet property="profilePicture" destination="MDv-Hl-HEx" id="uwb-DM-vB9"/>
+                                    <outlet property="regionLabel" destination="0K5-m1-aX4" id="0mx-Um-gNQ"/>
                                     <segue destination="u35-Y8-FlK" kind="show" id="Ds3-rh-Awx"/>
                                 </connections>
                             </tableViewCell>
@@ -1580,6 +1599,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zpt-Rl-494"/>
-        <segue reference="Bwe-DD-Cbn"/>
+        <segue reference="Ds3-rh-Awx"/>
     </inferredMetricsTieBreakers>
 </document>
