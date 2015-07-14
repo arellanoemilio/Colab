@@ -55,8 +55,11 @@ class MatchesViewController: UIViewController {
 		for region in regions{
 			query.whereKey("region", containsString: region)
 		}
-		if platforms.count > 0{query.whereKey("industries", containsAllObjectsInArray: platforms)}
-		if industries.count > 0{query.whereKey("industries", containsAllObjectsInArray: industries)}
+        for industry in industries{
+            query.whereKey("industry", containsString: industry)
+        }
+		if platforms.count > 0{query.whereKey("platforms", containsAllObjectsInArray: platforms)}
+		
 		query.whereKey("objectId" , notEqualTo: PFUser.currentUser()!.objectId!)
 		query.findObjectsInBackgroundWithBlock {
 			(objects: [AnyObject]?, error: NSError?) -> Void in
@@ -90,13 +93,27 @@ class MatchesViewController: UIViewController {
     func populateLayoutWithUser(user:PFUser){
         userNameLabel.text = user["name"] as? String
         userRegionLabel.text = user["region"] as? String
-        
+        userIndustryLabel.text = user["industry"] as? String
         //setPicture(user)
-        //setMedias(user)
+        setMedias(user)
     }
     
-    func setMedia(user: PFUser){
-    // let medias = user[
+    func setMedias(user: PFUser){
+        let medias = user["platforms"] as? [String]
+        var i = 0
+        for media in platforms{
+            if medias != nil{
+                if contains(medias!, media){
+                    switch i{
+                    case 0: userMedia1Label.text = media
+                    case 1: userMedia2Label.text = media
+                    case 2: userMedia3Label.text = media
+                    default: break
+                    }
+                    i++
+                }
+            }
+        }
     
     }
 	

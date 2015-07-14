@@ -983,7 +983,7 @@
                                 </state>
                                 <connections>
                                     <action selector="done:" destination="xST-VI-Hsl" eventType="touchUpInside" id="IJ7-OY-IOi"/>
-                                    <segue destination="KiJ-Fs-QJx" kind="presentation" id="zpt-Rl-494"/>
+                                    <segue destination="KiJ-Fs-QJx" kind="presentation" identifier="toHome" id="zpt-Rl-494"/>
                                 </connections>
                             </button>
                         </subviews>
