@@ -27,6 +27,7 @@
 		8A3624E81B501801006C860B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624E71B501801006C860B /* SystemConfiguration.framework */; };
 		8A3624EA1B501810006C860B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624E91B501810006C860B /* libz.dylib */; };
 		8A3624EC1B50181E006C860B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624EB1B50181E006C860B /* libsqlite3.dylib */; };
+		8A551CC81B5561C000D0F11E /* CollabsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A551CC71B5561C000D0F11E /* CollabsTableViewCell.swift */; };
 		8A73A7AF1B5401AC00D7ECD0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A73A7AC1B5401AC00D7ECD0 /* FBSDKCoreKit.framework */; };
 		8A73A7B01B5401AC00D7ECD0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A73A7AD1B5401AC00D7ECD0 /* FBSDKLoginKit.framework */; };
 		8A73A7B11B5401AC00D7ECD0 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A73A7AE1B5401AC00D7ECD0 /* FBSDKShareKit.framework */; };
@@ -81,6 +82,7 @@
 		8A3624E71B501801006C860B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8A3624E91B501810006C860B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8A3624EB1B50181E006C860B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8A551CC71B5561C000D0F11E /* CollabsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabsTableViewCell.swift; sourceTree = "<group>"; };
 		8A73A7AC1B5401AC00D7ECD0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		8A73A7AD1B5401AC00D7ECD0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		8A73A7AE1B5401AC00D7ECD0 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				B12FC8751B557AA8000A7D87 /* CollabsNavigationController.swift */,
 				8AC62A0B1B53F27F00FB11F6 /* UserSetupViewController.swift */,
 				8A2936A21B545010001ECD8C /* BioSetupViewController.swift */,
+				8A551CC71B5561C000D0F11E /* CollabsTableViewCell.swift */,
 			);
 			path = Colab;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			files = (
 				8A1375451B50554A00A39083 /* SignInViewController.swift in Sources */,
 				8A3624D11B500F95006C860B /* FilterViewController.swift in Sources */,
+				8A551CC81B5561C000D0F11E /* CollabsTableViewCell.swift in Sources */,
 				8A1BA8121B4F0413004C487D /* HomeViewController.swift in Sources */,
 				8A2936A31B545010001ECD8C /* BioSetupViewController.swift in Sources */,
 				B1FE4A321B53FA8B008931D2 /* MatchesViewController.swift in Sources */,
