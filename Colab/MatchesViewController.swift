@@ -130,7 +130,7 @@ class MatchesViewController: UIViewController {
     
     }
 	
-    func setPucture(user: PFUser){
+    func setPicture(user: PFUser){
         
     }
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
