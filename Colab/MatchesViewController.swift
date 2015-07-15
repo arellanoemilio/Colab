@@ -58,6 +58,11 @@ class MatchesViewController: UIViewController {
 		// TODO: FETCH NEW USER
 	}
 	
+    @IBAction func showProfile(sender: AnyObject) {
+        if currentUserDisplayed < matches.count{
+            performSegueWithIdentifier("MatchToProfile", sender: sender)
+        }
+    }
 	@IBAction func dislike(sender: AnyObject) {
 		// TODO: FETCH NEW USER
 	}
