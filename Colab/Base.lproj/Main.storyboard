@@ -20,11 +20,24 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-s5-WN3">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ln2-Q5-cOu"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Region"/>
                                     <segment title="Platform"/>
                                     <segment title="Industry"/>
                                 </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ln2-Q5-cOu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ln2-Q5-cOu"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="indexChanged:" destination="KJ2-Wn-wvY" eventType="valueChanged" id="ZPW-zy-hmc"/>
                                 </connections>
@@ -62,7 +75,7 @@
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="qyA-qf-HAd"/>
+                                        <exclude reference="qyA-qf-HAd"/>
                                     </mask>
                                 </variation>
                             </tableView>
@@ -71,9 +84,6 @@
                                 <state key="normal" title="Search">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="174" y="562" width="48" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="6qi-IX-HJE" kind="unwind" unwindAction="unwindToMatchVC:" id="hIO-0z-8SH"/>
                                 </connections>
@@ -82,15 +92,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="um8-S3-1Yd" firstAttribute="top" secondItem="iQ8-s5-WN3" secondAttribute="bottom" constant="6" id="6K6-kJ-2gC">
-                                <variation key="widthClass=compact" constant="8" symbolic="YES"/>
+                                <variation key="widthClass=compact" constant="7"/>
                             </constraint>
-                            <constraint firstItem="iQ8-s5-WN3" firstAttribute="leading" secondItem="LEq-z1-QGX" secondAttribute="leadingMargin" constant="-3" id="MeC-fh-Mm1"/>
-                            <constraint firstItem="um8-S3-1Yd" firstAttribute="leading" secondItem="iQ8-s5-WN3" secondAttribute="leading" id="WzM-EG-xpD"/>
-                            <constraint firstItem="iQ8-s5-WN3" firstAttribute="top" secondItem="1b9-HF-Quq" secondAttribute="bottom" constant="10" id="aHK-vw-1o8">
+                            <constraint firstAttribute="centerX" secondItem="46M-Rf-PJJ" secondAttribute="centerX" constant="2" id="MSM-xj-ok1"/>
+                            <constraint firstItem="iQ8-s5-WN3" firstAttribute="leading" secondItem="LEq-z1-QGX" secondAttribute="leadingMargin" constant="-3" id="MeC-fh-Mm1">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="iQ8-s5-WN3" secondAttribute="trailing" constant="3" id="d2v-uo-PaW"/>
+                            <constraint firstItem="um8-S3-1Yd" firstAttribute="leading" secondItem="iQ8-s5-WN3" secondAttribute="leading" id="WzM-EG-xpD"/>
+                            <constraint firstItem="iQ8-s5-WN3" firstAttribute="top" secondItem="1b9-HF-Quq" secondAttribute="bottom" constant="10" id="aHK-vw-1o8">
+                                <variation key="widthClass=compact" constant="7"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="iQ8-s5-WN3" secondAttribute="trailing" constant="3" id="d2v-uo-PaW">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="46M-Rf-PJJ" firstAttribute="top" secondItem="um8-S3-1Yd" secondAttribute="bottom" constant="2" id="ewV-wK-9vp">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="um8-S3-1Yd" firstAttribute="trailing" secondItem="iQ8-s5-WN3" secondAttribute="trailing" id="npG-3a-qmO"/>
+                            <constraint firstItem="IZ4-QS-Wv6" firstAttribute="top" secondItem="46M-Rf-PJJ" secondAttribute="bottom" constant="8" id="sbf-bt-he7">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -105,6 +126,9 @@
                                 <exclude reference="6K6-kJ-2gC"/>
                                 <exclude reference="WzM-EG-xpD"/>
                                 <exclude reference="npG-3a-qmO"/>
+                                <exclude reference="MSM-xj-ok1"/>
+                                <exclude reference="ewV-wK-9vp"/>
+                                <exclude reference="sbf-bt-he7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -120,6 +144,9 @@
                                 <include reference="6K6-kJ-2gC"/>
                                 <include reference="WzM-EG-xpD"/>
                                 <include reference="npG-3a-qmO"/>
+                                <include reference="MSM-xj-ok1"/>
+                                <include reference="ewV-wK-9vp"/>
+                                <include reference="sbf-bt-he7"/>
                             </mask>
                         </variation>
                     </view>
@@ -1760,6 +1787,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7fq-9s-GZ6"/>
-        <segue reference="dkM-oS-gAz"/>
+        <segue reference="aqj-1N-Fjb"/>
     </inferredMetricsTieBreakers>
 </document>
