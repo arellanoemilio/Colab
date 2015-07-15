@@ -24,6 +24,13 @@ class BioSetupViewController: UIViewController {
 
     }
 	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		bioField.layer.cornerRadius = 10
+		bioField.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5);
+	}
+	
 	@IBAction func done(sender: UIButton) {
 		var bio = bioField.text
 		if count(bio) > 255 {
