@@ -55,6 +55,8 @@ class MatchesViewController: UIViewController {
 		var connection = PFObject(className: "Connection")
 		connection["user1"] = PFUser.currentUser()
 		connection["user2"] = matches[currentUserDisplayed]
+		
+			//useUserAtIndex(++currentUserDisplayed)
 		connection.saveInBackground()
 		
 		// TODO: FETCH NEW USER
