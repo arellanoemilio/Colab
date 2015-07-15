@@ -1597,13 +1597,13 @@
     </scenes>
     <resources>
         <image name="chatIcon" width="48" height="48"/>
-        <image name="placeholder" width="325" height="332"/>
+        <image name="placeholder" width="594" height="594"/>
         <image name="thumbDown" width="48" height="48"/>
         <image name="thumbUp" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Hsw-hA-usv"/>
-        <segue reference="90I-Mk-yJJ"/>
+        <segue reference="jsS-Cc-cBE"/>
         <segue reference="CcO-HJ-6oA"/>
     </inferredMetricsTieBreakers>
 </document>
