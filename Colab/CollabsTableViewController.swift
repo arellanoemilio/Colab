@@ -16,18 +16,22 @@ class CollabsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-		
-		getCollabs()
-		
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        // we want it here so that the connections refresh every time a user cliks on the 
+        // collabs tab
+        getCollabs()
     }
 	
 	func getCollabs() {
+        users.removeAll(keepCapacity: false)
 		var query1 = PFQuery(className: "Connection")
 		query1.whereKey("user1", equalTo: PFUser.currentUser()!)
 		
@@ -85,7 +89,9 @@ class CollabsTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+         performSegueWithIdentifier("CollabsToProfile", sender: users[indexPath.row])
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -94,14 +100,19 @@ class CollabsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if let user = sender as? PFUser{
+            if segue.identifier == "CollabsToProfile" {
+                var profileViewController = segue.destinationViewController as! ProfileViewController
+                profileViewController.user = user
+            }
+            
+        }
     }
-    */
+
 
 }

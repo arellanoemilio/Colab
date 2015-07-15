@@ -24,6 +24,7 @@ class MatchesViewController: UIViewController {
     var industries = [String]()
     
     var matches: [PFUser]!
+    var collabs = [PFUser]()
     var currentUserDisplayed = 0
     
     override func viewDidLoad() {
@@ -74,17 +75,20 @@ class MatchesViewController: UIViewController {
     }
     
 	func query(){
-		var query = PFUser.query()!
+        
+        
+		var query1 = PFUser.query()!
 		for region in regions{
-			query.whereKey("region", containsString: region)
+			query1.whereKey("region", containsString: region)
 		}
         for industry in industries{
-            query.whereKey("industry", containsString: industry)
+            query1.whereKey("industry", containsString: industry)
         }
-		if platforms.count > 0{query.whereKey("platforms", containsAllObjectsInArray: platforms)}
+		if platforms.count > 0{query1.whereKey("platforms", containsAllObjectsInArray: platforms)}
 		
-		query.whereKey("objectId" , notEqualTo: PFUser.currentUser()!.objectId!)
-		query.findObjectsInBackgroundWithBlock {
+		query1.whereKey("objectId" , notEqualTo: PFUser.currentUser()!.objectId!)
+        
+        query1.findObjectsInBackgroundWithBlock {
 			(objects: [AnyObject]?, error: NSError?) -> Void in
 			
 			if error == nil {
@@ -97,19 +101,56 @@ class MatchesViewController: UIViewController {
 						var name = match["name"] as! String
 						println("\(name)")
 					}
-                    self.useUserAtIndex(self.currentUserDisplayed)
+                    self.useUserAtIndex(&self.currentUserDisplayed)
 				}
 			} else {
 				// Log details of the failure
 				println("Error: \(error!) \(error!.userInfo!)")
 			}
 		}
+        
+        var query3 = PFQuery(className: "Connection")
+        query3.whereKey("user1", equalTo: PFUser.currentUser()!)
+        
+        var query2 = PFQuery(className: "Connection")
+        query2.whereKey("user2", equalTo: PFUser.currentUser()!)
+        
+        var subQueries = [query3, query2]
+        
+        var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
+        mainQuery.includeKey("user1")
+        mainQuery.includeKey("user2")
+        
+        mainQuery.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                //self.users = objects as! [PFUser]
+                for obj in objects! {
+                    let connection: PFObject = obj as! PFObject
+                    if connection["user1"] as? PFUser == PFUser.currentUser() {
+                        self.collabs.append(connection["user2"] as! PFUser)
+                    } else {
+                        self.collabs.append(connection["user1"] as! PFUser)
+                    }
+                }
+            } else {
+                println("Error: \(error!) \(error!.userInfo!)")
+            }
+    
+        }
+        
+		
 		
 		//if matches != nil{ println(" matches = \(matches!.count)")}else{ println("matches = 0")}
 	}
     
-    func useUserAtIndex(index:Int){
+    func useUserAtIndex(inout index:Int){
         var displayUser = matches[index]
+        
+        while contains(collabs, displayUser){
+            displayUser = matches[++index]
+        }
+        
         populateLayoutWithUser(displayUser)
     }
     
@@ -173,11 +214,12 @@ class MatchesViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "toProfile" {
-			var profileViewController = segue.destinationViewController as! ProfileViewController
+		if segue.identifier == "MatchToProfile" {
+            var profileViewController = segue.destinationViewController as! ProfileViewController
 			profileViewController.user = matches[currentUserDisplayed]
 			
-			profileViewController.user = matches[currentUserDisplayed]
+			//profileViewController.user = matches[currentUserDisplayed]
+
 		}
     }
 
