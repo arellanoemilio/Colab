@@ -77,7 +77,6 @@ class SignInViewController: UIViewController {
         }
 	}
 	
-	// TODO: Get FB data here
 	func getDataFromFB() {
 		if FBSDKAccessToken.currentAccessToken() != nil {
 			var user = PFUser.currentUser()
