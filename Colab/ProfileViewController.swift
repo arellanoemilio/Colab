@@ -69,7 +69,7 @@ class ProfileViewController: UIViewController {
 	
     func populateMedia(){
         var counter = 0
-        while counter < 3 {
+        while counter < 3 && counter < media.count{
             switch counter{
             case 0: media1Label.text = media[counter++]
             case 1: media2Label.text = media[counter++]

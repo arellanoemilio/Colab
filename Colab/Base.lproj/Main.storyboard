@@ -673,6 +673,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-2H-NWy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPage:" destination="gcN-wp-UyN" eventType="touchUpInside" id="byY-cN-8mL"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EOU-40-Sfi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -697,15 +706,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-2H-NWy">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextPage:" destination="gcN-wp-UyN" eventType="touchUpInside" id="byY-cN-8mL"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -721,8 +721,8 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="2VH-gX-MeM"/>
-                                <exclude reference="EOU-40-Sfi"/>
                                 <exclude reference="DCs-2H-NWy"/>
+                                <exclude reference="EOU-40-Sfi"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="2bp-NE-AuN"/>
@@ -738,8 +738,8 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="2VH-gX-MeM"/>
-                                <include reference="EOU-40-Sfi"/>
                                 <include reference="DCs-2H-NWy"/>
+                                <include reference="EOU-40-Sfi"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="2bp-NE-AuN"/>
@@ -787,57 +787,38 @@
                                     <constraint firstAttribute="width" constant="400" id="cfb-at-Fug"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="platformWithURL" id="vKz-Xr-OEb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Centered Text Cell" id="vKz-Xr-OEb">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vKz-Xr-OEb" id="AfB-a0-gtL">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIx-er-WBO">
-                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="91" y="8" width="190" height="30"/>
-                                                    </variation>
-                                                </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platform: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJc-oj-Gvp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Centered Text Cell" text="Platform" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJc-oj-Gvp">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="8" y="17" width="65" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="LIx-er-WBO" firstAttribute="baseline" secondItem="hJc-oj-Gvp" secondAttribute="baseline" constant="-6" id="8UJ-dq-cWy"/>
-                                                <constraint firstItem="LIx-er-WBO" firstAttribute="top" secondItem="AfB-a0-gtL" secondAttribute="topMargin" id="NNO-bL-dcg"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="LIx-er-WBO" secondAttribute="trailing" constant="31" id="Nrw-BY-Xdz"/>
                                                 <constraint firstItem="hJc-oj-Gvp" firstAttribute="leading" secondItem="AfB-a0-gtL" secondAttribute="leadingMargin" id="OT6-zC-gUd"/>
-                                                <constraint firstItem="LIx-er-WBO" firstAttribute="leading" secondItem="hJc-oj-Gvp" secondAttribute="trailing" constant="8" id="QbB-vS-Fw1"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="LIx-er-WBO"/>
                                                     <exclude reference="hJc-oj-Gvp"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="8UJ-dq-cWy"/>
-                                                    <exclude reference="NNO-bL-dcg"/>
-                                                    <exclude reference="Nrw-BY-Xdz"/>
-                                                    <exclude reference="QbB-vS-Fw1"/>
                                                     <exclude reference="OT6-zC-gUd"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="LIx-er-WBO"/>
                                                     <include reference="hJc-oj-Gvp"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="8UJ-dq-cWy"/>
-                                                    <include reference="NNO-bL-dcg"/>
-                                                    <include reference="Nrw-BY-Xdz"/>
-                                                    <include reference="QbB-vS-Fw1"/>
                                                     <include reference="OT6-zC-gUd"/>
                                                 </mask>
                                             </variation>
