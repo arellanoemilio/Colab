@@ -46,7 +46,9 @@ class CollabsTableViewCell: UITableViewCell {
 		let image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
 		
 		profilePicture.image = image
-		profilePicture.layer.cornerRadius = 33
+		profilePicture.layer.cornerRadius = 28
+		profilePicture.contentMode = UIViewContentMode.ScaleAspectFill
+		profilePicture.clipsToBounds = true
 		
 	}
 	
