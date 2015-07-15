@@ -52,6 +52,7 @@ class ProfileViewController: UIViewController {
             populateMedia()
             println("strat vie")
         }
+        
         println("end viewDidLoad")
     }
 	
