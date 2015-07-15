@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -320,7 +320,6 @@
                                     <outlet property="nameLabel" destination="Li0-ml-4kQ" id="aJj-Pe-Nkq"/>
                                     <outlet property="profilePicture" destination="MDv-Hl-HEx" id="nxf-lm-EcT"/>
                                     <outlet property="regionLabel" destination="0K5-m1-aX4" id="FU8-Fq-wrQ"/>
-                                    <segue destination="u35-Y8-FlK" kind="show" identifier="CollabsToProfile" id="90I-Mk-yJJ"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Accept User Cell" rowHeight="79" id="ikU-Tx-jEY">
@@ -432,6 +431,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0M5-Rb-Yo1"/>
+                    <connections>
+                        <segue destination="u35-Y8-FlK" kind="show" identifier="CollabsToProfile" id="dkM-oS-gAz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDY-9P-zhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1193,7 +1195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCr-Wo-LDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="382"/>
+            <point key="canvasLocation" x="2685" y="1178"/>
         </scene>
         <!--Matches View Controller-->
         <scene sceneID="gJk-4Y-suk">
@@ -1560,6 +1562,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7fq-9s-GZ6"/>
-        <segue reference="aqj-1N-Fjb"/>
+        <segue reference="dkM-oS-gAz"/>
     </inferredMetricsTieBreakers>
 </document>
