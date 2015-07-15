@@ -53,8 +53,7 @@ class MatchesViewController: UIViewController {
 		connection["user1"] = PFUser.currentUser()
 		connection["user2"] = matches[currentUserDisplayed]
 		
-			//useUserAtIndex(++currentUserDisplayed)
-		connection.saveInBackground()
+        connection.saveInBackground()
 		
 		// TODO: FETCH NEW USER
 	}
@@ -63,7 +62,7 @@ class MatchesViewController: UIViewController {
 		// TODO: FETCH NEW USER
 	}
 	
-   @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
+    @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
     if let source = segue.sourceViewController as? FilterViewController{
         println("populating arrays")
         regions = source.regions
@@ -144,22 +143,47 @@ class MatchesViewController: UIViewController {
 		//if matches != nil{ println(" matches = \(matches!.count)")}else{ println("matches = 0")}
 	}
     
+    func getNextMatch(){
+        if ++currentUserDisplayed < matches.count{
+            useUserAtIndex(&currentUserDisplayed)
+        }
+    }
+    
+    
     func useUserAtIndex(inout index:Int){
-        var displayUser = matches[index]
-        
-        while contains(collabs, displayUser){
-            displayUser = matches[++index]
+        var displayUser: PFUser?
+        if matches.count > index {
+            displayUser = matches[index]
+            if displayUser != nil{
+                while contains(collabs, displayUser!){
+                    if index < matches.count - 1{
+                        displayUser = matches[++index]
+                    }else{
+                        displayUser = nil
+                    }
+                }
+            }
         }
         
         populateLayoutWithUser(displayUser)
     }
     
-    func populateLayoutWithUser(user:PFUser){
-        userNameLabel.text = user["name"] as? String
-        userRegionLabel.text = user["region"] as? String
-        userIndustryLabel.text = user["industry"] as? String
-        setPicture(user)
-        setMedias(user)
+    func populateLayoutWithUser(opUser:PFUser?){
+        if let user = opUser{
+            userNameLabel.text = user["name"] as? String
+            userRegionLabel.text = user["region"] as? String
+            userIndustryLabel.text = user["industry"] as? String
+            setPicture(user)
+            setMedias(user)
+        }else{
+            userNameLabel.text = "No More Users"
+            userRegionLabel.text = "The World"
+            userIndustryLabel.text = "I Do Everything"
+            userImageView.image = UIImage(named: "placeholder")
+            userMedia1Label.text = ""
+            userMedia2Label.text = ""
+            userMedia3Label.text = ""
+        }
     }
     
     func setMedias(user: PFUser){
