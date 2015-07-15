@@ -15,7 +15,6 @@ class CollabsTableViewCell: UITableViewCell {
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var industryLabel: UILabel!
 	@IBOutlet weak var regionLabel: UILabel!
-	@IBOutlet weak var followersLabel: UILabel!
 	
 	var user: PFUser! {
 		didSet {
@@ -39,12 +38,10 @@ class CollabsTableViewCell: UITableViewCell {
 		let name = user["name"] as! String
 		let region = user["region"] as! String
 		let industry = user["industry"] as! String
-		let followers = "1 000 000"
 		
 		nameLabel.text = name
 		regionLabel.text = region
 		industryLabel.text = industry
-		followersLabel.text = followers
 		
 		let image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
 		

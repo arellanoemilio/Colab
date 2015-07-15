@@ -11,14 +11,25 @@ import Parse
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var facebookButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//		var fbLoginButton = FBSDKLoginButton()
-//		fbLoginButton.center = self.view.center
-//		self.view.addSubview(fbLoginButton)
+        logoImage.image = UIImage(named: "Co.Op Logo")
+        
+        
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        facebookButton.layer.cornerRadius = 7
+        facebookButton.layer.masksToBounds = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

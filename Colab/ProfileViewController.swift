@@ -28,32 +28,21 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var profilePicture: UIImageView!
 	
     override func viewDidLoad() {
-        println("strat viewDidLoad")
         super.viewDidLoad()
         
         if user != nil {
-            //println("s")
 			name = user["name"] as! String
-            //println("st")
-			region = user["region"] as! String
-            //println("str")
-			media = user["platforms"] as! [String]
-            //println("stra")
             industry = user["industry"] as! String
-           //println("strat")
+			region = user["region"] as! String
+            media = user["platforms"] as! [String]
             let bioDescription: String = user["bio"] as! String
-            //println("strat v")
-			
+            
 			nameLabel.text = name
 			regionLabel.text = region
             bioDescriptionLabel.text = bioDescription
 			industry1Label.text = industry
-            //println("strat vi")
             populateMedia()
-            //println("strat vie")
         }
-        
-        println("end viewDidLoad")
     }
 	
 	override func viewWillAppear(animated: Bool) {
@@ -70,13 +59,24 @@ class ProfileViewController: UIViewController {
 	
     func populateMedia(){
         var counter = 0
-        while counter < 3 && counter < media.count{
+        while counter < 3 {
+            while counter < media.count{
+                switch counter{
+                case 0: media1Label.text = media[counter++]
+                case 1: media2Label.text = media[counter++]
+                case 2: media3Label.text = media[counter++]
+                default: break
+                }
+            
+            }
             switch counter{
-            case 0: media1Label.text = media[counter++]
-            case 1: media2Label.text = media[counter++]
-            case 2: media3Label.text = media[counter++]
+            case 0: media1Label.text = ""
+            case 1: media2Label.text = ""
+            case 2: media3Label.text = ""
             default: break
             }
+            counter++
+            
         }
     }
 	
@@ -89,15 +89,6 @@ class ProfileViewController: UIViewController {
 		
 	}
 
-//    func populateIndustry(){
-//        var counter = 0
-//        while counter < industry.count{
-//            switch counter{
-//            case 0: industry1Label.text = industry[counter++]
-//            default: break
-//            }
-//        }
-//    }
 	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
