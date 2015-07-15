@@ -166,7 +166,7 @@ class MatchesViewController: UIViewController {
         if matches.count > index {
             displayUser = matches[index]
             if displayUser != nil{
-                while contains(collabs, displayUser!){
+                while displayUser != nil && contains(collabs, displayUser!){
                     if index < matches.count - 1{
                         displayUser = matches[++index]
                     }else{
@@ -177,6 +177,7 @@ class MatchesViewController: UIViewController {
         }
         displayeduser = displayUser
         populateLayoutWithUser(displayeduser)
+        
     }
     
     func populateLayoutWithUser(opUser:PFUser?){
