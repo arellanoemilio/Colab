@@ -106,7 +106,6 @@ class CollabsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let user = sender as? PFUser{
-            
             if segue.identifier == "CollabsToProfile" {
                 var profileViewController = segue.destinationViewController as! ProfileViewController
                 profileViewController.user = user
