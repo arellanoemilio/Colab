@@ -50,10 +50,12 @@ class MatchesViewController: UIViewController {
 	}
 	
 	@IBAction func like(sender: AnyObject) {
-		var connection = PFObject(className: "Connection")
-		connection["user1"] = PFUser.currentUser()
-		connection["user2"] = matches[currentUserDisplayed]
-        connection.saveInBackground()
+        if displayeduser != nil{
+        var connection = PFObject(className: "Connection")
+            connection["user1"] = PFUser.currentUser()
+            connection["user2"] = displayeduser
+            connection.saveInBackground()
+        }
         
         getNextMatch()
 		
