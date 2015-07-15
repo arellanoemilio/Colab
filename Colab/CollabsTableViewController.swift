@@ -31,6 +31,7 @@ class CollabsTableViewController: UITableViewController {
     }
 	
 	func getCollabs() {
+        users.removeAll(keepCapacity: false)
 		var query1 = PFQuery(className: "Connection")
 		query1.whereKey("user1", equalTo: PFUser.currentUser()!)
 		
@@ -88,7 +89,9 @@ class CollabsTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+         performSegueWithIdentifier("CollabsToProfile", sender: users[indexPath.row])
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -97,14 +100,19 @@ class CollabsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if let user = sender as? PFUser{
+            if segue.identifier == "CollabsToProfile" {
+                var profileViewController = segue.destinationViewController as! ProfileViewController
+                profileViewController.user = user
+            }
+            
+        }
     }
-    */
+
 
 }

@@ -224,12 +224,12 @@ class MatchesViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "toProfile" {
-			/*var profileViewController = segue.destinationViewController as! ProfileViewController
+		if segue.identifier == "MatchToProfile" {
+            var profileViewController = segue.destinationViewController as! ProfileViewController
 			profileViewController.user = matches[currentUserDisplayed]
 			
-			profileViewController.user = matches[currentUserDisplayed]
-            */
+			//profileViewController.user = matches[currentUserDisplayed]
+
 		}
     }
 
