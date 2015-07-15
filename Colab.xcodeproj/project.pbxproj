@@ -171,12 +171,12 @@
 				B10B83241B505C780059766B /* ProfileViewController.swift */,
 				B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */,
 				8A3624D01B500F95006C860B /* FilterViewController.swift */,
-				B10B83281B505F220059766B /* CollabsTableViewController.swift */,
-				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				B12FC8751B557AA8000A7D87 /* CollabsNavigationController.swift */,
+				B10B83281B505F220059766B /* CollabsTableViewController.swift */,
+				8A551CC71B5561C000D0F11E /* CollabsTableViewCell.swift */,
+				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				8AC62A0B1B53F27F00FB11F6 /* UserSetupViewController.swift */,
 				8A2936A21B545010001ECD8C /* BioSetupViewController.swift */,
-				8A551CC71B5561C000D0F11E /* CollabsTableViewCell.swift */,
 			);
 			path = Colab;
 			sourceTree = "<group>";

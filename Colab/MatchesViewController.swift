@@ -76,16 +76,51 @@ class MatchesViewController: UIViewController {
     }
     
 	func query(){
-		var query = PFUser.query()!
+        var collabs = [PFUser]()
+        
+		var query1 = PFUser.query()!
 		for region in regions{
-			query.whereKey("region", containsString: region)
+			query1.whereKey("region", containsString: region)
 		}
         for industry in industries{
-            query.whereKey("industry", containsString: industry)
+            query1.whereKey("industry", containsString: industry)
         }
-		if platforms.count > 0{query.whereKey("platforms", containsAllObjectsInArray: platforms)}
+		if platforms.count > 0{query1.whereKey("platforms", containsAllObjectsInArray: platforms)}
 		
-		query.whereKey("objectId" , notEqualTo: PFUser.currentUser()!.objectId!)
+		query1.whereKey("objectId" , notEqualTo: PFUser.currentUser()!.objectId!)
+        
+        var query3 = PFQuery(className: "Connection")
+        query3.whereKey("user1", equalTo: PFUser.currentUser()!)
+        
+        var query2 = PFQuery(className: "Connection")
+        query2.whereKey("user2", equalTo: PFUser.currentUser()!)
+        
+        var subQueries = [query1, query2]
+        
+        var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
+        mainQuery.includeKey("user1")
+        mainQuery.includeKey("user2")
+        
+        mainQuery.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                //self.users = objects as! [PFUser]
+                for obj in objects! {
+                    let connection: PFObject = obj as! PFObject
+                    if connection["user1"] as? PFUser == PFUser.currentUser() {
+                        collabs.append(connection["user2"] as! PFUser)
+                    } else {
+                        collabs.append(connection["user1"] as! PFUser)
+                    }
+                }
+            } else {
+                println("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
+        
+        var query4 = PFUser.query()
+        query4?.whereKey(", notEqualTo: <#AnyObject#>)
+        
 		query.findObjectsInBackgroundWithBlock {
 			(objects: [AnyObject]?, error: NSError?) -> Void in
 			
