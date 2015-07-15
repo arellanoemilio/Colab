@@ -32,25 +32,25 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         if user != nil {
-            println("s")
+            //println("s")
 			name = user["name"] as! String
-            println("st")
+            //println("st")
 			region = user["region"] as! String
-            println("str")
+            //println("str")
 			media = user["platforms"] as! [String]
-            println("stra")
+            //println("stra")
             industry = user["industry"] as! String
-            println("strat")
+           //println("strat")
             let bioDescription: String = user["bio"] as! String
-            println("strat v")
+            //println("strat v")
 			
 			nameLabel.text = name
 			regionLabel.text = region
             bioDescriptionLabel.text = bioDescription
 			industry1Label.text = industry
-            println("strat vi")
+            //println("strat vi")
             populateMedia()
-            println("strat vie")
+            //println("strat vie")
         }
         
         println("end viewDidLoad")

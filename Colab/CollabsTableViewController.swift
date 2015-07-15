@@ -90,7 +90,9 @@ class CollabsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-         performSegueWithIdentifier("CollabsToProfile", sender: users[indexPath.row])
+        if indexPath.row < users.count{
+            performSegueWithIdentifier("CollabsToProfile", sender: users[indexPath.row])
+        }
     }
     /*
     // Override to support conditional editing of the table view.
