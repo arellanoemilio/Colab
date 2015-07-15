@@ -26,6 +26,7 @@ class MatchesViewController: UIViewController {
     var matches: [PFUser]!
     var collabs = [PFUser]()
     var currentUserDisplayed = 0
+    var displayeduser: PFUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,19 +53,24 @@ class MatchesViewController: UIViewController {
 		var connection = PFObject(className: "Connection")
 		connection["user1"] = PFUser.currentUser()
 		connection["user2"] = matches[currentUserDisplayed]
-		
         connection.saveInBackground()
+        
+        getNextMatch()
 		
 		// TODO: FETCH NEW USER
 	}
 	
     @IBAction func showProfile(sender: AnyObject) {
-        if currentUserDisplayed < matches.count{
+         println("a")
+        if displayeduser != nil {
+            println("b")
             performSegueWithIdentifier("MatchToProfile", sender: sender)
+            println("c")
         }
     }
+    
 	@IBAction func dislike(sender: AnyObject) {
-		// TODO: FETCH NEW USER
+        getNextMatch()
 	}
 	
     @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
@@ -79,8 +85,6 @@ class MatchesViewController: UIViewController {
     }
     
 	func query(){
-        
-        
 		var query1 = PFUser.query()!
 		for region in regions{
 			query1.whereKey("region", containsString: region)
@@ -105,7 +109,6 @@ class MatchesViewController: UIViewController {
 						var name = match["name"] as! String
 						println("\(name)")
 					}
-                    self.useUserAtIndex(&self.currentUserDisplayed)
 				}
 			} else {
 				// Log details of the failure
@@ -125,38 +128,41 @@ class MatchesViewController: UIViewController {
         mainQuery.includeKey("user1")
         mainQuery.includeKey("user2")
         
+        
+    
         mainQuery.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil {
-                //self.users = objects as! [PFUser]
                 for obj in objects! {
                     let connection: PFObject = obj as! PFObject
+                    println("c")
                     if connection["user1"] as? PFUser == PFUser.currentUser() {
+                         println("d")
                         self.collabs.append(connection["user2"] as! PFUser)
                     } else {
-                        self.collabs.append(connection["user1"] as! PFUser)
+                         println("e")
+                        if let collab = connection["user1"] as? PFUser{
+                             println("f")
+                            self.collabs.append(collab)
+                        }
+                        println("g")
                     }
                 }
+                self.useUserAtIndex(&self.currentUserDisplayed)
             } else {
                 println("Error: \(error!) \(error!.userInfo!)")
             }
-    
         }
-        
-		
-		
 		//if matches != nil{ println(" matches = \(matches!.count)")}else{ println("matches = 0")}
 	}
     
     func getNextMatch(){
-        if ++currentUserDisplayed < matches.count{
-            useUserAtIndex(&currentUserDisplayed)
-        }
+        ++currentUserDisplayed
+        useUserAtIndex(&currentUserDisplayed)
     }
     
-    
     func useUserAtIndex(inout index:Int){
-        var displayUser: PFUser?
+        var displayUser: PFUser? = nil
         if matches.count > index {
             displayUser = matches[index]
             if displayUser != nil{
@@ -169,18 +175,21 @@ class MatchesViewController: UIViewController {
                 }
             }
         }
-        
-        populateLayoutWithUser(displayUser)
+        displayeduser = displayUser
+        populateLayoutWithUser(displayeduser)
     }
     
     func populateLayoutWithUser(opUser:PFUser?){
+        println("9")
         if let user = opUser{
+            println("10")
             userNameLabel.text = user["name"] as? String
             userRegionLabel.text = user["region"] as? String
             userIndustryLabel.text = user["industry"] as? String
             setPicture(user)
             setMedias(user)
         }else{
+            println("11")
             userNameLabel.text = "No More Users"
             userRegionLabel.text = "The World"
             userIndustryLabel.text = "I Do Everything"
@@ -189,6 +198,7 @@ class MatchesViewController: UIViewController {
             userMedia2Label.text = ""
             userMedia3Label.text = ""
         }
+        println("12")
     }
     
     func setMedias(user: PFUser){
@@ -244,8 +254,11 @@ class MatchesViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "MatchToProfile" {
-            var profileViewController = segue.destinationViewController as! ProfileViewController
-			profileViewController.user = matches[currentUserDisplayed]
+            println("1")
+            if let profileViewController = segue.destinationViewController as? ProfileViewController{
+                println("2")
+                profileViewController.user = displayeduser
+            }
 			
 			//profileViewController.user = matches[currentUserDisplayed]
 

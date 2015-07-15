@@ -9,7 +9,6 @@
 import UIKit
 import Parse
 import Bolts
-import FBSDKCoreKit
 
 //import PFFacebookUtil
 //import ParseFacebookUtilsV4
