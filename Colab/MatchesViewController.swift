@@ -18,7 +18,6 @@ class MatchesViewController: UIViewController {
     @IBOutlet weak var userMedia2Label: UILabel!
     @IBOutlet weak var userMedia3Label: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 	
 	var regions = [String]()
     var platforms = [String]()
@@ -46,9 +45,6 @@ class MatchesViewController: UIViewController {
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		
-		loadingIndicator.stopAnimating()
-		loadingIndicator.hidden = true
 	}
 	
 	@IBAction func like(sender: AnyObject) {
@@ -160,13 +156,7 @@ class MatchesViewController: UIViewController {
     func setPicture(user: PFUser){
         let urlString = user["pictureURL"] as! String
 		
-		loadingIndicator.hidden = false
-		loadingIndicator.startAnimating()
-		
 		let image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
-		
-		loadingIndicator.stopAnimating()
-		loadingIndicator.hidden = true
 		
 		userImageView.image = image
 		
