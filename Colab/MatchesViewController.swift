@@ -62,8 +62,8 @@ class MatchesViewController: UIViewController {
 		// TODO: FETCH NEW USER
 	}
 	
-    @IBAction func showProfile(sender: AnyObject) {
-         println("a")
+    @IBAction func showProile(sender: AnyObject) {
+        println("a")
         if displayeduser != nil {
             println("b")
             performSegueWithIdentifier("MatchToProfile", sender: sender)
