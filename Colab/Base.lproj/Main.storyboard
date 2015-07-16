@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -1437,7 +1437,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Dqw-Th-gPW"/>
+                    <navigationItem key="navigationItem" id="Dqw-Th-gPW">
+                        <barButtonItem key="rightBarButtonItem" title="Contact" id="9lT-f6-wOA">
+                            <connections>
+                                <action selector="sendEmail:" destination="u35-Y8-FlK" id="ZfX-4n-DMF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bioDescriptionLabel" destination="9eX-jE-kgg" id="X0N-to-PHH"/>
                         <outlet property="emailLabel" destination="sRh-bz-u9P" id="GRt-r0-ykC"/>
@@ -1609,6 +1615,18 @@
                                 <exclude reference="RJz-4f-mZh"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="JSi-I8-zta"/>
+                                <exclude reference="opa-EE-GtX"/>
+                                <exclude reference="Pr5-3O-Ahg"/>
+                                <exclude reference="Op5-em-8yO"/>
+                                <exclude reference="amy-hh-bUd"/>
+                                <exclude reference="sHA-rU-aMN"/>
+                                <exclude reference="Q6l-h1-wUc"/>
+                                <exclude reference="ffA-Kn-ZXG"/>
+                                <exclude reference="HAN-2K-SMt"/>
+                                <exclude reference="116-gd-XTQ"/>
+                                <exclude reference="8e9-ik-4fQ"/>
+                                <exclude reference="qbl-Iv-2Rw"/>
                                 <exclude reference="5Et-su-zPU"/>
                                 <exclude reference="5tw-op-Xp1"/>
                                 <exclude reference="8B8-Id-fVX"/>
@@ -1620,18 +1638,6 @@
                                 <exclude reference="lsQ-ae-Hjn"/>
                                 <exclude reference="uzd-wD-RMR"/>
                                 <exclude reference="xHh-ii-R1b"/>
-                                <exclude reference="HAN-2K-SMt"/>
-                                <exclude reference="Q6l-h1-wUc"/>
-                                <exclude reference="amy-hh-bUd"/>
-                                <exclude reference="sHA-rU-aMN"/>
-                                <exclude reference="ffA-Kn-ZXG"/>
-                                <exclude reference="Pr5-3O-Ahg"/>
-                                <exclude reference="Op5-em-8yO"/>
-                                <exclude reference="8e9-ik-4fQ"/>
-                                <exclude reference="qbl-Iv-2Rw"/>
-                                <exclude reference="JSi-I8-zta"/>
-                                <exclude reference="opa-EE-GtX"/>
-                                <exclude reference="116-gd-XTQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1648,6 +1654,20 @@
                                 <include reference="RJz-4f-mZh"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="JSi-I8-zta"/>
+                                <exclude reference="opa-EE-GtX"/>
+                                <include reference="Pr5-3O-Ahg"/>
+                                <include reference="Op5-em-8yO"/>
+                                <include reference="amy-hh-bUd"/>
+                                <include reference="sHA-rU-aMN"/>
+                                <include reference="Q6l-h1-wUc"/>
+                                <include reference="ffA-Kn-ZXG"/>
+                                <exclude reference="2De-9o-xcW"/>
+                                <include reference="HAN-2K-SMt"/>
+                                <exclude reference="wIH-rK-Ryo"/>
+                                <include reference="116-gd-XTQ"/>
+                                <include reference="8e9-ik-4fQ"/>
+                                <include reference="qbl-Iv-2Rw"/>
                                 <exclude reference="3q4-Cp-w4V"/>
                                 <include reference="5Et-su-zPU"/>
                                 <include reference="5tw-op-Xp1"/>
@@ -1662,20 +1682,6 @@
                                 <include reference="lsQ-ae-Hjn"/>
                                 <include reference="uzd-wD-RMR"/>
                                 <include reference="xHh-ii-R1b"/>
-                                <exclude reference="2De-9o-xcW"/>
-                                <include reference="HAN-2K-SMt"/>
-                                <exclude reference="wIH-rK-Ryo"/>
-                                <include reference="Q6l-h1-wUc"/>
-                                <include reference="amy-hh-bUd"/>
-                                <include reference="sHA-rU-aMN"/>
-                                <include reference="ffA-Kn-ZXG"/>
-                                <include reference="Pr5-3O-Ahg"/>
-                                <include reference="Op5-em-8yO"/>
-                                <include reference="8e9-ik-4fQ"/>
-                                <include reference="qbl-Iv-2Rw"/>
-                                <include reference="JSi-I8-zta"/>
-                                <exclude reference="opa-EE-GtX"/>
-                                <include reference="116-gd-XTQ"/>
                             </mask>
                         </variation>
                     </view>
