@@ -81,10 +81,12 @@ class SignInViewController: UIViewController {
                 }
                 
                 if let profileNavCon = navCons[2] as? ProfileNavigationController{
-                    profileNavCon.user = PFUser.currentUser()
-                    if let profileViewCon = profileNavCon.topViewController as? ProfileViewController{
-                        profileViewCon.user = profileNavCon.user
-                    }
+//                    profileNavCon.user = PFUser.currentUser()
+//                    if let profileViewCon = profileNavCon.topViewController as? ProfileViewController{
+//                        profileViewCon.user = PFUser.currentUser()//profileNavCon.user
+//                        profileNavCon.user?.objectId
+//                        println("\(profileNavCon.user?.objectId)")
+//                    }
                 }
             }
         }

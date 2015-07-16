@@ -77,25 +77,16 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	
     func populateMedia(){
         var counter = 0
-        while counter < 3 {
-            while counter < media.count{
-                switch counter{
-                case 0: media1Label.text = media[counter++]
-                case 1: media2Label.text = media[counter++]
-                case 2: media3Label.text = media[counter++]
-                default: break
-                }
-            
-            }
+        while counter < 3 && counter < media.count{
             switch counter{
-            case 0: media1Label.text = ""
-            case 1: media2Label.text = ""
-            case 2: media3Label.text = ""
+            case 0: media1Label.text = media[counter++]
+            case 1: media2Label.text = media[counter++]
+            case 2: media3Label.text = media[counter++]
             default: break
             }
-            counter++
-            
+        
         }
+            
     }
 	
 	func getProfilePic() {
