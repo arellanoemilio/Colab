@@ -53,6 +53,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 		messageButton.layer.cornerRadius = 30
 		
         query()
+
 	}
 	
 	@IBAction func like(sender: AnyObject) {
@@ -78,19 +79,14 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	}
 	
     @IBAction func showProfile(sender: AnyObject) {
-        println("a")
         if displayeduser != nil {
-            println("b")
             performSegueWithIdentifier("MatchToProfile", sender: sender)
-            println("c")
         }
     }
 	
 	func goToProfile() {
 		if displayeduser != nil {
-			println("b")
 			performSegueWithIdentifier("MatchToProfile", sender: self)
-			println("c")
 		}
 	}
 	
@@ -100,44 +96,36 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	
     @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
     if let source = segue.sourceViewController as? FilterViewController{
-        println("populating arrays")
         regions = source.regions
         industries = source.industries
         platforms = source.platforms
     }
-        println("\(regions) \n \(industries) \n \(platforms)")
         query()
     }
     
 	func query(){
-        println("1")
+        currentUserDisplayed = 0
         var queries = [PFQuery]()
-        
-        println("2")
-        //for region in regions{
         var query1 = PFUser.query()!
         if regions.count > 0{query1.whereKey("region", containedIn: regions)}
         if industries.count > 0{query1.whereKey("industry", containedIn: industries)}
         if platforms.count > 0 {query1.whereKey("platforms", containedIn: platforms)}
+        query1.whereKey("objectId", notEqualTo: PFUser.currentUser()!.objectId!)
+        
         query1.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil {
-                println("The find succeeded.")
-                println("Successfully retrieved \(objects!.count) matches.")
                 // Do something with the found objects
                 if let objects = objects as? [PFUser] {
                     self.matches = objects
                     for match in self.matches{
                         var name = match["name"] as! String
-                        println("\(name)")
                     }
                 }
             } else {
-            println("dhhbdhflakjsdhfcagnvfjkdnbadcfhgkjfbvasdfcgjhagnfhngbafhjnasdcbfhvbfkhjsgbhjfgvhjfghvbfhkgcnfhjgncfgfugfuyagcfnangfd")
             println("Error: \(error!) \(error!.userInfo!)")
             }
         }
-        println("10")
         var query3 = PFQuery(className: "Connection")
         query3.whereKey("user1", equalTo: PFUser.currentUser()!)
         
@@ -157,20 +145,14 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             if error == nil {
                 for obj in objects! {
                     let connection: PFObject = obj as! PFObject
-                    println("c")
                     if connection["user1"] as? PFUser == PFUser.currentUser() {
-                         println("d")
                         if let collab = connection["user2"] as? PFUser{
-                            println("d2")
                             self.collabs.append(collab)
                         }
                     } else {
-                         println("e")
                         if let collab = connection["user1"] as? PFUser{
-                             println("f")
                             self.collabs.append(collab)
                         }
-                        println("g")
                     }
                 }
                 self.useUserAtIndex(&self.currentUserDisplayed)
@@ -178,7 +160,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
                 println("Error: \(error!) \(error!.userInfo!)")
             }
         }
-		//if matches != nil{ println(" matches = \(matches!.count)")}else{ println("matches = 0")}
 	}
     
     func getNextMatch(){
@@ -202,20 +183,17 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         }
         displayeduser = displayUser
         populateLayoutWithUser(displayeduser)
-        
+        checkUserForNil()
     }
     
     func populateLayoutWithUser(opUser:PFUser?){
-        println("9")
         if let user = opUser{
-            println("10")
             userNameLabel.text = user["name"] as? String
             userRegionLabel.text = user["region"] as? String
             userIndustryLabel.text = user["industry"] as? String
             setPicture(user)
             setMedias(user)
         }else{
-            println("11")
             userNameLabel.text = "No More Users"
             userRegionLabel.text = "The World"
             userIndustryLabel.text = "I Do Everything"
@@ -224,7 +202,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             userMedia2Label.text = ""
             userMedia3Label.text = ""
         }
-        println("12")
     }
     
     func setMedias(user: PFUser){
@@ -273,7 +250,16 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 	
-	
+    func checkUserForNil(){
+        if displayeduser == nil{
+            clearButton.hidden = true
+            messageButton.hidden = true
+        }else{
+            clearButton.hidden = false
+            messageButton.hidden = false
+        }
+    }
+    
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
         if let filterViewController = segue
     }*/
@@ -285,9 +271,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "MatchToProfile" {
-            println("1")
             if let profileViewController = segue.destinationViewController as? ProfileViewController{
-                println("2")
                 profileViewController.user = displayeduser
             }
 			
