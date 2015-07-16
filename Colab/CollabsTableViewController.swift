@@ -42,7 +42,8 @@ class CollabsTableViewController: UITableViewController {
 		var subQueries = [query1, query2]
 		
 		var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
-		mainQuery.includeKey("user1")
+		mainQuery.whereKey("connected", equalTo: true)
+        mainQuery.includeKey("user1")
 		mainQuery.includeKey("user2")
 		
 		mainQuery.findObjectsInBackgroundWithBlock {
@@ -57,7 +58,6 @@ class CollabsTableViewController: UITableViewController {
 						self.users.append(connection["user1"] as! PFUser)
 					}
 				}
-				println(self.users)
 				self.tableView.reloadData()
 			} else {
 				println("Error: \(error!) \(error!.userInfo!)")
@@ -96,13 +96,47 @@ class CollabsTableViewController: UITableViewController {
         }
     }
 	
-	// Override to support editing the table view.
-//	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//		if editingStyle == .Delete {
-//			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-//		}
-//	}
-//	
+    func queryForConnectionWithUser(user: PFUser) -> [PFObject]{
+        var conncetions = [PFObject]()
+        var query1 = PFQuery(className: "Connection")
+        query1.whereKey("user1", equalTo: user)
+        
+        var query2 = PFQuery(className: "Connection")
+        query2.whereKey("user2", equalTo: user)
+        
+        var subQueries = [query1, query2]
+        
+        var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
+        mainQuery.whereKey("connected", equalTo: true)
+        mainQuery.includeKey("user1")
+        mainQuery.includeKey("user2")
+        
+        mainQuery.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                conncetions = objects as! [PFObject]
+                    
+            } else {
+                println("Error: \(error!) \(error!.userInfo!)")
+            }
+        }
+        return conncetions
+    }
+    
+    //Override to support editing the table view.
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == .Delete {
+            var connectionsToDelete = queryForConnectionWithUser(users[indexPath.row])
+            for connection in connectionsToDelete{
+                connection["connected"] = false
+                connection.saveInBackground()
+            }
+            getCollabs()
+            
+            tableView.reloadData()
+		}
+	}
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

@@ -57,19 +57,21 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	}
 	
 	@IBAction func like(sender: AnyObject) {
-        if displayeduser != nil{
-        var connection = PFObject(className: "Connection")
-            connection["user1"] = PFUser.currentUser()
-            connection["user2"] = displayeduser
-            connection.saveInBackground()
-        }
-		
-		var picker = MFMailComposeViewController()
+        var picker = MFMailComposeViewController()
 		picker.mailComposeDelegate = self
 		picker.setSubject("Let's collaborate")
 		picker.setToRecipients([matches[currentUserDisplayed].email!])
 		
 		presentViewController(picker, animated: true, completion: nil)
+        if displayeduser != nil{
+        var connection = PFObject(className: "Connection")
+            connection["user1"] = PFUser.currentUser()
+            connection["user2"] = displayeduser
+            connection["connected"] = true
+            connection.saveInBackground()
+        }
+		
+		
 		
 		//goToProfile()
 		
@@ -91,6 +93,13 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	}
 	
 	@IBAction func dislike(sender: AnyObject) {
+        if displayeduser != nil{
+            var connection = PFObject(className: "Connection")
+            connection["user1"] = PFUser.currentUser()
+            connection["user2"] = displayeduser
+            connection["connected"] = false
+            connection.saveInBackground()
+        }
         getNextMatch()
 	}
 	
