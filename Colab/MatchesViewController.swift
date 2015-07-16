@@ -17,12 +17,7 @@ class MatchesViewController: UIViewController {
     @IBOutlet weak var userMedia1Label: UILabel!
     @IBOutlet weak var userMedia2Label: UILabel!
     @IBOutlet weak var userMedia3Label: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!{
-        didSet{
-            
-            userImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "showProfile:"))
-        }
-    }
+    @IBOutlet weak var userImageView: UIImageView!
 	
 	var regions = [String]()
     var platforms = [String]()
@@ -67,7 +62,7 @@ class MatchesViewController: UIViewController {
 		// TODO: FETCH NEW USER
 	}
 	
-    func showProfile(sender: AnyObject) {
+    @IBAction func showProfile(sender: AnyObject) {
         println("a")
         if displayeduser != nil {
             println("b")
