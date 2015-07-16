@@ -33,7 +33,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
-            case 0: populateWith(fileName: "Regions")
+            case 0:populateWith(fileName: "Regions")
             case 1: populateWith(fileName: "SocialPlatforms")
             case 2: populateWith(fileName: "Industry")
             default: break
@@ -44,6 +44,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         defaults = NSUserDefaults.standardUserDefaults()
         var fileContent =  NSBundle.mainBundle().pathForResource(file, ofType: "plist")
         listToDisplay = NSArray(contentsOfFile: fileContent!)! as! [String]
+        
         list.reloadData()
     }
     
@@ -108,7 +109,6 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
         if let cell = selectedCell{
-            cell.selected = false
             if let content = cell.textLabel?.text{
                 switch filterSelector.selectedSegmentIndex{
                 case 0:
@@ -124,7 +124,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                 counter++
                             }
                         }
-                    }else{
+                    } else{
                         regions.append(content)
                         cell.selected = true
                         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
