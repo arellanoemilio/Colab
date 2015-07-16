@@ -8,8 +8,9 @@
 
 import UIKit
 import Parse
+import MessageUI
 
-class MatchesViewController: UIViewController {
+class MatchesViewController: UIViewController,  MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userRegionLabel: UILabel!
@@ -18,6 +19,8 @@ class MatchesViewController: UIViewController {
     @IBOutlet weak var userMedia2Label: UILabel!
     @IBOutlet weak var userMedia3Label: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
+	@IBOutlet weak var clearButton: UIButton!
+	@IBOutlet weak var messageButton: UIButton!
 	
 	var regions = [String]()
     var platforms = [String]()
@@ -35,7 +38,7 @@ class MatchesViewController: UIViewController {
 		userImageView.layer.cornerRadius = 20
 		userImageView.layer.masksToBounds = true
 		
-        
+		
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +48,10 @@ class MatchesViewController: UIViewController {
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-        
+		
+		clearButton.layer.cornerRadius = 30
+		messageButton.layer.cornerRadius = 30
+		
         query()
 	}
 	
@@ -56,7 +62,15 @@ class MatchesViewController: UIViewController {
             connection["user2"] = displayeduser
             connection.saveInBackground()
         }
-        
+		
+		var picker = MFMailComposeViewController()
+		picker.mailComposeDelegate = self
+		picker.setSubject("Let's collaborate")
+		picker.setToRecipients([matches[currentUserDisplayed].email!])
+		
+		presentViewController(picker, animated: true, completion: nil)
+		//goToProfile()
+		
         getNextMatch()
 		
 		// TODO: FETCH NEW USER
@@ -70,7 +84,15 @@ class MatchesViewController: UIViewController {
             println("c")
         }
     }
-    
+	
+	func goToProfile() {
+		if displayeduser != nil {
+			println("b")
+			performSegueWithIdentifier("MatchToProfile", sender: self)
+			println("c")
+		}
+	}
+	
 	@IBAction func dislike(sender: AnyObject) {
         getNextMatch()
 	}
@@ -244,6 +266,11 @@ class MatchesViewController: UIViewController {
 		userImageView.image = image
 		
     }
+	
+	// MFMailComposeViewControllerDelegate
+	func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+		dismissViewControllerAnimated(true, completion: nil)
+	}
 	
 	
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
