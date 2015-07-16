@@ -8,8 +8,9 @@
 
 import UIKit
 import Parse
+import MessageUI
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     var user: PFUser!
 	var email: String!
@@ -47,6 +48,9 @@ class ProfileViewController: UIViewController {
 			industry1Label.text = industry
             populateMedia()
         }
+		
+		//subject.delegate = self
+		//body.delegate = self
     }
 	
 	override func viewWillAppear(animated: Bool) {
@@ -60,6 +64,7 @@ class ProfileViewController: UIViewController {
 		super.viewDidAppear(animated)
 		getProfilePic()
 	}
+	
 	
     func populateMedia(){
         var counter = 0
