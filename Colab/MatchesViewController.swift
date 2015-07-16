@@ -69,6 +69,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 		picker.setToRecipients([matches[currentUserDisplayed].email!])
 		
 		presentViewController(picker, animated: true, completion: nil)
+		
 		//goToProfile()
 		
         getNextMatch()
