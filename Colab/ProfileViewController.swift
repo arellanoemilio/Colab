@@ -12,6 +12,7 @@ import Parse
 class ProfileViewController: UIViewController {
 
     var user: PFUser!
+	var email: String!
 	var media: [String]!
 	var industry: String!
 	var region: String!
@@ -26,18 +27,21 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var industry1Label: UILabel!
     @IBOutlet weak var bioDescriptionLabel: UITextView!
 	@IBOutlet weak var profilePicture: UIImageView!
+	@IBOutlet weak var emailLabel: UILabel!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if user != nil {
 			name = user["name"] as! String
+			email = user.email
             industry = user["industry"] as! String
 			region = user["region"] as! String
             media = user["platforms"] as! [String]
             let bioDescription: String = user["bio"] as! String
             
 			nameLabel.text = name
+			emailLabel.text = email
 			regionLabel.text = region
             bioDescriptionLabel.text = bioDescription
 			industry1Label.text = industry

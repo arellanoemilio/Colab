@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -1440,6 +1440,7 @@
                     <navigationItem key="navigationItem" id="Dqw-Th-gPW"/>
                     <connections>
                         <outlet property="bioDescriptionLabel" destination="9eX-jE-kgg" id="X0N-to-PHH"/>
+                        <outlet property="emailLabel" destination="sRh-bz-u9P" id="GRt-r0-ykC"/>
                         <outlet property="industry1Label" destination="r3P-Oj-KwM" id="J7Z-U8-9l5"/>
                         <outlet property="media1Label" destination="w56-uV-kFG" id="sq9-XQ-bCn"/>
                         <outlet property="media2Label" destination="ptB-rx-fHS" id="MMT-kD-5kS"/>

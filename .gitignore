@@ -3,3 +3,4 @@ Colab.xcodeproj/project.xcworkspace/xcuserdata
 .DS_Store
 Pods
 UserInterfaceState.xcuserstate
+Podfile.lock
