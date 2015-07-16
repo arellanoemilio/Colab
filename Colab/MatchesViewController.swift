@@ -140,7 +140,10 @@ class MatchesViewController: UIViewController {
                     println("c")
                     if connection["user1"] as? PFUser == PFUser.currentUser() {
                          println("d")
-                        self.collabs.append(connection["user2"] as! PFUser)
+                        if let collab = connection["user2"] as? PFUser{
+                            println("d2")
+                            self.collabs.append(collab)
+                        }
                     } else {
                          println("e")
                         if let collab = connection["user1"] as? PFUser{
