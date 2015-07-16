@@ -11,20 +11,10 @@ import Parse
 
 class ProfileNavigationController: UINavigationController {
 
-    var user: PFUser? = PFUser.currentUser()
+    var user: PFUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var user: PFUser? = PFUser.currentUser()
-        if user == nil {
-            println("user is nil")
-        }else{
-          println("user is not nil")
-        }
-        var profileViewCon = topViewController as! ProfileViewController
-        profileViewCon.user = user
-        
-
         // Do any additional setup after loading the view.
     }
 
