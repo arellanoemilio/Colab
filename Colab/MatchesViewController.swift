@@ -32,8 +32,6 @@ class MatchesViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        query()
-		
 		userImageView.layer.cornerRadius = 20
 		userImageView.layer.masksToBounds = true
 		
@@ -47,6 +45,8 @@ class MatchesViewController: UIViewController {
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
+        
+        query()
 	}
 	
 	@IBAction func like(sender: AnyObject) {
