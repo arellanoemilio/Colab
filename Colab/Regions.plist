@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>South America</string>
 	<string>North America</string>
+	<string>South America</string>
 	<string>Central America</string>
 	<string>Eastern Europe</string>
 	<string>Western Europe</string>
@@ -12,7 +12,7 @@
 	<string>Middle East</string>
 	<string>Northern Asia</string>
 	<string>Southern Asia</string>
-	<string>South East Asia</string>
+	<string>Southeast Asia</string>
 	<string>Eastern Asia</string>
 	<string>Central Asia</string>
 </array>

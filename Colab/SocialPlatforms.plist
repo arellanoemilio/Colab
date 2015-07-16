@@ -3,11 +3,11 @@
 <plist version="1.0">
 <array>
 	<string>Facebook</string>
-	<string>Tweeter</string>
+	<string>Twitter</string>
 	<string>YouTube</string>
 	<string>Pinterest</string>
 	<string>Tumblr</string>
-	<string>Flikr</string>
+	<string>Flickr</string>
 	<string>Snapchat</string>
 	<string>Other</string>
 </array>

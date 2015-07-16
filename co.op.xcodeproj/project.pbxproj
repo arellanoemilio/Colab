@@ -10,7 +10,6 @@
 		8A1375451B50554A00A39083 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1375441B50554A00A39083 /* SignInViewController.swift */; };
 		8A1BA8101B4F0413004C487D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BA80F1B4F0413004C487D /* AppDelegate.swift */; };
 		8A1BA8151B4F0413004C487D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8131B4F0413004C487D /* Main.storyboard */; };
-		8A1BA8171B4F0413004C487D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8161B4F0413004C487D /* Images.xcassets */; };
 		8A1BA81A1B4F0413004C487D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1BA8181B4F0413004C487D /* LaunchScreen.xib */; };
 		8A1BA8261B4F0413004C487D /* ColabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BA8251B4F0413004C487D /* ColabTests.swift */; };
 		8A2936A31B545010001ECD8C /* BioSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2936A21B545010001ECD8C /* BioSetupViewController.swift */; };
@@ -39,6 +38,7 @@
 		B14C48F31B53AABA0000782E /* Regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F21B53AABA0000782E /* Regions.plist */; };
 		B14C48F51B53ABBF0000782E /* SocialPlatforms.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */; };
 		B14C48F71B53AC9A0000782E /* Industry.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F61B53AC9A0000782E /* Industry.plist */; };
+		B19627541B585527008B4D32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19627531B585527008B4D32 /* Images.xcassets */; };
 		B1FE4A321B53FA8B008931D2 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,6 @@
 		8A1BA80E1B4F0413004C487D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1BA80F1B4F0413004C487D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A1BA8141B4F0413004C487D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8A1BA8161B4F0413004C487D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A1BA8191B4F0413004C487D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8A1BA81F1B4F0413004C487D /* co.opTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = co.opTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1BA8241B4F0413004C487D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		B14C48F21B53AABA0000782E /* Regions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Regions.plist; sourceTree = "<group>"; };
 		B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SocialPlatforms.plist; sourceTree = "<group>"; };
 		B14C48F61B53AC9A0000782E /* Industry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Industry.plist; sourceTree = "<group>"; };
+		B19627531B585527008B4D32 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		B5CE7ABC730FB1EA0D4DE997 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F62854ECF9A25A6B7B2D5FB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				8A1BA8131B4F0413004C487D /* Main.storyboard */,
-				8A1BA8161B4F0413004C487D /* Images.xcassets */,
+				B19627531B585527008B4D32 /* Images.xcassets */,
 				B14C48EE1B5307770000782E /* ConstantList.swift */,
 				B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */,
 				B14C48F61B53AC9A0000782E /* Industry.plist */,
@@ -315,9 +315,9 @@
 				8A1BA8151B4F0413004C487D /* Main.storyboard in Resources */,
 				8A1BA81A1B4F0413004C487D /* LaunchScreen.xib in Resources */,
 				B14C48F51B53ABBF0000782E /* SocialPlatforms.plist in Resources */,
+				B19627541B585527008B4D32 /* Images.xcassets in Resources */,
 				B14C48F31B53AABA0000782E /* Regions.plist in Resources */,
 				B14C48F71B53AC9A0000782E /* Industry.plist in Resources */,
-				8A1BA8171B4F0413004C487D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
