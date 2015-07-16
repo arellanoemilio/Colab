@@ -32,32 +32,64 @@ class BioSetupViewController: UIViewController {
 		bioField.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5);
 	}
 	
+	func makeAlert(title: String, text: String, button: String) {
+		let alertController = UIAlertController(title: title, message:
+			text, preferredStyle: UIAlertControllerStyle.Alert)
+		alertController.addAction(UIAlertAction(title: button, style: UIAlertActionStyle.Default,handler: nil))
+		self.presentViewController(alertController, animated: true, completion: nil)
+	}
+	
 	@IBAction func done(sender: UIButton) {
 		var bio = bioField.text
 		var email = emailField.text
-		if count(email) < 1 {
-			let alertController = UIAlertController(title: "Dude!", message:
-				"Enter your contact email!", preferredStyle: UIAlertControllerStyle.Alert)
-			alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-			return
-		}
-		if count(bio) < 1 {
-			let alertController = UIAlertController(title: "Dude!", message:
-				"Add something to your bio!", preferredStyle: UIAlertControllerStyle.Alert)
-			alertController.addAction(UIAlertAction(title: "Fine", style: UIAlertActionStyle.Default,handler: nil))
-			return
-		}
-		if count(bio) > 255 {
-			let alertController = UIAlertController(title: "Dude!", message:
-				"Your bio is to long!", preferredStyle: UIAlertControllerStyle.Alert)
-			alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-			return
-		}
-		
-		user["bio"] = bio
 		user.email = email
-		user.saveInBackground()
-		performSegueWithIdentifier("toHome", sender: sender)
+		user.saveInBackgroundWithBlock {
+			(success: Bool, error: NSError?) -> Void in
+			if (error != nil && error?.code == 125) || count(email) < 1 {
+				self.makeAlert("Dude!", text: "Enter a valid email!", button: "Ok")
+				return
+			} else {
+				
+				if count(bio) < 1 {
+					self.makeAlert("Dude!", text: "Add something to your bio!", button: "Ok")
+					return
+				}
+				if count(bio) > 255 {
+					self.makeAlert("Dude!", text: "Your bio is too long!", button: "Ok")
+					return
+				}
+				
+				self.user["bio"] = bio
+				//user.email = email
+				self.user["complete"] = true
+				self.user.saveInBackground()
+				self.performSegueWithIdentifier("toHome", sender: sender)
+			}
+		}
+//		if emailValid {
+//			let alertController = UIAlertController(title: "Dude!", message:
+//				"Enter a valid!", preferredStyle: UIAlertControllerStyle.Alert)
+//			alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+//			return
+//		}
+//		if count(bio) < 1 {
+//			let alertController = UIAlertController(title: "Dude!", message:
+//				"Add something to your bio!", preferredStyle: UIAlertControllerStyle.Alert)
+//			alertController.addAction(UIAlertAction(title: "Fine", style: UIAlertActionStyle.Default,handler: nil))
+//			return
+//		}
+//		if count(bio) > 255 {
+//			let alertController = UIAlertController(title: "Dude!", message:
+//				"Your bio is to long!", preferredStyle: UIAlertControllerStyle.Alert)
+//			alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+//			return
+//		}
+//		
+//		user["bio"] = bio
+//		//user.email = email
+//		user["complete"] = true
+//		user.saveInBackground()
+//		performSegueWithIdentifier("toHome", sender: sender)
 		
 	}
 	

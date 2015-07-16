@@ -42,6 +42,8 @@ class SignInViewController: UIViewController {
 			if let user = user {
 				if user.isNew {
 					println("User signed up and logged in through Facebook!")
+					user["complete"] = false
+					user.saveInBackground()
 					self.getDataFromFB()
 					self.performSegueWithIdentifier("userSetup", sender: sender)
 				} else {
