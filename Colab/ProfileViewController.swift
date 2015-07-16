@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import MessageUI
 
-class ProfileViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
+class ProfileViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     var user: PFUser!
 	var email: String!
@@ -29,6 +29,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
     @IBOutlet weak var bioDescriptionLabel: UITextView!
 	@IBOutlet weak var profilePicture: UIImageView!
 	@IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var contactButton: UIBarButtonItem!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,14 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             bioDescriptionLabel.text = bioDescription
 			industry1Label.text = industry
             populateMedia()
+			
+			if (user == PFUser.currentUser()) {
+				contactButton.enabled = false
+				contactButton.tintColor = UIColor.clearColor()
+			} else {
+				contactButton.enabled = true
+				contactButton.tintColor = self.view.tintColor
+			}
         }
 		
 		//subject.delegate = self
@@ -97,14 +106,23 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		profilePicture.image = image
 		
 	}
-
 	
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
+	@IBAction func sendEmail(sender: AnyObject) {
+		var picker = MFMailComposeViewController()
+		picker.mailComposeDelegate = self
+		picker.setSubject("Let's collaborate")
+		picker.setToRecipients([email])
+		
+		presentViewController(picker, animated: true, completion: nil)
+	}
+	
+	// MFMailComposeViewControllerDelegate
+	func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+		dismissViewControllerAnimated(true, completion: nil)
+	}
+	
+	@IBAction func unwindToProfile(segue: UIStoryboardSegue) {}
+	
     /*
     // MARK: - Navigation
 

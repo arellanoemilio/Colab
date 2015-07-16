@@ -94,6 +94,14 @@ class CollabsTableViewController: UITableViewController {
             performSegueWithIdentifier("CollabsToProfile", sender: users[indexPath.row])
         }
     }
+	
+	// Override to support editing the table view.
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == .Delete {
+			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+		}
+	}
+	
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
