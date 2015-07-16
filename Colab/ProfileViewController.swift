@@ -29,6 +29,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
     @IBOutlet weak var bioDescriptionLabel: UITextView!
 	@IBOutlet weak var profilePicture: UIImageView!
 	@IBOutlet weak var emailLabel: UILabel!
+	@IBOutlet weak var contactButton: UIBarButtonItem!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,14 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             bioDescriptionLabel.text = bioDescription
 			industry1Label.text = industry
             populateMedia()
+			
+			if (user == PFUser.currentUser()) {
+				contactButton.enabled = false
+				contactButton.tintColor = UIColor.clearColor()
+			} else {
+				contactButton.enabled = true
+				contactButton.tintColor = self.view.tintColor
+			}
         }
 		
 		//subject.delegate = self
