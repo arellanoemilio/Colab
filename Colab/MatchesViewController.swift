@@ -91,65 +91,30 @@ class MatchesViewController: UIViewController {
         var queries = [PFQuery]()
         
         println("2")
-		for region in regions{
-            var query1 = PFUser.query()!
-            query1.whereKey("region", containsString: region)
-            queries.append(query1)
-		}
-        
-        println("3")
-        let count = queries.count
-        
-        println("4   count = \(count)")
-        if industries.count > 0{
-            for copies in 0..<industries.count-1{
-                for query in 0..<count{
-                    queries.append(queries[query])
-                }
-            }
-        }
-        
-        println("5")
-        for industry in 0..<industries.count{
-            if count > 1{for c in 1...count{queries[(industry*count)+c].whereKey("industry", equalTo: industries[industry])}}
-        }
-        
-        println("6")
-        for query in queries{
-            if platforms.count > 0{query.whereKey("platforms", containsAllObjectsInArray: platforms)}
-        }
-        
-        println("7")
-        for query in queries{query.whereKey("objectId" , notEqualTo: PFUser.currentUser()!.objectId!)}
-        
-        println("8")
-        if queries.count <  1{
-            var query = PFUser.query()!
-            query.whereKey("objectId", notEqualTo: PFUser.currentUser()!.objectId!)
-            queries.append(query)
-        }
-        for query in queries{
-            query.findObjectsInBackgroundWithBlock {
-                (objects: [AnyObject]?, error: NSError?) -> Void in
-                if error == nil {
-                    // The find succeeded.
-                    println("Successfully retrieved \(objects!.count) matches.")
-                    // Do something with the found objects
-                    if let objects = objects as? [PFUser] {
-                        self.matches = objects
-                        for match in self.matches{
-                            var name = match["name"] as! String
-                            println("\(name)")
-                        }
+        //for region in regions{
+        var query1 = PFUser.query()!
+        if regions.count > 0{query1.whereKey("region", containedIn: regions)}
+        if industries.count > 0{query1.whereKey("industry", containedIn: industries)}
+        if platforms.count > 0 {query1.whereKey("platforms", containedIn: platforms)}
+        query1.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                println("The find succeeded.")
+                println("Successfully retrieved \(objects!.count) matches.")
+                // Do something with the found objects
+                if let objects = objects as? [PFUser] {
+                    self.matches = objects
+                    for match in self.matches{
+                        var name = match["name"] as! String
+                        println("\(name)")
                     }
-                } else {
-                println("dhhbdhflakjsdhfcagnvfjkdnbadcfhgkjfbvasdfcgjhagnfhngbafhjnasdcbfhvbfkhjsgbhjfgvhjfghvbfhkgcnfhjgncfgfugfuyagcfnangfd")
-				println("Error: \(error!) \(error!.userInfo!)")
                 }
+            } else {
+            println("dhhbdhflakjsdhfcagnvfjkdnbadcfhgkjfbvasdfcgjhagnfhngbafhjnasdcbfhvbfkhjsgbhjfgvhjfghvbfhkgcnfhjgncfgfugfuyagcfnangfd")
+            println("Error: \(error!) \(error!.userInfo!)")
             }
         }
-        
-        println("9")
+        println("10")
         var query3 = PFQuery(className: "Connection")
         query3.whereKey("user1", equalTo: PFUser.currentUser()!)
         
