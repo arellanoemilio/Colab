@@ -30,7 +30,7 @@
 		8A73A7B41B5402E700D7ECD0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624D71B5017AA006C860B /* AudioToolbox.framework */; };
 		8A73A7B61B54030C00D7ECD0 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A73A7B51B54030C00D7ECD0 /* ParseFacebookUtilsV4.framework */; };
 		8AC62A0C1B53F27F00FB11F6 /* UserSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC62A0B1B53F27F00FB11F6 /* UserSetupViewController.swift */; };
-		AE5B0FAADEEA43F438B19389 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D54D1D3EEFC7EEF3AAE2C28 /* libPods.a */; };
+		9C953D0B56C77FD8B403C55E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F62854ECF9A25A6B7B2D5FB1 /* libPods.a */; };
 		B10B83251B505C780059766B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83241B505C780059766B /* ProfileViewController.swift */; };
 		B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83281B505F220059766B /* CollabsTableViewController.swift */; };
 		B12FC8741B556837000A7D87 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12FC8731B556837000A7D87 /* ProfileNavigationController.swift */; };
@@ -53,16 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2838BEBB70DDEA5B8CE6CDFB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		5D54D1D3EEFC7EEF3AAE2C28 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B0F8802378A05A70F7B0A1B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8A1375441B50554A00A39083 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		8A1BA80A1B4F0413004C487D /* Colab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1BA80A1B4F0413004C487D /* co.op.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = co.op.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1BA80E1B4F0413004C487D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1BA80F1B4F0413004C487D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A1BA8141B4F0413004C487D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A1BA8161B4F0413004C487D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A1BA8191B4F0413004C487D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8A1BA81F1B4F0413004C487D /* ColabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1BA81F1B4F0413004C487D /* co.opTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = co.opTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1BA8241B4F0413004C487D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1BA8251B4F0413004C487D /* ColabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColabTests.swift; sourceTree = "<group>"; };
 		8A2936A21B545010001ECD8C /* BioSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioSetupViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +82,6 @@
 		8A73A7B51B54030C00D7ECD0 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		8AC62A0B1B53F27F00FB11F6 /* UserSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetupViewController.swift; sourceTree = "<group>"; };
 		8AD4DF501B52DFB400220CFF /* Colab-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colab-Bridging-Header.h"; sourceTree = "<group>"; };
-		952F7A57DDFE4A3C3086442C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B10B83241B505C780059766B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B10B83281B505F220059766B /* CollabsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabsTableViewController.swift; sourceTree = "<group>"; };
 		B12FC8731B556837000A7D87 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
@@ -93,6 +91,8 @@
 		B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SocialPlatforms.plist; sourceTree = "<group>"; };
 		B14C48F61B53AC9A0000782E /* Industry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Industry.plist; sourceTree = "<group>"; };
 		B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		B5CE7ABC730FB1EA0D4DE997 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F62854ECF9A25A6B7B2D5FB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 				8A3624DC1B5017C1006C860B /* CoreGraphics.framework in Frameworks */,
 				8A73A7B61B54030C00D7ECD0 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				8A3624DA1B5017B4006C860B /* CFNetwork.framework in Frameworks */,
-				AE5B0FAADEEA43F438B19389 /* libPods.a in Frameworks */,
+				9C953D0B56C77FD8B403C55E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C8D6F705D4CDCDD11D04072 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5CE7ABC730FB1EA0D4DE997 /* Pods.debug.xcconfig */,
+				4B0F8802378A05A70F7B0A1B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8A1BA8011B4F0413004C487D = {
 			isa = PBXGroup;
 			children = (
@@ -134,15 +143,15 @@
 				8A1BA80C1B4F0413004C487D /* Colab */,
 				8A1BA8221B4F0413004C487D /* ColabTests */,
 				8A1BA80B1B4F0413004C487D /* Products */,
-				C84CB3FE501FE95121B964E5 /* Pods */,
+				6C8D6F705D4CDCDD11D04072 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		8A1BA80B1B4F0413004C487D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A1BA80A1B4F0413004C487D /* Colab.app */,
-				8A1BA81F1B4F0413004C487D /* ColabTests.xctest */,
+				8A1BA80A1B4F0413004C487D /* co.op.app */,
+				8A1BA81F1B4F0413004C487D /* co.opTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,45 +224,36 @@
 				8A3624DB1B5017C1006C860B /* CoreGraphics.framework */,
 				8A3624D91B5017B4006C860B /* CFNetwork.framework */,
 				8A3624D71B5017AA006C860B /* AudioToolbox.framework */,
-				5D54D1D3EEFC7EEF3AAE2C28 /* libPods.a */,
+				F62854ECF9A25A6B7B2D5FB1 /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C84CB3FE501FE95121B964E5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2838BEBB70DDEA5B8CE6CDFB /* Pods.debug.xcconfig */,
-				952F7A57DDFE4A3C3086442C /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8A1BA8091B4F0413004C487D /* Colab */ = {
+		8A1BA8091B4F0413004C487D /* co.op */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A1BA8291B4F0413004C487D /* Build configuration list for PBXNativeTarget "Colab" */;
+			buildConfigurationList = 8A1BA8291B4F0413004C487D /* Build configuration list for PBXNativeTarget "co.op" */;
 			buildPhases = (
-				10116B7FF51BCB448493D103 /* Check Pods Manifest.lock */,
+				4F8F97CBDDADE201B09AFB6B /* Check Pods Manifest.lock */,
 				8A1BA8061B4F0413004C487D /* Sources */,
 				8A1BA8071B4F0413004C487D /* Frameworks */,
 				8A1BA8081B4F0413004C487D /* Resources */,
-				22F6DF66DE1B49B0B02BEBFA /* Copy Pods Resources */,
+				BCB24FCC00657C4FD8CA8FD6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Colab;
+			name = co.op;
 			productName = Colab;
-			productReference = 8A1BA80A1B4F0413004C487D /* Colab.app */;
+			productReference = 8A1BA80A1B4F0413004C487D /* co.op.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8A1BA81E1B4F0413004C487D /* ColabTests */ = {
+		8A1BA81E1B4F0413004C487D /* co.opTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A1BA82C1B4F0413004C487D /* Build configuration list for PBXNativeTarget "ColabTests" */;
+			buildConfigurationList = 8A1BA82C1B4F0413004C487D /* Build configuration list for PBXNativeTarget "co.opTests" */;
 			buildPhases = (
 				8A1BA81B1B4F0413004C487D /* Sources */,
 				8A1BA81C1B4F0413004C487D /* Frameworks */,
@@ -264,9 +264,9 @@
 			dependencies = (
 				8A1BA8211B4F0413004C487D /* PBXTargetDependency */,
 			);
-			name = ColabTests;
+			name = co.opTests;
 			productName = ColabTests;
-			productReference = 8A1BA81F1B4F0413004C487D /* ColabTests.xctest */;
+			productReference = 8A1BA81F1B4F0413004C487D /* co.opTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -288,7 +288,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8A1BA8051B4F0413004C487D /* Build configuration list for PBXProject "Colab" */;
+			buildConfigurationList = 8A1BA8051B4F0413004C487D /* Build configuration list for PBXProject "co.op" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -301,8 +301,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8A1BA8091B4F0413004C487D /* Colab */,
-				8A1BA81E1B4F0413004C487D /* ColabTests */,
+				8A1BA8091B4F0413004C487D /* co.op */,
+				8A1BA81E1B4F0413004C487D /* co.opTests */,
 			);
 		};
 /* End PBXProject section */
@@ -331,7 +331,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10116B7FF51BCB448493D103 /* Check Pods Manifest.lock */ = {
+		4F8F97CBDDADE201B09AFB6B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,7 +346,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		22F6DF66DE1B49B0B02BEBFA /* Copy Pods Resources */ = {
+		BCB24FCC00657C4FD8CA8FD6 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -396,7 +396,7 @@
 /* Begin PBXTargetDependency section */
 		8A1BA8211B4F0413004C487D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8A1BA8091B4F0413004C487D /* Colab */;
+			target = 8A1BA8091B4F0413004C487D /* co.op */;
 			targetProxy = 8A1BA8201B4F0413004C487D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -506,7 +506,7 @@
 		};
 		8A1BA82A1B4F0413004C487D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2838BEBB70DDEA5B8CE6CDFB /* Pods.debug.xcconfig */;
+			baseConfigurationReference = B5CE7ABC730FB1EA0D4DE997 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -519,7 +519,7 @@
 				INFOPLIST_FILE = Colab/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = co.op;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Colab/Colab-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -529,7 +529,7 @@
 		};
 		8A1BA82B1B4F0413004C487D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 952F7A57DDFE4A3C3086442C /* Pods.release.xcconfig */;
+			baseConfigurationReference = 4B0F8802378A05A70F7B0A1B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -542,7 +542,7 @@
 				INFOPLIST_FILE = Colab/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = co.op;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Colab/Colab-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -563,8 +563,8 @@
 				);
 				INFOPLIST_FILE = ColabTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Colab.app/Colab";
+				PRODUCT_NAME = co.opTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/co.op.app/co.op";
 			};
 			name = Debug;
 		};
@@ -578,15 +578,15 @@
 				);
 				INFOPLIST_FILE = ColabTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Colab.app/Colab";
+				PRODUCT_NAME = co.opTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/co.op.app/co.op";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8A1BA8051B4F0413004C487D /* Build configuration list for PBXProject "Colab" */ = {
+		8A1BA8051B4F0413004C487D /* Build configuration list for PBXProject "co.op" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A1BA8271B4F0413004C487D /* Debug */,
@@ -595,7 +595,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A1BA8291B4F0413004C487D /* Build configuration list for PBXNativeTarget "Colab" */ = {
+		8A1BA8291B4F0413004C487D /* Build configuration list for PBXNativeTarget "co.op" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A1BA82A1B4F0413004C487D /* Debug */,
@@ -604,7 +604,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A1BA82C1B4F0413004C487D /* Build configuration list for PBXNativeTarget "ColabTests" */ = {
+		8A1BA82C1B4F0413004C487D /* Build configuration list for PBXNativeTarget "co.opTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A1BA82D1B4F0413004C487D /* Debug */,
