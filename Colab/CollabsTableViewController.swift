@@ -13,6 +13,7 @@ class CollabsTableViewController: UITableViewController {
 
     var user: PFUser?
 	var users = [PFUser]()
+    var conncetions = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ class CollabsTableViewController: UITableViewController {
 				//self.users = objects as! [PFUser]
 				for obj in objects! {
 					let connection: PFObject = obj as! PFObject
+                    self.conncetions.append(connection)
 					if connection["user1"] as? PFUser == PFUser.currentUser() {
 						self.users.append(connection["user2"] as! PFUser)
 					} else {
@@ -79,8 +81,7 @@ class CollabsTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return users.count
     }
-
-	
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("collabsListCell", forIndexPath: indexPath) as! CollabsTableViewCell
 
@@ -96,44 +97,53 @@ class CollabsTableViewController: UITableViewController {
         }
     }
 	
-    func queryForConnectionWithUser(user: PFUser) -> [PFObject]{
-        var conncetions = [PFObject]()
-        var query1 = PFQuery(className: "Connection")
-        query1.whereKey("user1", equalTo: user)
-        
-        var query2 = PFQuery(className: "Connection")
-        query2.whereKey("user2", equalTo: user)
-        
-        var subQueries = [query1, query2]
-        
-        var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
-        mainQuery.whereKey("connected", equalTo: true)
-        mainQuery.includeKey("user1")
-        mainQuery.includeKey("user2")
-        
-        mainQuery.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil {
-                conncetions = objects as! [PFObject]
-                    
-            } else {
-                println("Error: \(error!) \(error!.userInfo!)")
-            }
-        }
-        return conncetions
-    }
+//    func queryForConnectionWithUser(user: PFUser) -> [PFObject]{
+//        var conncetions = [PFObject]()
+//        var query1 = PFQuery(className: "Connection")
+//        query1.whereKey("user1", equalTo: user)
+//        
+//        var query2 = PFQuery(className: "Connection")
+//        query2.whereKey("user2", equalTo: user)
+//        
+//        var subQueries = [query1, query2]
+//        
+//        var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
+//        mainQuery.whereKey("connected", equalTo: true)
+//        mainQuery.includeKey("user1")
+//        mainQuery.includeKey("user2")
+//        
+//        mainQuery.findObjectsInBackgroundWithBlock {
+//            (objects: [AnyObject]?, error: NSError?) -> Void in
+//            if error == nil {
+//                conncetions = objects as! [PFObject]
+//                    
+//            } else {
+//                println("Error: \(error!) \(error!.userInfo!)")
+//            }
+//        }
+//        return conncetions
+//    }
     
     //Override to support editing the table view.
 	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 		if editingStyle == .Delete {
-            var connectionsToDelete = queryForConnectionWithUser(users[indexPath.row])
-            for connection in connectionsToDelete{
-                connection["connected"] = false
-                connection.saveInBackground()
-            }
-            getCollabs()
+            var conncetion = conncetions[indexPath.row]
+            conncetions.removeAtIndex(indexPath.row)
+            users.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //tableView.reloadData()
+            conncetion["connected"] = false
+            conncetion.saveInBackground()
+//            conncetion.saveInBackgroundWithBlock{
+//                (success: Bool, error: NSError?) -> Void in
+//                if (success) {
+//                    self.getCollabs()
+//                    self.tableView.reloadData()
+//                } else {
+//                    println("Error: \(error!) \(error!.userInfo!)")
+//                }
+//            }
             
-            tableView.reloadData()
 		}
 	}
 
