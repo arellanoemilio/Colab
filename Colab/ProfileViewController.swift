@@ -33,7 +33,13 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+		var  boarderColor = UIColor.grayColor()
+		bioDescriptionLabel.layer.borderColor = boarderColor.CGColor
+		bioDescriptionLabel.layer.borderWidth = 1.0
+		bioDescriptionLabel.layer.cornerRadius = 5
+		bioDescriptionLabel.textContainerInset = UIEdgeInsetsMake(5, 15, 5, 15);
+		
+		
         if user != nil {
 			name = user["name"] as! String
 			email = user.email

@@ -1259,12 +1259,12 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9eX-jE-kgg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eX-jE-kgg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -1293,10 +1293,10 @@
                                 <variation key="widthClass=compact" constant="3"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="9eX-jE-kgg" secondAttribute="trailing" constant="146" id="SVf-17-YGi">
-                                <variation key="widthClass=compact" constant="50"/>
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="9eX-jE-kgg" firstAttribute="leading" secondItem="Afc-YX-Iib" secondAttribute="leadingMargin" constant="147" id="TZg-ZZ-xcN">
-                                <variation key="widthClass=compact" constant="50"/>
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="w56-uV-kFG" firstAttribute="top" secondItem="2EO-RG-qNB" secondAttribute="bottom" constant="8" id="VKo-Dv-zcx"/>
                             <constraint firstItem="n3c-Id-7di" firstAttribute="width" secondItem="r3P-Oj-KwM" secondAttribute="width" id="Yhg-qN-nSp"/>

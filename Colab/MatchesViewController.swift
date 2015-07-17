@@ -38,8 +38,9 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-		userImageView.layer.cornerRadius = 20
+		userImageView.layer.cornerRadius = 10
 		userImageView.layer.masksToBounds = true
+		
 		
 		
     }
@@ -177,20 +178,8 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	}
 	
     func getNextMatch(){
-//		if i++ < matches.count {
-//			while true {
-//				let random: Int = Int(arc4random_uniform(UInt32(matches.count-1)))
-//				currentUserDisplayed = random
-//				if matches[random] != nil {
-//					currentUserDisplayed = random
-//					populateLayoutWithUser(matches[random])
-//					return
-//				}
-//			}
-//		}
 		if matches.count > 0 {
 			let random = arc4random_uniform(UInt32(matches.count-1))
-			arc
 			currentUserDisplayed = Int(random)
 			populateLayoutWithUser(matches[currentUserDisplayed])
 		} else {
