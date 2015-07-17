@@ -39,6 +39,7 @@ class SignInViewController: UIViewController {
 		let permissions = ["public_profile"]
 		PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
 			(user: PFUser?, error: NSError?) -> Void in
+			println("in here")
 			if let user = user {
 				if user.isNew {
 					println("User signed up and logged in through Facebook!")
@@ -51,13 +52,20 @@ class SignInViewController: UIViewController {
 					//self.getDataFromFB()
 					//self.performSegueWithIdentifier("userSetup", sender: sender)
 					if user["bio"] != nil {
+						println("bio != nil")
 						self.performSegueWithIdentifier("User Profile", sender: sender)
 					} else {
+						println("bio == nil")
 						self.performSegueWithIdentifier("userSetup", sender: sender)
 					}
 				}
 			} else {
 				println("Uh oh. The user cancelled the Facebook login.")
+			}
+			if error != nil {
+				println("Error: \(error)")
+			} else {
+				println("error == nil")
 			}
 		}
 	}
