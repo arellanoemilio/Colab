@@ -27,6 +27,9 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     var industries = [String]()
     
     var matches: [PFUser]!
+	
+	var i = 0
+	
     var collabs = [PFUser]()
     var currentUserDisplayed = 0
     var displayeduser: PFUser?
@@ -94,13 +97,13 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	}
 	
 	@IBAction func dislike(sender: AnyObject) {
-        if displayeduser != nil{
-            var connection = PFObject(className: "Connection")
-            connection["user1"] = PFUser.currentUser()
-            connection["user2"] = displayeduser
-            connection["connected"] = false
-            connection.saveInBackground()
-        }
+//        if displayeduser != nil{
+//            var connection = PFObject(className: "Connection")
+//            connection["user1"] = PFUser.currentUser()
+//            connection["user2"] = displayeduser
+//            connection["connected"] = false
+//            connection.saveInBackground()
+//        }
         getNextMatch()
 	}
 	
@@ -128,6 +131,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
                 // Do something with the found objects
                 if let objects = objects as? [PFUser] {
                     self.matches = objects
+					self.i = objects.count
                     for match in self.matches{
                         var name = match["name"] as! String
                     }
@@ -171,10 +175,32 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             }
         }
 	}
-    
+	
     func getNextMatch(){
-        ++currentUserDisplayed
-        useUserAtIndex(&currentUserDisplayed)
+//		if i++ < matches.count {
+//			while true {
+//				let random: Int = Int(arc4random_uniform(UInt32(matches.count-1)))
+//				currentUserDisplayed = random
+//				if matches[random] != nil {
+//					currentUserDisplayed = random
+//					populateLayoutWithUser(matches[random])
+//					return
+//				}
+//			}
+//		}
+		if matches.count > 0 {
+			let random = arc4random_uniform(UInt32(matches.count-1))
+			arc
+			currentUserDisplayed = Int(random)
+			populateLayoutWithUser(matches[currentUserDisplayed])
+		} else {
+			displayeduser = nil
+			populateLayoutWithUser(displayeduser)
+			checkUserForNil()
+		}
+		
+        //++currentUserDisplayed
+        //useUserAtIndex(&currentUserDisplayed)
     }
     
     func useUserAtIndex(inout index:Int){
@@ -212,6 +238,9 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             userMedia2Label.text = ""
             userMedia3Label.text = ""
         }
+		if matches.count > 0 {
+			matches.removeAtIndex(currentUserDisplayed)
+		}
     }
     
     func setMedias(user: PFUser){
