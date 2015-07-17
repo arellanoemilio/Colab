@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -1771,11 +1771,11 @@
             </objects>
             <point key="canvasLocation" x="1908" y="1055"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="GOF-UY-kwN">
             <objects>
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="KiJ-Fs-QJx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="x1h-JH-22w"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="face" id="x1h-JH-22w"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KC9-P0-wAC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1808,11 +1808,11 @@
             </objects>
             <point key="canvasLocation" x="1125" y="2524"/>
         </scene>
-        <!--Profile Navigation Controller-->
+        <!--My Profile-->
         <scene sceneID="jsn-TN-egX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h7W-gO-5eS" customClass="ProfileNavigationController" customModule="co_op" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="w2w-76-Clu"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="person" id="w2w-76-Clu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="413-aV-Xfm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1847,11 +1847,11 @@
             </objects>
             <point key="canvasLocation" x="352.5" y="1055"/>
         </scene>
-        <!--Collabs Navigation Controller-->
+        <!--Collabs-->
         <scene sceneID="SFA-RL-wuK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wda-ie-ifp" customClass="CollabsNavigationController" customModule="co_op" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="ptY-GX-7Ab"/>
+                    <tabBarItem key="tabBarItem" title="Collabs" image="star" id="ptY-GX-7Ab"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z0T-ID-2YY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1870,10 +1870,13 @@
     <resources>
         <image name="clear" width="48" height="48"/>
         <image name="email" width="48" height="48"/>
+        <image name="face" width="24" height="24"/>
+        <image name="person" width="24" height="24"/>
         <image name="placeholder" width="135" height="135"/>
+        <image name="star" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Hsw-hA-usv"/>
-        <segue reference="dkM-oS-gAz"/>
+        <segue reference="aqj-1N-Fjb"/>
     </inferredMetricsTieBreakers>
 </document>
