@@ -280,7 +280,6 @@
 				TargetAttributes = {
 					8A1BA8091B4F0413004C487D = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = RUL8JWEEC7;
 					};
 					8A1BA81E1B4F0413004C487D = {
 						CreatedOnToolsVersion = 6.3.2;

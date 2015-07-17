@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mYD-nN-5m0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -161,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="2674.5" y="1055"/>
         </scene>
-        <!--Collabs Table View Controller-->
+        <!--Contacts-->
         <scene sceneID="P9I-9U-Bgq">
             <objects>
                 <tableViewController id="dFd-mP-7tY" customClass="CollabsTableViewController" customModule="co_op" customModuleProvider="target" sceneMemberID="viewController">
@@ -494,7 +494,7 @@
                             <outlet property="delegate" destination="dFd-mP-7tY" id="sAm-rW-FBY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0M5-Rb-Yo1"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="0M5-Rb-Yo1"/>
                     <connections>
                         <segue destination="u35-Y8-FlK" kind="show" identifier="CollabsToProfile" id="dkM-oS-gAz"/>
                     </connections>
@@ -1167,7 +1167,7 @@
             </objects>
             <point key="canvasLocation" x="4234.5" y="2524"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="0kh-Yj-UyT">
             <objects>
                 <viewController id="u35-Y8-FlK" customClass="ProfileViewController" customModule="co_op" customModuleProvider="target" sceneMemberID="viewController">
@@ -1426,7 +1426,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Dqw-Th-gPW">
+                    <navigationItem key="navigationItem" title="Profile" id="Dqw-Th-gPW">
                         <barButtonItem key="rightBarButtonItem" title="Contact" id="9lT-f6-wOA">
                             <connections>
                                 <action selector="sendEmail:" destination="u35-Y8-FlK" id="ZfX-4n-DMF"/>
@@ -1450,7 +1450,7 @@
             </objects>
             <point key="canvasLocation" x="1908" y="382"/>
         </scene>
-        <!--Matches View Controller-->
+        <!--Matches-->
         <scene sceneID="gJk-4Y-suk">
             <objects>
                 <viewController id="0yo-W4-fOm" customClass="MatchesViewController" customModule="co_op" customModuleProvider="target" sceneMemberID="viewController">
@@ -1747,7 +1747,7 @@
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="RZw-wx-Q1X">
+                    <navigationItem key="navigationItem" title="Matches" id="RZw-wx-Q1X">
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="paH-sS-25W">
                             <connections>
                                 <segue destination="KJ2-Wn-wvY" kind="presentation" id="81Q-y7-8nv"/>
@@ -1874,6 +1874,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Hsw-hA-usv"/>
-        <segue reference="aqj-1N-Fjb"/>
+        <segue reference="dkM-oS-gAz"/>
     </inferredMetricsTieBreakers>
 </document>
