@@ -190,7 +190,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 //		}
 		if matches.count > 0 {
 			let random = arc4random_uniform(UInt32(matches.count-1))
-			arc
 			currentUserDisplayed = Int(random)
 			populateLayoutWithUser(matches[currentUserDisplayed])
 		} else {
