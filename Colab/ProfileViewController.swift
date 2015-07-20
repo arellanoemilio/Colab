@@ -34,12 +34,12 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		var  boarderColor = UIColor.grayColor()
+		
+        var  boarderColor = UIColor.grayColor()
 		bioDescriptionLabel.layer.borderColor = boarderColor.CGColor
 		bioDescriptionLabel.layer.borderWidth = 1.0
 		bioDescriptionLabel.layer.cornerRadius = 5
 		bioDescriptionLabel.textContainerInset = UIEdgeInsetsMake(5, 15, 5, 15);
-		
 		
         if user != nil {
 			name = user["name"] as! String
@@ -56,17 +56,14 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 			industry1Label.text = industry
             populateMedia()
 			
-			if (user == PFUser.currentUser()) {
-				contactButton.enabled = false
-				contactButton.tintColor = UIColor.clearColor()
-			} else {
-				contactButton.enabled = true
-				contactButton.tintColor = self.view.tintColor
-			}
+            if (user == PFUser.currentUser()) {
+                contactButton.enabled = false
+                contactButton.tintColor = UIColor.clearColor()
+            } else {
+                contactButton.enabled = true
+                contactButton.tintColor = self.view.tintColor
+            }
         }
-		
-		//subject.delegate = self
-		//body.delegate = self
     }
 	
 	override func viewWillAppear(animated: Bool) {

@@ -37,7 +37,8 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        query()
+
         // Do any additional setup after loading the view.
 		userImageView.layer.masksToBounds = true
     }
@@ -46,12 +47,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
-	override func viewWillAppear(animated: Bool) {
-		super.viewWillAppear(animated)
-        query()
-
-	}
     
     override func viewDidAppear(animated: Bool) {
         println(" hight  = \(clearButton.bounds.size.height / 2)")
@@ -292,9 +287,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	
     // MARK: - Navigation
 
-    
-    
-    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "MatchToProfile" {
