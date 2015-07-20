@@ -24,6 +24,7 @@
 		8A3624E81B501801006C860B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624E71B501801006C860B /* SystemConfiguration.framework */; };
 		8A3624EA1B501810006C860B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624E91B501810006C860B /* libz.dylib */; };
 		8A3624EC1B50181E006C860B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624EB1B50181E006C860B /* libsqlite3.dylib */; };
+		8A4976CB1B5D2FFC00B66257 /* SocialWebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4976CA1B5D2FFC00B66257 /* SocialWebviewViewController.swift */; };
 		8A551CC81B5561C000D0F11E /* CollabsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A551CC71B5561C000D0F11E /* CollabsTableViewCell.swift */; };
 		8A73A7B31B54029000D7ECD0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A73A7B21B54029000D7ECD0 /* Parse.framework */; };
 		8A73A7B41B5402E700D7ECD0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3624D71B5017AA006C860B /* AudioToolbox.framework */; };
@@ -76,6 +77,7 @@
 		8A3624E71B501801006C860B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8A3624E91B501810006C860B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8A3624EB1B50181E006C860B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8A4976CA1B5D2FFC00B66257 /* SocialWebviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialWebviewViewController.swift; sourceTree = "<group>"; };
 		8A551CC71B5561C000D0F11E /* CollabsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabsTableViewCell.swift; sourceTree = "<group>"; };
 		8A73A7B21B54029000D7ECD0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8A73A7B51B54030C00D7ECD0 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				8A1375441B50554A00A39083 /* SignInViewController.swift */,
 				8AC62A0B1B53F27F00FB11F6 /* UserSetupViewController.swift */,
 				8A2936A21B545010001ECD8C /* BioSetupViewController.swift */,
+				8A4976CA1B5D2FFC00B66257 /* SocialWebviewViewController.swift */,
 			);
 			path = Colab;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				8A551CC81B5561C000D0F11E /* CollabsTableViewCell.swift in Sources */,
 				8A2936A31B545010001ECD8C /* BioSetupViewController.swift in Sources */,
 				B1FE4A321B53FA8B008931D2 /* MatchesViewController.swift in Sources */,
+				8A4976CB1B5D2FFC00B66257 /* SocialWebviewViewController.swift in Sources */,
 				B14C48EF1B5307770000782E /* ConstantList.swift in Sources */,
 				B10B83251B505C780059766B /* ProfileViewController.swift in Sources */,
 				B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */,
