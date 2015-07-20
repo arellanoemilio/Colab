@@ -54,7 +54,7 @@ class BioSetupViewController: UIViewController {
 					self.makeAlert("Dude!", text: "Add something to your bio!", button: "Ok")
 					return
 				}
-				if count(bio) > 255 {
+				if count(bio) > 500 {
 					self.makeAlert("Dude!", text: "Your bio is too long!", button: "Ok")
 					return
 				}
