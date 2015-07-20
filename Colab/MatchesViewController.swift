@@ -21,6 +21,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     @IBOutlet weak var userImageView: UIImageView!
 	@IBOutlet weak var clearButton: UIButton!
 	@IBOutlet weak var messageButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
 	
 	var regions = [String]()
     var platforms = [String]()
@@ -38,11 +39,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-		userImageView.layer.cornerRadius = 10
 		userImageView.layer.masksToBounds = true
-		
-		
-		
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +58,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         
         clearButton.layer.cornerRadius = clearButton.bounds.size.height / 2
         messageButton.layer.cornerRadius = messageButton.bounds.size.height / 2
+        userImageView.layer.cornerRadius = userImageView.bounds.size.height / 2
     }
 	
 	@IBAction func like(sender: AnyObject) {
@@ -213,9 +211,9 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             setPicture(user)
             setMedias(user)
         }else{
-            userNameLabel.text = "No More Users"
-            userRegionLabel.text = "The World"
-            userIndustryLabel.text = "I Do Everything"
+            userNameLabel.text = "No More Matches"
+            userRegionLabel.text = ""
+            userIndustryLabel.text = ""
             userImageView.image = UIImage(named: "placeholder")
         }
 		if matches.count > 0 {
@@ -274,9 +272,17 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         if displayeduser == nil{
             clearButton.hidden = true
             messageButton.hidden = true
+            userMedia1Label.hidden = true
+            userMedia2Label.hidden = true
+            userMedia3Label.hidden = true
+            infoButton.hidden = true
         }else{
             clearButton.hidden = false
             messageButton.hidden = false
+            userMedia1Label.hidden = false
+            userMedia2Label.hidden = false
+            userMedia3Label.hidden = false
+            infoButton.hidden = false
         }
     }
     
@@ -284,10 +290,11 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         if let filterViewController = segue
     }*/
 	
-
-	
     // MARK: - Navigation
 
+    
+    
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "MatchToProfile" {
