@@ -1251,9 +1251,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LL6-gf-byW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="KjU-3V-8aQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="KjU-3V-8aQ">
+                                        <variation key="widthClass=compact" constant="48"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="46" id="Xe0-ge-V2U">
-                                        <variation key="widthClass=compact" constant="50"/>
+                                        <variation key="widthClass=compact" constant="48"/>
                                     </constraint>
                                 </constraints>
                                 <state key="normal">

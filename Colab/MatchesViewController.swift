@@ -59,7 +59,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         clearButton.layer.cornerRadius = clearButton.bounds.size.height / 2
         messageButton.layer.cornerRadius = messageButton.bounds.size.height / 2
         userImageView.layer.cornerRadius = userImageView.bounds.size.height / 2
-        }
+    }
 	
 	@IBAction func like(sender: AnyObject) {
         var picker = MFMailComposeViewController()
