@@ -7,30 +7,60 @@
 //
 
 import UIKit
+import Parse
 
-class SocialWebviewViewController: UIViewController, UIWebViewDelegate {
+class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
 
 	@IBOutlet weak var webview: UIWebView!
+	@IBOutlet weak var urlField: UITextField!
+	@IBOutlet weak var addButton: UIButton!
+	
+	var user: PFUser!
+	var urlString: String!
+	var index: Int!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		var request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: "http://www.example.com")!)
+		urlField.delegate = self
+		
+		if urlString == nil {
+			urlString = "http://www.google.com"
+		}
+		
+		if PFUser.currentUser() != user {
+			addButton.setTitle("Done", forState: UIControlState.Normal)
+		} else {
+			addButton.setTitle("Add this link", forState: UIControlState.Normal)
+		}
+		
+		var request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
 		webview.loadRequest(request)
-		//println(webview.request?.URL?.absoluteString)
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+		urlField.text = request.URL?.absoluteString
+		
     }
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		println(webview.request?.URL?.absoluteString)
 	}
+	
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		let request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlField.text)!)
+		webview.loadRequest(request)
+		return true
+	}
     
+	@IBAction func add(sender: AnyObject) {
+		let array = user["platformUrl"] as? [String]
+		if  array != nil {
+			println(array!.description)
+			
+		}
+		
+	}
+
+	
 
     /*
     // MARK: - Navigation
