@@ -28,9 +28,9 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	@IBOutlet weak var emailLabel: UILabel!
 	@IBOutlet weak var contactButton: UIBarButtonItem!
     
-    @IBOutlet weak var userMedia1Label: UIButton!
-    @IBOutlet weak var userMedia2Label: UIButton!
-    @IBOutlet weak var userMedia3Label: UIButton!
+    @IBOutlet weak var userMedia1Button: UIButton!
+    @IBOutlet weak var userMedia2Button: UIButton!
+    @IBOutlet weak var userMedia3Button: UIButton!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,9 +83,9 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
         if media.count >= 3{
             while counter < 3 && counter < media.count{
                 switch counter{
-                case 0: userMedia1Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
-                case 1:userMedia2Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
-                case 2: userMedia3Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 0: userMedia1Button.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 1:userMedia2Button.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 2: userMedia3Button.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
                 default: break
                 }
             
@@ -93,15 +93,15 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
         }else if media.count == 2{
             while counter < 2 && counter < media.count{
                 switch counter{
-                case 0: userMedia1Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
-                case 1:userMedia3Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 0: userMedia1Button.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 1:userMedia3Button.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
                 default: break
                 }
             }
         }else if media.count == 1{
             while counter < 1 && counter < media.count{
                 switch counter{
-                case 0: userMedia2Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 0: userMedia2Button.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
                 default: break
                 }
             }

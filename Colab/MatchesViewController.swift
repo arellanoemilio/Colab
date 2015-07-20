@@ -114,6 +114,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         if industries.count > 0{query1.whereKey("industry", containedIn: industries)}
         if platforms.count > 0 {query1.whereKey("platforms", containedIn: platforms)}
         query1.whereKey("objectId", notEqualTo: PFUser.currentUser()!.objectId!)
+        query1.whereKey("complete", equalTo: true)
         
         query1.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in

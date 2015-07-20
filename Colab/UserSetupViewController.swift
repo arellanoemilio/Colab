@@ -87,16 +87,28 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 		let row = indexPath.row
 		let cell = tableView.cellForRowAtIndexPath(indexPath)
 		
-		if self.restorationIdentifier! == "RegionSetup" || self.restorationIdentifier! == "IndustrySetup" {
-			for i in 0..<listToDisplay.count {
-				if i != row {
-					selected[i] = false
-					let newIndexPath = NSIndexPath(forItem: i, inSection: 0)
-					tableView.cellForRowAtIndexPath(newIndexPath)?.accessoryType = UITableViewCellAccessoryType.None
+		if self.restorationIdentifier! == "PlatformSetup"{
+			var counter = 0
+            for i in 0..<listToDisplay.count {
+                if i != row && selected[i] == true{
+                    counter++
+                    if counter >= 3{
+                        selected[i] = false
+                        let newIndexPath = NSIndexPath(forItem: i, inSection: 0)
+                        tableView.cellForRowAtIndexPath(newIndexPath)?.accessoryType = UITableViewCellAccessoryType.None
+                    }
 				}
 			}
-		}
-		
+		}else if self.restorationIdentifier! == "RegionSetup" || self.restorationIdentifier! == "IndustrySetup"{
+            for i in 0..<listToDisplay.count {
+                if i != row {
+                    selected[i] = false
+                    let newIndexPath = NSIndexPath(forItem: i, inSection: 0)
+                    tableView.cellForRowAtIndexPath(newIndexPath)?.accessoryType = UITableViewCellAccessoryType.None
+                }
+            }
+        }
+        
 		if selected[row] {
 			cell?.accessoryType = UITableViewCellAccessoryType.None
 		} else {
