@@ -29,6 +29,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	@IBOutlet weak var contactButton: UIBarButtonItem!
     @IBOutlet weak var indicationsLabel: UILabel!
     
+    @IBOutlet weak var tempButton: UIButton!
     @IBOutlet weak var userMedia1Button: UIButton!
     @IBOutlet weak var userMedia2Button: UIButton!
     @IBOutlet weak var userMedia3Button: UIButton!
@@ -118,12 +119,25 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	
 	func getProfilePic() {
 		let urlString = user["pictureURL"] as! String
-		
 		let image = UIImage(data: NSData(contentsOfURL: NSURL(string: urlString)!)!)
-				
 		profilePicture.image = image
 		
 	}
+    
+    func getURLFromSender(sender: AnyObject?) -> String{
+        if let button = sender as? UIButton{
+            switch button {
+            case userMedia1Button:break
+            case userMedia2Button:break
+            case userMedia3Button:break
+            case tempButton:
+                return "www.facebook.com"
+            default: break
+            }
+        }
+        return ""
+    }
+    
 	
 	@IBAction func sendEmail(sender: AnyObject) {
 		var picker = MFMailComposeViewController()
@@ -140,17 +154,16 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	}
 	
 	@IBAction func unwindToProfile(segue: UIStoryboardSegue) {}
-	
+    
 	
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
 		if segue.identifier == "profileToWeb"{
 			var destinationController = segue.destinationViewController as! SocialWebviewViewController
 			destinationController.user = user
+            destinationController.urlString = getURLFromSender(sender)
 		}
     }
 
