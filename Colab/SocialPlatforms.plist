@@ -9,6 +9,8 @@
 	<string>Tumblr</string>
 	<string>Flickr</string>
 	<string>Snapchat</string>
-	<string>Other</string>
+	<string>Vine</string>
+	<string>Soundcloud</string>
+	<string>other</string>
 </array>
 </plist>

@@ -22,14 +22,15 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
-    @IBOutlet weak var media1Label: UILabel!
-    @IBOutlet weak var media2Label: UILabel!
-    @IBOutlet weak var media3Label: UILabel!
     @IBOutlet weak var industry1Label: UILabel!
     @IBOutlet weak var bioDescriptionLabel: UITextView!
 	@IBOutlet weak var profilePicture: UIImageView!
 	@IBOutlet weak var emailLabel: UILabel!
 	@IBOutlet weak var contactButton: UIBarButtonItem!
+    
+    @IBOutlet weak var userMedia1Label: UIButton!
+    @IBOutlet weak var userMedia2Label: UIButton!
+    @IBOutlet weak var userMedia3Label: UIButton!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,29 +71,45 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		
-		profilePicture.layer.cornerRadius = 100
 		profilePicture.layer.masksToBounds = true
 	}
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
+        profilePicture.layer.cornerRadius = profilePicture.bounds.size.height / 2
 		getProfilePic()
 	}
 	
 	
     func populateMedia(){
         var counter = 0
-        while counter < 3 && counter < media.count{
-            switch counter{
-            case 0: media1Label.text = media[counter++]
-            case 1: media2Label.text = media[counter++]
-            case 2: media3Label.text = media[counter++]
-            default: break
-            }
-        
-        }
+        if media.count >= 3{
+            while counter < 3 && counter < media.count{
+                switch counter{
+                case 0: userMedia1Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 1:userMedia2Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 2: userMedia3Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                default: break
+                }
             
+            }
+        }else if media.count == 2{
+            while counter < 2 && counter < media.count{
+                switch counter{
+                case 0: userMedia1Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 1:userMedia3Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                default: break
+                }
+            }
+        }else if media.count == 1{
+            while counter < 1 && counter < media.count{
+                switch counter{
+                case 0: userMedia2Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                default: break
+                }
+            }
+        }
+
     }
 	
 	func getProfilePic() {
