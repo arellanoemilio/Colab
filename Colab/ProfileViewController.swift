@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	@IBOutlet weak var profilePicture: UIImageView!
 	@IBOutlet weak var emailLabel: UILabel!
 	@IBOutlet weak var contactButton: UIBarButtonItem!
+    @IBOutlet weak var indicationsLabel: UILabel!
     
     @IBOutlet weak var userMedia1Button: UIButton!
     @IBOutlet weak var userMedia2Button: UIButton!
@@ -34,7 +35,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+        
         var  boarderColor = UIColor.grayColor()
 		bioDescriptionLabel.layer.borderColor = boarderColor.CGColor
 		bioDescriptionLabel.layer.borderWidth = 1.0
@@ -68,11 +69,17 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
+        if user != PFUser.currentUser(){
+            indicationsLabel.bounds.size.height = 0
+            indicationsLabel.setNeedsDisplay()
+            indicationsLabel.hidden = true
+        }
 		profilePicture.layer.masksToBounds = true
 	}
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
+        
         profilePicture.layer.cornerRadius = profilePicture.bounds.size.height / 2
 		getProfilePic()
 	}
