@@ -15,7 +15,8 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
     var user: PFUser!
 	var email: String!
 	var media: [String]!
-	var industry: String!
+	var mediaURL: [String]!
+    var industry: String!
 	var region: String!
 	var name: String!
 	var bioDescription = ""
@@ -49,6 +50,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             industry = user["industry"] as! String
 			region = user["region"] as! String
             media = user["platforms"] as! [String]
+            mediaURL = user["platformURL"] as! [String]
             let bioDescription: String = user["bio"] as! String
             
 			nameLabel.text = name
@@ -84,7 +86,6 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
         profilePicture.layer.cornerRadius = profilePicture.bounds.size.height / 2
 		getProfilePic()
 	}
-	
 	
     func populateMedia(){
         var counter = 0
@@ -124,15 +125,15 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		
 	}
     
-    func getURLFromSender(sender: AnyObject?) -> (url:String,index:Int){
+    func getURLAndIndexFromSender(sender: AnyObject?) -> (url:String,index:Int){
         if let button = sender as? UIButton{
             switch button {
             case userMedia1Button:
-                return (media.first!, 0)
+                return (mediaURL.first!, 0)
             case userMedia2Button:
-                return (media[1], 1)
+                return (mediaURL[1], 1)
             case userMedia3Button:
-                return (media[2],2)
+                return (mediaURL[2],2)
             case tempButton:
                 return ("www.facebook.com", -1)
             default: break
@@ -141,7 +142,6 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
         return ("",-1)
     }
     
-	
 	@IBAction func sendEmail(sender: AnyObject) {
 		var picker = MFMailComposeViewController()
 		picker.mailComposeDelegate = self
@@ -156,9 +156,16 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 	
-	@IBAction func unwindToProfile(segue: UIStoryboardSegue) {}
+	@IBAction func unwindToProfile(segue: UIStoryboardSegue) {
+        if let previousViewController = segue.sourceViewController as? SocialWebviewViewController{
+            if previousViewController.user == PFUser.currentUser() && previousViewController.index >= 0 && previousViewController.index <= 2{
+                mediaURL[previousViewController.index] = previousViewController.urlString
+                user["platformURL"] = mediaURL
+                user.saveInBackground()
+            }
+        }
+    }
     
-	
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -166,7 +173,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		if segue.identifier == "profileToWeb"{
 			var destinationController = segue.destinationViewController as! SocialWebviewViewController
 			destinationController.user = user
-            let senderData = getURLFromSender(sender)
+            let senderData = getURLAndIndexFromSender(sender)
             destinationController.urlString = senderData.url
             destinationController.index = senderData.index
 		}
