@@ -1273,12 +1273,18 @@
                                         <include reference="Xe0-ge-V2U"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="toSocialWeb:" destination="u35-Y8-FlK" eventType="touchUpInside" id="DCN-MI-8tt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGk-eR-R0Z">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toSocialWeb:" destination="u35-Y8-FlK" eventType="touchUpInside" id="cUF-Z7-CHb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Region" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3c-Id-7di">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -1286,18 +1292,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7J-AR-SjL">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="338" y="205" width="46" height="40"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="UpR-lc-hAQ" kind="presentation" identifier="profileToWeb" id="EIz-Q5-OFU"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect us to your Social Media:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4I-d5-zHB">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -1309,6 +1303,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toSocialWeb:" destination="u35-Y8-FlK" eventType="touchUpInside" id="m1v-DX-LoZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1387,7 +1384,6 @@
                                 <exclude reference="LL6-gf-byW"/>
                                 <exclude reference="fGk-eR-R0Z"/>
                                 <exclude reference="n3c-Id-7di"/>
-                                <exclude reference="H7J-AR-SjL"/>
                                 <exclude reference="m4I-d5-zHB"/>
                                 <exclude reference="87E-xO-Q5H"/>
                             </mask>
@@ -1445,7 +1441,6 @@
                                 <include reference="LL6-gf-byW"/>
                                 <include reference="fGk-eR-R0Z"/>
                                 <include reference="n3c-Id-7di"/>
-                                <include reference="H7J-AR-SjL"/>
                                 <include reference="m4I-d5-zHB"/>
                                 <include reference="87E-xO-Q5H"/>
                             </mask>
@@ -1509,11 +1504,10 @@
                         <outlet property="nameLabel" destination="Vst-3C-Akz" id="Pff-eP-Xro"/>
                         <outlet property="profilePicture" destination="SU6-LC-YSa" id="f1M-GO-Eei"/>
                         <outlet property="regionLabel" destination="n3c-Id-7di" id="8wa-nn-nAW"/>
-                        <outlet property="tempButton" destination="H7J-AR-SjL" id="Brj-IH-ayu"/>
                         <outlet property="userMedia1Button" destination="87E-xO-Q5H" id="Th4-kI-tOV"/>
                         <outlet property="userMedia2Button" destination="LL6-gf-byW" id="3zg-8G-huo"/>
                         <outlet property="userMedia3Button" destination="fGk-eR-R0Z" id="JVK-F1-wn5"/>
-                        <segue destination="UpR-lc-hAQ" kind="presentation" identifier="toSocialWeb" id="XSG-4g-tBQ"/>
+                        <segue destination="UpR-lc-hAQ" kind="presentation" identifier="profileToWeb" id="XSG-4g-tBQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCr-Wo-LDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2138,8 +2132,7 @@
         <image name="star" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hsw-hA-usv"/>
         <segue reference="aqj-1N-Fjb"/>
-        <segue reference="EIz-Q5-OFU"/>
+        <segue reference="Hsw-hA-usv"/>
     </inferredMetricsTieBreakers>
 </document>

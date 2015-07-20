@@ -26,7 +26,7 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 		
 		urlField.delegate = self
 		
-		if urlString == nil {
+		if urlString == nil || urlString == "" {
 			urlString = "http://www.google.com"
 		}
 		

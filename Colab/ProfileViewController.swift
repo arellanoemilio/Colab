@@ -124,9 +124,12 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		profilePicture.image = image
 		
 	}
+	@IBAction func toSocialWeb(sender: AnyObject) {
+		performSegueWithIdentifier("profileToWeb", sender: sender)
+	}
     
     func getURLAndIndexFromSender(sender: AnyObject?) -> (url:String,index:Int){
-        if let button = sender as? UIButton{
+        if let button = sender as? UIButton {
             switch button {
             case userMedia1Button:
                 return (mediaURL.first!, 0)
@@ -170,7 +173,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "profileToWeb"{
+		if segue.identifier == "profileToWeb" {
 			var destinationController = segue.destinationViewController as! SocialWebviewViewController
 			destinationController.user = user
             let senderData = getURLAndIndexFromSender(sender)
