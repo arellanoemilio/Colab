@@ -15,9 +15,9 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userRegionLabel: UILabel!
     @IBOutlet weak var userIndustryLabel: UILabel!
-    @IBOutlet weak var userMedia1Label: UILabel!
-    @IBOutlet weak var userMedia2Label: UILabel!
-    @IBOutlet weak var userMedia3Label: UILabel!
+    @IBOutlet weak var userMedia1Label: UIButton!
+    @IBOutlet weak var userMedia2Label: UIButton!
+    @IBOutlet weak var userMedia3Label: UIButton!
     @IBOutlet weak var userImageView: UIImageView!
 	@IBOutlet weak var clearButton: UIButton!
 	@IBOutlet weak var messageButton: UIButton!
@@ -52,13 +52,16 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		
-		clearButton.layer.cornerRadius = 30
-		messageButton.layer.cornerRadius = 30
-		
         query()
 
 	}
+    
+    override func viewDidAppear(animated: Bool) {
+        println(" hight  = \(clearButton.bounds.size.height / 2)")
+        
+        clearButton.layer.cornerRadius = clearButton.bounds.size.height / 2
+        messageButton.layer.cornerRadius = messageButton.bounds.size.height / 2
+    }
 	
 	@IBAction func like(sender: AnyObject) {
         var picker = MFMailComposeViewController()
@@ -98,13 +101,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	}
 	
 	@IBAction func dislike(sender: AnyObject) {
-//        if displayeduser != nil{
-//            var connection = PFObject(className: "Connection")
-//            connection["user1"] = PFUser.currentUser()
-//            connection["user2"] = displayeduser
-//            connection["connected"] = false
-//            connection.saveInBackground()
-//        }
         getNextMatch()
 	}
 	
@@ -181,15 +177,13 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 		if matches.count > 0 {
 			let random = arc4random_uniform(UInt32(matches.count-1))
 			currentUserDisplayed = Int(random)
-			populateLayoutWithUser(matches[currentUserDisplayed])
+            useUserAtIndex(&currentUserDisplayed)
+//			populateLayoutWithUser(matches[currentUserDisplayed])
 		} else {
 			displayeduser = nil
 			populateLayoutWithUser(displayeduser)
 			checkUserForNil()
 		}
-		
-        //++currentUserDisplayed
-        //useUserAtIndex(&currentUserDisplayed)
     }
     
     func useUserAtIndex(inout index:Int){
@@ -223,46 +217,44 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             userRegionLabel.text = "The World"
             userIndustryLabel.text = "I Do Everything"
             userImageView.image = UIImage(named: "placeholder")
-            userMedia1Label.text = ""
-            userMedia2Label.text = ""
-            userMedia3Label.text = ""
         }
 		if matches.count > 0 {
 			matches.removeAtIndex(currentUserDisplayed)
 		}
     }
     
-    func setMedias(user: PFUser){
-        let medias = user["platforms"] as? [String]
-        var i = 0
-        if medias != nil{
-            for media in platforms{
-                    if contains(medias!, media){
-                    switch i{
-                    case 0: userMedia1Label.text = media
-                    case 1: userMedia2Label.text = media
-                    case 2: userMedia3Label.text = media
-                    default: break
-                    }
-                    i++
+    func setMedias(user:PFUser){
+        let media = (user["platforms"] as? [String])!
+        var counter = 0
+        if media.count >= 3{
+            while counter < 3 && counter < media.count{
+                switch counter{
+                case 0: userMedia1Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 1:userMedia2Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 2: userMedia3Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                default: break
+                }
+                
+            }
+        }else if media.count == 2{
+            while counter < 2 && counter < media.count{
+                switch counter{
+                case 0: userMedia1Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                case 1:userMedia3Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                default: break
                 }
             }
-            while i < 2{
-                for j in 0..<medias!.count {
-                    if !contains(platforms, medias![j]){
-                        switch i{
-                        case 0: userMedia1Label.text = medias![j]
-                        case 1: userMedia2Label.text = medias![j]
-                        case 2: userMedia3Label.text = medias![j]
-                        default: break
-                        }
-                        i++
-                    }else{i++}
+        }else if media.count == 1{
+            while counter < 1 && counter < media.count{
+                switch counter{
+                case 0: userMedia2Label.setBackgroundImage(UIImage(named: media[counter++]), forState: UIControlState.Normal)
+                default: break
                 }
             }
         }
-    
+        
     }
+    
 	
     func setPicture(user: PFUser){
         let urlString = user["pictureURL"] as! String
