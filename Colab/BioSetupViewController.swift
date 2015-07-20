@@ -62,7 +62,7 @@ class BioSetupViewController: UIViewController {
 				self.user["bio"] = bio
 				//user.email = email
 				self.user["complete"] = true
-                self.user["platformURL"] = ["","",""]
+                self.user["platformUrl"] = ["","",""]
 				self.user.saveInBackground()
 				self.performSegueWithIdentifier("toHome", sender: sender)
 			}

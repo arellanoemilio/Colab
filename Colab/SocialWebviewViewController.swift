@@ -19,6 +19,8 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 	var urlString: String!
 	var index: Int!
 	
+	var userMediaUrl: String!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -52,11 +54,19 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 	}
     
 	@IBAction func add(sender: AnyObject) {
-		let array = user["platformUrl"] as? [String]
-		if  array != nil {
-			println(array!.description)
-			
+		var url = webview.request?.URL?.absoluteString
+		
+		var array: [String] = (user["platformUrl"] as! [String])
+		println("count \(array.count)")
+		println("index \(index)")
+		if index < array.count && index > -1{
+			array[index] = url!
 		}
+	
+		user["platformUrl"] = array
+		user.saveInBackground()
+		
+		
 		
 	}
 

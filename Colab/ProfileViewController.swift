@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             industry = user["industry"] as! String
 			region = user["region"] as! String
             media = user["platforms"] as! [String]
-            mediaURL = user["platformURL"] as! [String]
+            mediaURL = user["platformUrl"] as! [String]
             let bioDescription: String = user["bio"] as! String
             
 			nameLabel.text = name
@@ -135,7 +135,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             case userMedia3Button:
                 return (mediaURL[2],2)
             case tempButton:
-                return ("www.facebook.com", -1)
+                return ("http://www.facebook.com", -1)
             default: break
             }
         }
@@ -160,7 +160,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
         if let previousViewController = segue.sourceViewController as? SocialWebviewViewController{
             if previousViewController.user == PFUser.currentUser() && previousViewController.index >= 0 && previousViewController.index <= 2{
                 mediaURL[previousViewController.index] = previousViewController.urlString
-                user["platformURL"] = mediaURL
+                user["platformUrl"] = mediaURL
                 user.saveInBackground()
             }
         }
