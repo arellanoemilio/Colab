@@ -290,8 +290,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         if let filterViewController = segue
     }*/
 	
-
-	
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
