@@ -124,18 +124,21 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		
 	}
     
-    func getURLFromSender(sender: AnyObject?) -> String{
+    func getURLFromSender(sender: AnyObject?) -> (url:String,index:Int){
         if let button = sender as? UIButton{
             switch button {
-            case userMedia1Button:break
-            case userMedia2Button:break
-            case userMedia3Button:break
+            case userMedia1Button:
+                return (media.first!, 0)
+            case userMedia2Button:
+                return (media[1], 1)
+            case userMedia3Button:
+                return (media[2],2)
             case tempButton:
-                return "www.facebook.com"
+                return ("www.facebook.com", -1)
             default: break
             }
         }
-        return ""
+        return ("",-1)
     }
     
 	
@@ -163,7 +166,9 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		if segue.identifier == "profileToWeb"{
 			var destinationController = segue.destinationViewController as! SocialWebviewViewController
 			destinationController.user = user
-            destinationController.urlString = getURLFromSender(sender)
+            let senderData = getURLFromSender(sender)
+            destinationController.urlString = senderData.url
+            destinationController.index = senderData.index
 		}
     }
 

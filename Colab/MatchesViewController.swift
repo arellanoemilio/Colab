@@ -218,6 +218,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     }
     
     func setMedias(user:PFUser){
+        clearMedias()
         let media = (user["platforms"] as? [String])!
         var counter = 0
         if media.count >= 3{
@@ -249,6 +250,11 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         
     }
     
+    func clearMedias(){
+        userMedia1Label.setBackgroundImage(nil , forState: UIControlState.Normal)
+        userMedia2Label.setBackgroundImage(nil , forState: UIControlState.Normal)
+        userMedia3Label.setBackgroundImage(nil , forState: UIControlState.Normal)
+    }
 	
     func setPicture(user: PFUser){
         let urlString = user["pictureURL"] as! String

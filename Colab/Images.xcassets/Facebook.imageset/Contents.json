@@ -2,16 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "facebook48x48.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "facebook-hover.png"
+      "filename" : "facebook96x96.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "facebook144x144.png"
     }
   ],
   "info" : {

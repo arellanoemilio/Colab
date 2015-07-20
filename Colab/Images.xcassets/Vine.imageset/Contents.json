@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "twitter48x48.png"
+      "filename" : "vine48x48.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "twitter96x96.png"
+      "filename" : "vine96x96.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "twitter144x144.png"
+      "filename" : "vine144x144.png"
     }
   ],
   "info" : {

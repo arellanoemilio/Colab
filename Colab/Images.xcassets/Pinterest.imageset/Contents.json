@@ -2,16 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "pinterest48x48.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "pinterest-hover.png"
+      "filename" : "pinterest96x96.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "pinterest144x144.png"
     }
   ],
   "info" : {

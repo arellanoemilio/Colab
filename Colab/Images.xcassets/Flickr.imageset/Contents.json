@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "twitter48x48.png"
+      "filename" : "flickr48x48.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "twitter96x96.png"
+      "filename" : "flickr96x96.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "twitter144x144.png"
+      "filename" : "flickr144x144.png"
     }
   ],
   "info" : {
