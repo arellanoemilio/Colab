@@ -1493,8 +1493,11 @@
                         <outlet property="nameLabel" destination="Vst-3C-Akz" id="Pff-eP-Xro"/>
                         <outlet property="profilePicture" destination="SU6-LC-YSa" id="f1M-GO-Eei"/>
                         <outlet property="regionLabel" destination="n3c-Id-7di" id="8wa-nn-nAW"/>
+                        <outlet property="userMedia1Button" destination="87E-xO-Q5H" id="Th4-kI-tOV"/>
                         <outlet property="userMedia1Label" destination="87E-xO-Q5H" id="acc-ol-ook"/>
+                        <outlet property="userMedia2Button" destination="LL6-gf-byW" id="3zg-8G-huo"/>
                         <outlet property="userMedia2Label" destination="LL6-gf-byW" id="Zh8-ny-6yL"/>
+                        <outlet property="userMedia3Button" destination="fGk-eR-R0Z" id="JVK-F1-wn5"/>
                         <outlet property="userMedia3Label" destination="fGk-eR-R0Z" id="vzL-WR-yCL"/>
                         <segue destination="UpR-lc-hAQ" kind="presentation" identifier="toSocialWeb" id="XSG-4g-tBQ"/>
                     </connections>
