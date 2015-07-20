@@ -1779,12 +1779,18 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tosSocialWeb:" destination="0yo-W4-fOm" eventType="touchUpInside" id="5DU-lh-EEm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4H-oI-BGP">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tosSocialWeb:" destination="0yo-W4-fOm" eventType="touchUpInside" id="iKk-PD-OYP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSx-w3-fn5">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1807,6 +1813,9 @@
                                         <include reference="Lpt-j5-L1Z"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="tosSocialWeb:" destination="0yo-W4-fOm" eventType="touchUpInside" id="N69-U3-yrV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJz-4f-mZh">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -2020,6 +2029,7 @@
                         <outlet property="userNameLabel" destination="u4p-DW-SIM" id="CYR-RW-6vv"/>
                         <outlet property="userRegionLabel" destination="bk6-kH-RzB" id="fbT-4p-mvG"/>
                         <segue destination="u35-Y8-FlK" kind="show" identifier="MatchToProfile" id="aqj-1N-Fjb"/>
+                        <segue destination="UpR-lc-hAQ" kind="presentation" identifier="tinderToWeb" id="f9n-L8-Pka"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4B-Mo-1GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2132,7 +2142,8 @@
         <image name="star" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aqj-1N-Fjb"/>
+        <segue reference="f9n-L8-Pka"/>
         <segue reference="Hsw-hA-usv"/>
+        <segue reference="aqj-1N-Fjb"/>
     </inferredMetricsTieBreakers>
 </document>

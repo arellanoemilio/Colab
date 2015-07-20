@@ -287,7 +287,28 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             infoButton.hidden = false
         }
     }
-    
+	
+	func getURLAndIndexFromSender(sender: AnyObject?) -> (url:String,index:Int){
+		var mediaURL = matches[currentUserDisplayed]["platformUrl"] as! [String]
+		if let button = sender as? UIButton {
+			switch button {
+			case userMedia1Label:
+				return (mediaURL.first!, 0)
+			case userMedia2Label:
+				return (mediaURL[1], 1)
+			case userMedia3Label:
+				return (mediaURL[2],2)
+			default: break
+			}
+		}
+		return ("",-1)
+	}
+	
+	@IBAction func tosSocialWeb(sender: AnyObject) {
+		performSegueWithIdentifier("tinderToWeb", sender: sender)
+	}
+	
+	
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
         if let filterViewController = segue
     }*/
@@ -303,6 +324,13 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 			
 			//profileViewController.user = matches[currentUserDisplayed]
 
+		}
+		if segue.identifier == "tinderToWeb" {
+			var destinationController = segue.destinationViewController as! SocialWebviewViewController
+			destinationController.user = matches[currentUserDisplayed]
+			let senderData = getURLAndIndexFromSender(sender)
+			destinationController.urlString = senderData.url
+			destinationController.index = senderData.index
 		}
     }
 
