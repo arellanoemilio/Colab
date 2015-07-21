@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
     @IBOutlet weak var userMedia1Button: UIButton!
     @IBOutlet weak var userMedia2Button: UIButton!
     @IBOutlet weak var userMedia3Button: UIButton!
-	
+		
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
 			return
         }
-        
+		        
         var  boarderColor = UIColor.grayColor()
 		bioDescriptionLabel.layer.borderColor = boarderColor.CGColor
 		bioDescriptionLabel.layer.borderWidth = 1.0
