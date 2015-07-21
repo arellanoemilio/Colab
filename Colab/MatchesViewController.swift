@@ -50,9 +50,12 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     
     override func viewDidAppear(animated: Bool) {
         println(" hight  = \(clearButton.bounds.size.height / 2)")
-        
         clearButton.layer.cornerRadius = clearButton.bounds.size.height / 2
+        clearButton.layer.borderColor = UIColor(red: 0.714, green: 0.714, blue: 0.714, alpha: 1.0).CGColor
+        clearButton.layer.borderWidth = 1
         messageButton.layer.cornerRadius = messageButton.bounds.size.height / 2
+        messageButton.layer.borderColor = UIColor(red: 0.714, green: 0.714, blue: 0.714, alpha: 1.0).CGColor
+        messageButton.layer.borderWidth = 1
         userImageView.layer.cornerRadius = userImageView.bounds.size.height / 2
     }
 	
@@ -95,11 +98,11 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	}
 	
     @IBAction func unwindToMatchVC(segue: UIStoryboardSegue){
-    if let source = segue.sourceViewController as? FilterViewController{
-        regions = source.regions
-        industries = source.industries
-        platforms = source.platforms
-    }
+        if let source = segue.sourceViewController as? FilterViewController{
+            regions = source.regions
+            industries = source.industries
+            platforms = source.platforms
+        }
         query()
     }
     
