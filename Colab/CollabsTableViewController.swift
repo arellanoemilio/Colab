@@ -35,7 +35,8 @@ class CollabsTableViewController: UITableViewController {
 	func getCollabs() {
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+            Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
         users.removeAll(keepCapacity: false)
@@ -106,7 +107,8 @@ class CollabsTableViewController: UITableViewController {
 	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+            Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
 		if editingStyle == .Delete {

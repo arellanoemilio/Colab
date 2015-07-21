@@ -16,9 +16,7 @@ class Alert: NSObject {
 			text, preferredStyle: UIAlertControllerStyle.Alert)
 		
 		alertController.addAction(UIAlertAction(title: button, style: UIAlertActionStyle.Default,handler: nil))
-		
-		//context.presentViewController(alertController, animated: true, completion: nil)
-		
+				
 		return alertController
 	}
 	

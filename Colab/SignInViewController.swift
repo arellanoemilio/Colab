@@ -43,7 +43,8 @@ class SignInViewController: UIViewController {
 	@IBAction func signIn(sender: UIButton) {
         
         if !Reachability.isConnectedToNetwork(){
-           //TODO
+			Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
 		let permissions = ["public_profile"]
@@ -113,7 +114,8 @@ class SignInViewController: UIViewController {
 	func getDataFromFB() {
         
         if !Reachability.isConnectedToNetwork(){
-           //TODO
+			Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
 
 		if FBSDKAccessToken.currentAccessToken() != nil {

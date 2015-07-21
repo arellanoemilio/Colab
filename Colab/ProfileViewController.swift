@@ -39,7 +39,8 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
         super.viewDidLoad()
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+            Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
         var  boarderColor = UIColor.grayColor()
