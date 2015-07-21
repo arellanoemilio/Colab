@@ -37,6 +37,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         query()
 
         // Do any additional setup after loading the view.

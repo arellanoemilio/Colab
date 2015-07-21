@@ -28,7 +28,12 @@ class SignInViewController: UIViewController {
         
         facebookButton.layer.cornerRadius = 7
         facebookButton.layer.masksToBounds = true
+		
     }
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+	}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
