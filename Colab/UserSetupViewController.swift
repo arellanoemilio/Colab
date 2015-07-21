@@ -150,7 +150,8 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	func setRegion() {
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+            Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
 		var region = ""
@@ -167,7 +168,8 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	func setIndustries() {
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+            Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
 		var industry = ""
@@ -184,7 +186,8 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	func setPlatforms() {
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+            Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
 		for i in 0..<listToDisplay.count {

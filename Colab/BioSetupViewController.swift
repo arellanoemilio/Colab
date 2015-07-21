@@ -42,7 +42,8 @@ class BioSetupViewController: UIViewController {
 	@IBAction func done(sender: UIButton) {
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+            Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
 		var bio = bioField.text

@@ -37,6 +37,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         query()
 
         // Do any additional setup after loading the view.
@@ -62,7 +63,8 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	@IBAction func like(sender: AnyObject) {
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+			Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
         var picker = MFMailComposeViewController()
@@ -109,7 +111,8 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	func query(){
         
         if !Reachability.isConnectedToNetwork(){
-            //TODO
+            Alert.getAlertController("Whoops!", text: "Please connect to the internet before continuing", button: "Ok")
+			return
         }
         
         currentUserDisplayed = 0

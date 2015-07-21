@@ -52,6 +52,8 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 		webview.loadRequest(request)
 		return true
 	}
+	
+	
     
 	@IBAction func add(sender: AnyObject) {
 		var url = webview.request?.URL?.absoluteString
