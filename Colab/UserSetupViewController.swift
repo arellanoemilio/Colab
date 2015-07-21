@@ -148,6 +148,11 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	}
 	
 	func setRegion() {
+        
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
 		var region = ""
 		for i in 0..<listToDisplay.count {
 			if selected[i] {
@@ -160,6 +165,11 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	}
 	
 	func setIndustries() {
+        
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
 		var industry = ""
 		for i in 0..<listToDisplay.count {
 			if selected[i] {
@@ -172,6 +182,11 @@ class UserSetupViewController: UIViewController, UITableViewDelegate, UITableVie
 	}
 	
 	func setPlatforms() {
+        
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
 		for i in 0..<listToDisplay.count {
 			if selected[i] {
 				platforms.append(listToDisplay[i])

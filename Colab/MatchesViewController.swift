@@ -57,6 +57,11 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     }
 	
 	@IBAction func like(sender: AnyObject) {
+        
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
         var picker = MFMailComposeViewController()
 		picker.mailComposeDelegate = self
 		picker.setSubject("Let's collaborate")
@@ -71,14 +76,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             connection["connected"] = true
             connection.saveInBackground()
         }
-		
-		
-		
-		//goToProfile()
-		
-        //getNextMatch()
-		
-		// TODO: FETCH NEW USER
 	}
 	
     @IBAction func showProfile(sender: AnyObject) {
@@ -107,6 +104,11 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     }
     
 	func query(){
+        
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
         currentUserDisplayed = 0
         var queries = [PFQuery]()
         var query1 = PFUser.query()!
@@ -307,7 +309,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	@IBAction func tosSocialWeb(sender: AnyObject) {
 		performSegueWithIdentifier("tinderToWeb", sender: sender)
 	}
-	
 	
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
         if let filterViewController = segue

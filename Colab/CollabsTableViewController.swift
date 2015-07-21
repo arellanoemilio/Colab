@@ -33,6 +33,11 @@ class CollabsTableViewController: UITableViewController {
     }
 	
 	func getCollabs() {
+        
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
         users.removeAll(keepCapacity: false)
 		var query1 = PFQuery(className: "Connection")
 		query1.whereKey("user1", equalTo: PFUser.currentUser()!)
@@ -96,36 +101,14 @@ class CollabsTableViewController: UITableViewController {
             performSegueWithIdentifier("CollabsToProfile", sender: users[indexPath.row])
         }
     }
-	
-//    func queryForConnectionWithUser(user: PFUser) -> [PFObject]{
-//        var conncetions = [PFObject]()
-//        var query1 = PFQuery(className: "Connection")
-//        query1.whereKey("user1", equalTo: user)
-//        
-//        var query2 = PFQuery(className: "Connection")
-//        query2.whereKey("user2", equalTo: user)
-//        
-//        var subQueries = [query1, query2]
-//        
-//        var mainQuery = PFQuery.orQueryWithSubqueries(subQueries)
-//        mainQuery.whereKey("connected", equalTo: true)
-//        mainQuery.includeKey("user1")
-//        mainQuery.includeKey("user2")
-//        
-//        mainQuery.findObjectsInBackgroundWithBlock {
-//            (objects: [AnyObject]?, error: NSError?) -> Void in
-//            if error == nil {
-//                conncetions = objects as! [PFObject]
-//                    
-//            } else {
-//                println("Error: \(error!) \(error!.userInfo!)")
-//            }
-//        }
-//        return conncetions
-//    }
     
     //Override to support editing the table view.
 	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
 		if editingStyle == .Delete {
             var conncetion = conncetions[indexPath.row]
             conncetions.removeAtIndex(indexPath.row)
@@ -134,16 +117,6 @@ class CollabsTableViewController: UITableViewController {
             //tableView.reloadData()
             conncetion["connected"] = false
             conncetion.saveInBackground()
-//            conncetion.saveInBackgroundWithBlock{
-//                (success: Bool, error: NSError?) -> Void in
-//                if (success) {
-//                    self.getCollabs()
-//                    self.tableView.reloadData()
-//                } else {
-//                    println("Error: \(error!) \(error!.userInfo!)")
-//                }
-//            }
-            
 		}
 	}
 
