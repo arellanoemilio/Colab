@@ -40,6 +40,11 @@ class BioSetupViewController: UIViewController {
 	}
 	
 	@IBAction func done(sender: UIButton) {
+        
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
 		var bio = bioField.text
 		var email = emailField.text
 		user.email = email
@@ -67,31 +72,6 @@ class BioSetupViewController: UIViewController {
 				self.performSegueWithIdentifier("toHome", sender: sender)
 			}
 		}
-//		if emailValid {
-//			let alertController = UIAlertController(title: "Dude!", message:
-//				"Enter a valid!", preferredStyle: UIAlertControllerStyle.Alert)
-//			alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-//			return
-//		}
-//		if count(bio) < 1 {
-//			let alertController = UIAlertController(title: "Dude!", message:
-//				"Add something to your bio!", preferredStyle: UIAlertControllerStyle.Alert)
-//			alertController.addAction(UIAlertAction(title: "Fine", style: UIAlertActionStyle.Default,handler: nil))
-//			return
-//		}
-//		if count(bio) > 255 {
-//			let alertController = UIAlertController(title: "Dude!", message:
-//				"Your bio is to long!", preferredStyle: UIAlertControllerStyle.Alert)
-//			alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-//			return
-//		}
-//		
-//		user["bio"] = bio
-//		//user.email = email
-//		user["complete"] = true
-//		user.saveInBackground()
-//		performSegueWithIdentifier("toHome", sender: sender)
-		
 	}
 	
 	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {

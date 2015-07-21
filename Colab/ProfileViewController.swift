@@ -38,6 +38,10 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if !Reachability.isConnectedToNetwork(){
+            //TODO
+        }
+        
         var  boarderColor = UIColor.grayColor()
 		bioDescriptionLabel.layer.borderColor = boarderColor.CGColor
 		bioDescriptionLabel.layer.borderWidth = 1.0

@@ -42,6 +42,7 @@
 		B14C48F51B53ABBF0000782E /* SocialPlatforms.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */; };
 		B14C48F71B53AC9A0000782E /* Industry.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F61B53AC9A0000782E /* Industry.plist */; };
 		B19627541B585527008B4D32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19627531B585527008B4D32 /* Images.xcassets */; };
+		B1A0D5801B5E7A7A0089F0A2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A0D57F1B5E7A7A0089F0A2 /* Reachability.swift */; };
 		B1FE4A321B53FA8B008931D2 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SocialPlatforms.plist; sourceTree = "<group>"; };
 		B14C48F61B53AC9A0000782E /* Industry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Industry.plist; sourceTree = "<group>"; };
 		B19627531B585527008B4D32 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B1A0D57F1B5E7A7A0089F0A2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		B5CE7ABC730FB1EA0D4DE997 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F62854ECF9A25A6B7B2D5FB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };

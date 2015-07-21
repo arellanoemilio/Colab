@@ -41,6 +41,11 @@ class SignInViewController: UIViewController {
     }
 
 	@IBAction func signIn(sender: UIButton) {
+        
+        if !Reachability.isConnectedToNetwork(){
+           //TODO
+        }
+        
 		let permissions = ["public_profile"]
 		PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
 			(user: PFUser?, error: NSError?) -> Void in
@@ -106,6 +111,11 @@ class SignInViewController: UIViewController {
 	}
 	
 	func getDataFromFB() {
+        
+        if !Reachability.isConnectedToNetwork(){
+           //TODO
+        }
+
 		if FBSDKAccessToken.currentAccessToken() != nil {
 			var user = PFUser.currentUser()
 			var name = ""
@@ -127,12 +137,8 @@ class SignInViewController: UIViewController {
 						picURL = (result["data"] as! NSDictionary)["url"] as! String
 						user!["pictureURL"] = picURL
 						user?.saveInBackground()
-					}
-			}
-			
-			//user!.saveInBackground()
-
+                    }
+            }
 		}
-		
 	}
 }

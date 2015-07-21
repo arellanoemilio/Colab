@@ -67,12 +67,8 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 	
 		user["platformUrl"] = array
 		user.saveInBackground()
-		
-		
-		
-	}
-
-	
+    }
+    
 
     // MARK: - Navigation
 
