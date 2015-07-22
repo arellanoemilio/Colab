@@ -87,7 +87,6 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-        
         profilePicture.layer.cornerRadius = profilePicture.bounds.size.height / 2
 		getProfilePic()
 	}
