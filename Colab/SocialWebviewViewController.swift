@@ -45,7 +45,6 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-		println(webview.request?.URL?.absoluteString)
 	}
 	
 	func textFieldShouldReturn(textField: UITextField) -> Bool {

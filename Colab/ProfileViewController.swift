@@ -128,12 +128,18 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		profilePicture.image = image
 		
 	}
-	@IBAction func toSocialWeb(sender: AnyObject) {
-		performSegueWithIdentifier("profileToWeb", sender: sender)
+	
+    @IBAction func toSocialWeb(sender: AnyObject) {
+        if let button = sender as? UIButton{
+            if let image = button.currentBackgroundImage{
+                performSegueWithIdentifier("profileToWeb", sender: sender)
+            }
+        }
 	}
     
     func getURLAndIndexFromSender(sender: AnyObject?) -> (url:String,index:Int){
         if let button = sender as? UIButton {
+            mediaURL = user["platformUrl"] as! [String]
             switch button {
             case userMedia1Button:
                 return (mediaURL.first!, 0)
@@ -142,7 +148,6 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             case userMedia3Button:
                 return (mediaURL[2],2)
             default:
-                println("no button")
                 break
             }
         }

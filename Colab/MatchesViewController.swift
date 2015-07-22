@@ -37,7 +37,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+        
         query()
 
         // Do any additional setup after loading the view.
@@ -50,7 +50,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     }
     
     override func viewDidAppear(animated: Bool) {
-        println(" hight  = \(clearButton.bounds.size.height / 2)")
         clearButton.layer.cornerRadius = clearButton.bounds.size.height / 2
         clearButton.layer.borderColor = UIColor(red: 0.33, green: 0.33, blue: 0.33, alpha: 1.0).CGColor
         clearButton.layer.borderWidth = 1
@@ -184,7 +183,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 			let random = arc4random_uniform(UInt32(matches.count-1))
 			currentUserDisplayed = Int(random)
             useUserAtIndex(&currentUserDisplayed)
-//			populateLayoutWithUser(matches[currentUserDisplayed])
 		} else {
 			displayeduser = nil
 			populateLayoutWithUser(displayeduser)
@@ -212,6 +210,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
     }
     
     func populateLayoutWithUser(opUser:PFUser?){
+        
         if let user = opUser{
             userNameLabel.text = user["name"] as? String
             userRegionLabel.text = user["region"] as? String
@@ -259,13 +258,15 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
                 }
             }
         }
-        
     }
     
     func clearMedias(){
         userMedia1Label.setBackgroundImage(nil , forState: UIControlState.Normal)
         userMedia2Label.setBackgroundImage(nil , forState: UIControlState.Normal)
         userMedia3Label.setBackgroundImage(nil , forState: UIControlState.Normal)
+        userMedia1Label.hidden = true
+        userMedia2Label.hidden = true
+        userMedia3Label.hidden = true
     }
 	
     func setPicture(user: PFUser){
@@ -317,7 +318,11 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 	}
 	
 	@IBAction func tosSocialWeb(sender: AnyObject) {
-		performSegueWithIdentifier("tinderToWeb", sender: sender)
+        if let button = sender as? UIButton{
+            if let image = button.currentBackgroundImage{
+                performSegueWithIdentifier("tinderToWeb", sender: sender)
+            }
+        }
 	}
 	
     /*@IBAction func unwindToMatchesViewController(segue: UIStoryboardSegue) {
@@ -332,9 +337,6 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             if let profileViewController = segue.destinationViewController as? ProfileViewController{
                 profileViewController.user = displayeduser
             }
-			
-			//profileViewController.user = matches[currentUserDisplayed]
-
 		}
 		if segue.identifier == "tinderToWeb" {
 			var destinationController = segue.destinationViewController as! SocialWebviewViewController
