@@ -334,7 +334,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 		}
 		if segue.identifier == "tinderToWeb" {
 			var destinationController = segue.destinationViewController as! SocialWebviewViewController
-			destinationController.user = matches[currentUserDisplayed]
+			qdestinationController.user = matches[currentUserDisplayed]
 			let senderData = getURLAndIndexFromSender(sender)
 			destinationController.urlString = senderData.url
 			destinationController.index = senderData.index
