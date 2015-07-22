@@ -49,9 +49,18 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 	}
 	
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
-		let request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlField.text)!)
+		let url: String = dealWithHTTP(urlField.text)
+		let request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: url)!)
 		webview.loadRequest(request)
 		return true
+	}
+	
+	func dealWithHTTP(URL: String) -> String {
+		var newURL = URL
+		if URL.rangeOfString("http://") == nil {
+			newURL = "http://\(URL)"
+		}
+		return newURL
 	}
     
 	@IBAction func add(sender: AnyObject) {
