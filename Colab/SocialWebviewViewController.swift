@@ -3,7 +3,7 @@
 //  co.op
 //
 //  Created by Mikk Kärner on 20/07/15.
-//  Copyright (c) 2015 mikkkarner. All rights reserved.
+//  Copyright (c) 2015 Mikk Kärner and Emilio Arellano. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,8 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 	@IBOutlet weak var webview: UIWebView!
 	@IBOutlet weak var urlField: UITextField!
 	@IBOutlet weak var addButton: UIButton!
-	
+    
+    var isMatches: Bool = false
 	var user: PFUser!
 	var urlString: String!
 	var index: Int!
@@ -44,7 +45,6 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-		println(webview.request?.URL?.absoluteString)
 	}
 	
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -52,21 +52,27 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 		webview.loadRequest(request)
 		return true
 	}
-	
-	
     
 	@IBAction func add(sender: AnyObject) {
-		var url = webview.request?.URL?.absoluteString
-		
-		var array: [String] = (user["platformUrl"] as! [String])
-		println("count \(array.count)")
-		println("index \(index)")
-		if index < array.count && index > -1{
-			array[index] = url!
-		}
-	
-		user["platformUrl"] = array
-		user.saveInBackground()
+        if user == PFUser.currentUser(){
+            var url = webview.request?.URL?.absoluteString
+            var array: [String] = (user["platformUrl"] as! [String])
+            if index < array.count && index > -1{
+                array[index] = url!
+            }
+            
+            user["platformUrl"] = array
+            user.saveInBackground()
+        }
+        if isMatches{
+            performSegueWithIdentifier("backToMatches", sender: sender)
+        }else{
+            performSegueWithIdentifier("backToProfile", sender: sender)
+        }
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        urlField.text = webview.request?.URL?.absoluteString
     }
     
 

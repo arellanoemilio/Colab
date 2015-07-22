@@ -3,7 +3,7 @@
 //  Colab
 //
 //  Created by Emilio Arellano on 7/10/15.
-//  Copyright (c) 2015 mikkkarner. All rights reserved.
+//  Copyright (c) 2015 Mikk Kärner and Emilio Arellano. All rights reserved.
 //
 
 import UIKit
@@ -128,12 +128,18 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 		profilePicture.image = image
 		
 	}
-	@IBAction func toSocialWeb(sender: AnyObject) {
-		performSegueWithIdentifier("profileToWeb", sender: sender)
+	
+    @IBAction func toSocialWeb(sender: AnyObject) {
+        if let button = sender as? UIButton{
+            if let image = button.currentBackgroundImage{
+                performSegueWithIdentifier("profileToWeb", sender: sender)
+            }
+        }
 	}
     
     func getURLAndIndexFromSender(sender: AnyObject?) -> (url:String,index:Int){
         if let button = sender as? UIButton {
+            mediaURL = user["platformUrl"] as! [String]
             switch button {
             case userMedia1Button:
                 return (mediaURL.first!, 0)
@@ -141,9 +147,8 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
                 return (mediaURL[1], 1)
             case userMedia3Button:
                 return (mediaURL[2],2)
-            case tempButton:
-                return ("http://www.facebook.com", -1)
-            default: break
+            default:
+                break
             }
         }
         return ("",-1)
@@ -164,13 +169,6 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	}
 	
 	@IBAction func unwindToProfile(segue: UIStoryboardSegue) {
-        if let previousViewController = segue.sourceViewController as? SocialWebviewViewController{
-            if previousViewController.user == PFUser.currentUser() && previousViewController.index >= 0 && previousViewController.index <= 2{
-                mediaURL[previousViewController.index] = previousViewController.urlString
-                user["platformUrl"] = mediaURL
-                user.saveInBackground()
-            }
-        }
     }
     
     // MARK: - Navigation
@@ -183,6 +181,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             let senderData = getURLAndIndexFromSender(sender)
             destinationController.urlString = senderData.url
             destinationController.index = senderData.index
+            destinationController.isMatches = false
 		}
     }
 

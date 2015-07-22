@@ -629,12 +629,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your current region" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf7-rn-bRO">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGd-hZ-vwc">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Continue">
@@ -681,6 +675,12 @@
                                     </mask>
                                 </variation>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you from?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf7-rn-bRO">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -710,9 +710,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="kf7-rn-bRO"/>
                                 <exclude reference="HGd-hZ-vwc"/>
                                 <exclude reference="AfU-jQ-T2x"/>
+                                <exclude reference="kf7-rn-bRO"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ewp-db-rtJ"/>
@@ -730,9 +730,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="kf7-rn-bRO"/>
                                 <include reference="HGd-hZ-vwc"/>
                                 <include reference="AfU-jQ-T2x"/>
+                                <include reference="kf7-rn-bRO"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ewp-db-rtJ"/>
@@ -771,7 +771,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the industry you define with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VH-gX-MeM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the industry you are a part of" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VH-gX-MeM">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -924,7 +924,7 @@
                                     <action selector="nextPage:" destination="5Uu-sL-3ms" eventType="touchUpInside" id="rQH-ID-d6d"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the platforms you use" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gld-ya-BrV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the social medias you use" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gld-ya-BrV">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1032,7 +1032,7 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your contect email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-7j-vXE">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your contact email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUQ-7j-vXE">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1652,7 +1652,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="add:" destination="UpR-lc-hAQ" eventType="touchUpInside" id="5zb-8z-TCk"/>
-                                    <segue destination="tb1-Jh-mN3" kind="unwind" unwindAction="unwindToMatchVC:" id="lZ7-dO-ckP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1726,7 +1725,8 @@
                         <outlet property="addButton" destination="DIy-1W-43T" id="vUW-4X-SCy"/>
                         <outlet property="urlField" destination="df2-Vl-rgL" id="pnQ-d2-p9s"/>
                         <outlet property="webview" destination="JGd-4A-QBz" id="lfw-L2-UCj"/>
-                        <segue destination="tb1-Jh-mN3" kind="unwind" unwindAction="unwindToProfile:" id="H7F-gL-jxq"/>
+                        <segue destination="tb1-Jh-mN3" kind="unwind" identifier="backToMatches" unwindAction="unwindToMatchVC:" id="vZ4-JY-IQs"/>
+                        <segue destination="tb1-Jh-mN3" kind="unwind" identifier="backToProfile" unwindAction="unwindToProfile:" id="rea-xK-5dy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAI-Sw-1hI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1967,7 +1967,8 @@
                                         <include reference="cGm-gs-q1g"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="177" y="654" width="47" height="47"/>
                                     <mask key="constraints">
                                         <exclude reference="Gdc-iq-MGC"/>
                                         <include reference="IWj-RU-hoe"/>
@@ -2709,8 +2710,8 @@
         <image name="star" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hsw-hA-usv"/>
-        <segue reference="f9n-L8-Pka"/>
+        <segue reference="EBx-lu-zQz"/>
         <segue reference="aqj-1N-Fjb"/>
+        <segue reference="XSG-4g-tBQ"/>
     </inferredMetricsTieBreakers>
 </document>

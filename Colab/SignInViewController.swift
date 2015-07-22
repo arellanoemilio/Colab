@@ -3,7 +3,7 @@
 //  Colab
 //
 //  Created by Mikk Kärner on 10/07/15.
-//  Copyright (c) 2015 mikkkarner. All rights reserved.
+//  Copyright (c) 2015 Mikk Kärner and Emilio Arellano. All rights reserved.
 //
 
 import UIKit
@@ -50,33 +50,22 @@ class SignInViewController: UIViewController {
 		let permissions = ["public_profile"]
 		PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
 			(user: PFUser?, error: NSError?) -> Void in
-			println("in here")
 			if let user = user {
 				if user.isNew {
-					println("User signed up and logged in through Facebook!")
 					user["complete"] = false
 					user.saveInBackground()
 					self.getDataFromFB()
 					self.performSegueWithIdentifier("userSetup", sender: sender)
 				} else {
-					println("User logged in through Facebook!")
-					//self.getDataFromFB()
-					//self.performSegueWithIdentifier("userSetup", sender: sender)
 					if user["bio"] != nil {
-						println("bio != nil")
 						self.performSegueWithIdentifier("User Profile", sender: sender)
 					} else {
-						println("bio == nil")
 						self.performSegueWithIdentifier("userSetup", sender: sender)
 					}
 				}
-			} else {
-				println("Uh oh. The user cancelled the Facebook login.")
 			}
 			if error != nil {
 				println("Error: \(error)")
-			} else {
-				println("error == nil")
 			}
 		}
 	}
@@ -104,7 +93,6 @@ class SignInViewController: UIViewController {
                     if let profileViewCon = profileNavCon.topViewController as? ProfileViewController{
                         profileViewCon.user = PFUser.currentUser()//profileNavCon.user
                         profileNavCon.user?.objectId
-                        println("\(profileNavCon.user?.objectId)")
                     }
                 }
             }
