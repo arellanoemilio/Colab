@@ -69,10 +69,9 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
         var picker = MFMailComposeViewController()
 		picker.mailComposeDelegate = self
 		picker.setSubject("Let's collaborate")
-		picker.setToRecipients([matches[currentUserDisplayed].email!])
+		picker.setToRecipients([displayeduser!.email!])
 		
 		presentViewController(picker, animated: true, completion: {self.getNextMatch()})
-
         if displayeduser != nil{
         var connection = PFObject(className: "Connection")
             connection["user1"] = PFUser.currentUser()
