@@ -1652,7 +1652,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="add:" destination="UpR-lc-hAQ" eventType="touchUpInside" id="5zb-8z-TCk"/>
-                                    <segue destination="tb1-Jh-mN3" kind="unwind" unwindAction="unwindToMatchVC:" id="lZ7-dO-ckP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1726,7 +1725,8 @@
                         <outlet property="addButton" destination="DIy-1W-43T" id="vUW-4X-SCy"/>
                         <outlet property="urlField" destination="df2-Vl-rgL" id="pnQ-d2-p9s"/>
                         <outlet property="webview" destination="JGd-4A-QBz" id="lfw-L2-UCj"/>
-                        <segue destination="tb1-Jh-mN3" kind="unwind" unwindAction="unwindToProfile:" id="H7F-gL-jxq"/>
+                        <segue destination="tb1-Jh-mN3" kind="unwind" identifier="backToMatches" unwindAction="unwindToMatchVC:" id="vZ4-JY-IQs"/>
+                        <segue destination="tb1-Jh-mN3" kind="unwind" identifier="backToProfile" unwindAction="unwindToProfile:" id="rea-xK-5dy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAI-Sw-1hI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2709,8 +2709,8 @@
         <image name="star" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hsw-hA-usv"/>
-        <segue reference="f9n-L8-Pka"/>
+        <segue reference="XSG-4g-tBQ"/>
         <segue reference="aqj-1N-Fjb"/>
+        <segue reference="Hsw-hA-usv"/>
     </inferredMetricsTieBreakers>
 </document>

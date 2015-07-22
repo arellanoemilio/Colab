@@ -104,8 +104,12 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
             regions = source.regions
             industries = source.industries
             platforms = source.platforms
+            query()
         }
-        query()
+        if let source = segue.sourceViewController as? SocialWebviewViewController{
+            
+        }
+        
     }
     
 	func query(){
@@ -338,6 +342,7 @@ class MatchesViewController: UIViewController,  MFMailComposeViewControllerDeleg
 			let senderData = getURLAndIndexFromSender(sender)
 			destinationController.urlString = senderData.url
 			destinationController.index = senderData.index
+            destinationController.isMatches = true
 		}
     }
 

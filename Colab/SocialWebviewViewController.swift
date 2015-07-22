@@ -14,7 +14,8 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 	@IBOutlet weak var webview: UIWebView!
 	@IBOutlet weak var urlField: UITextField!
 	@IBOutlet weak var addButton: UIButton!
-	
+    
+    var isMatches: Bool = false
 	var user: PFUser!
 	var urlString: String!
 	var index: Int!
@@ -52,21 +53,23 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
 		webview.loadRequest(request)
 		return true
 	}
-	
-	
     
 	@IBAction func add(sender: AnyObject) {
-		var url = webview.request?.URL?.absoluteString
-		
-		var array: [String] = (user["platformUrl"] as! [String])
-		println("count \(array.count)")
-		println("index \(index)")
-		if index < array.count && index > -1{
-			array[index] = url!
-		}
-	
-		user["platformUrl"] = array
-		user.saveInBackground()
+        if user == PFUser.currentUser(){
+            var url = webview.request?.URL?.absoluteString
+            var array: [String] = (user["platformUrl"] as! [String])
+            if index < array.count && index > -1{
+                array[index] = url!
+            }
+            
+            user["platformUrl"] = array
+            user.saveInBackground()
+        }
+        if isMatches{
+            performSegueWithIdentifier("backToMatches", sender: sender)
+        }else{
+            performSegueWithIdentifier("backToProfile", sender: sender)
+        }
     }
     
 

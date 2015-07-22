@@ -141,9 +141,9 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
                 return (mediaURL[1], 1)
             case userMedia3Button:
                 return (mediaURL[2],2)
-            case tempButton:
-                return ("http://www.facebook.com", -1)
-            default: break
+            default:
+                println("no button")
+                break
             }
         }
         return ("",-1)
@@ -164,13 +164,6 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
 	}
 	
 	@IBAction func unwindToProfile(segue: UIStoryboardSegue) {
-        if let previousViewController = segue.sourceViewController as? SocialWebviewViewController{
-            if previousViewController.user == PFUser.currentUser() && previousViewController.index >= 0 && previousViewController.index <= 2{
-                mediaURL[previousViewController.index] = previousViewController.urlString
-                user["platformUrl"] = mediaURL
-                user.saveInBackground()
-            }
-        }
     }
     
     // MARK: - Navigation
@@ -183,6 +176,7 @@ class ProfileViewController: UIViewController, MFMailComposeViewControllerDelega
             let senderData = getURLAndIndexFromSender(sender)
             destinationController.urlString = senderData.url
             destinationController.index = senderData.index
+            destinationController.isMatches = false
 		}
     }
 
