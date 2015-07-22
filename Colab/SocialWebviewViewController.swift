@@ -3,7 +3,7 @@
 //  co.op
 //
 //  Created by Mikk Kärner on 20/07/15.
-//  Copyright (c) 2015 mikkkarner. All rights reserved.
+//  Copyright (c) 2015 Mikk Kärner and Emilio Arellano. All rights reserved.
 //
 
 import UIKit
@@ -69,6 +69,10 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
         }else{
             performSegueWithIdentifier("backToProfile", sender: sender)
         }
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        urlField.text = webview.request?.URL?.absoluteString
     }
     
 

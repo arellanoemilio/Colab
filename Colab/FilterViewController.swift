@@ -2,8 +2,8 @@
 //  BrowseViewController.swift
 //  Colab
 //
-//  Created by Mikk Kärner & Emilio  on 10/07/15.
-//  Copyright (c) 2015 mikkkarner. All rights reserved.
+//  Created by Mikk Kärner on 10/07/15.
+//  Copyright (c) 2015 Mikk Kärner and Emilio Arellano. All rights reserved.
 //
 
 

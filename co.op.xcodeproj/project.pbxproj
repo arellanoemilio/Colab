@@ -37,12 +37,10 @@
 		B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10B83281B505F220059766B /* CollabsTableViewController.swift */; };
 		B12FC8741B556837000A7D87 /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12FC8731B556837000A7D87 /* ProfileNavigationController.swift */; };
 		B12FC8761B557AA8000A7D87 /* CollabsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12FC8751B557AA8000A7D87 /* CollabsNavigationController.swift */; };
-		B14C48EF1B5307770000782E /* ConstantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C48EE1B5307770000782E /* ConstantList.swift */; };
 		B14C48F31B53AABA0000782E /* Regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F21B53AABA0000782E /* Regions.plist */; };
 		B14C48F51B53ABBF0000782E /* SocialPlatforms.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */; };
 		B14C48F71B53AC9A0000782E /* Industry.plist in Resources */ = {isa = PBXBuildFile; fileRef = B14C48F61B53AC9A0000782E /* Industry.plist */; };
 		B19627541B585527008B4D32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19627531B585527008B4D32 /* Images.xcassets */; };
-		B1A0D5801B5E7A7A0089F0A2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A0D57F1B5E7A7A0089F0A2 /* Reachability.swift */; };
 		B1FE4A321B53FA8B008931D2 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,12 +90,10 @@
 		B10B83281B505F220059766B /* CollabsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabsTableViewController.swift; sourceTree = "<group>"; };
 		B12FC8731B556837000A7D87 /* ProfileNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 		B12FC8751B557AA8000A7D87 /* CollabsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollabsNavigationController.swift; sourceTree = "<group>"; };
-		B14C48EE1B5307770000782E /* ConstantList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantList.swift; sourceTree = "<group>"; };
 		B14C48F21B53AABA0000782E /* Regions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Regions.plist; sourceTree = "<group>"; };
 		B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SocialPlatforms.plist; sourceTree = "<group>"; };
 		B14C48F61B53AC9A0000782E /* Industry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Industry.plist; sourceTree = "<group>"; };
 		B19627531B585527008B4D32 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B1A0D57F1B5E7A7A0089F0A2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B1FE4A311B53FA8B008931D2 /* MatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		B5CE7ABC730FB1EA0D4DE997 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F62854ECF9A25A6B7B2D5FB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,7 +165,6 @@
 			children = (
 				8A1BA8131B4F0413004C487D /* Main.storyboard */,
 				B19627531B585527008B4D32 /* Images.xcassets */,
-				B14C48EE1B5307770000782E /* ConstantList.swift */,
 				B14C48F41B53ABBF0000782E /* SocialPlatforms.plist */,
 				B14C48F61B53AC9A0000782E /* Industry.plist */,
 				B14C48F21B53AABA0000782E /* Regions.plist */,
@@ -386,7 +381,6 @@
 				8A2936A31B545010001ECD8C /* BioSetupViewController.swift in Sources */,
 				B1FE4A321B53FA8B008931D2 /* MatchesViewController.swift in Sources */,
 				8A4976CB1B5D2FFC00B66257 /* SocialWebviewViewController.swift in Sources */,
-				B14C48EF1B5307770000782E /* ConstantList.swift in Sources */,
 				B10B83251B505C780059766B /* ProfileViewController.swift in Sources */,
 				B10B83291B505F220059766B /* CollabsTableViewController.swift in Sources */,
 				B12FC8761B557AA8000A7D87 /* CollabsNavigationController.swift in Sources */,
