@@ -26,6 +26,7 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
         super.viewDidLoad()
 		
 		urlField.delegate = self
+		webview.delegate = self
 		
 		if urlString == nil || urlString == "" {
 			urlString = "http://www.google.com"
@@ -71,7 +72,7 @@ class SocialWebviewViewController: UIViewController, UIWebViewDelegate, UITextFi
         }
     }
     
-    func webViewDidStartLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(webView: UIWebView) {
         urlField.text = webview.request?.URL?.absoluteString
     }
     
